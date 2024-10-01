@@ -2,7 +2,7 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "");
-define("DB_NAME", "classicmodels");
+define("DB_NAME", "kihulorestaurant");
 Class Database{
     public $host=DB_HOST;
     public $user=DB_USER;
