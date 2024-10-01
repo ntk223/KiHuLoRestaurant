@@ -40,3 +40,20 @@ h2 {
 footer {
   background-color: #f8a853;
 }
+
+.info {
+  width: 80%;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+.info th {
+  height: 30px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+.info td {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
