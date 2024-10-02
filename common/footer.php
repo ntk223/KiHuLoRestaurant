@@ -1,4 +1,5 @@
 <footer>
+<link rel="stylesheet" href="assets/css/headerandfooter.css"/>
       <table class="info">
         <tr>
           <th><strong>ADDRESS</strong></th>
