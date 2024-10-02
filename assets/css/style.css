@@ -1,0 +1,116 @@
+/* Đặt phần header kéo dài toàn bộ chiều ngang của trang */
+.header {
+    width: 100%; /* Chiều rộng 100% của trình duyệt */
+    background-color: white; /* Màu nền cho dễ nhìn */
+    color:rgb(170, 166, 166);
+}
+
+/* Phần header-top bên trong header */
+.header-top {
+    padding: 20px;
+    text-align: center; /* Canh giữa nội dung */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi chiều rộng */
+    T
+}
+
+/* Đặt body và html để không có margin mặc định */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Tổng thể cho body */
+/* Tổng thể cho body */
+/* Tổng thể cho body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Định dạng cho header */
+.header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* Đảm bảo header luôn nằm trên */
+}
+
+/* Tạo khoảng cách từ trên xuống để tránh header chồng chập */
+.sidebar {
+    width: 250px;
+    height: 500px;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    box-sizing: border-box;
+    margin-top: 200px; /* Khoảng cách để đẩy sidebar xuống dưới header */
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+
+/* Sidebar title */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Danh sách trong sidebar */
+/* Danh sách trong sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Các mục trong danh sách */
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+/* Các liên kết trong danh sách được hiển thị như box */
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 15px; /* Tăng padding để tạo không gian cho box */
+    background-color: #333; /* Màu nền cho box */
+    border: 1px solid #ccc; /* Đường viền xám */
+    border-radius: 5px; /* Bo tròn các góc */
+    transition: background 0.3s ease, border 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+/* Hiệu ứng hover khi di chuột */
+.sidebar ul li a:hover {
+    background-color: #555; /* Đổi màu nền khi hover */
+    border-color: #aaa; /* Đổi màu viền khi hover */
+}
+
+
+/* Thông báo */
+.notification {
+    background-color: #f44336;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 50%;
+    margin-left: 10px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+/* Đặt body và html để không có margin mặc định */
+html, body {
+    margin: 0;
+    padding: 0;
+}
