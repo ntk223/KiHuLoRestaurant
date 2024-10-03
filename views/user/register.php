@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/signup.css"/>
     <title>Sign up</title>
   </head>
   <body>
@@ -25,6 +26,7 @@
           <label for="name">Username:</label>
           <input
             type="text"
+            name="username"
             id="name"
             placeholder="Plese enter your username"
             required
@@ -34,6 +36,7 @@
           <label for="password">Password:</label>
           <input
             type="password"
+            name="password"
             id="password"
             placeholder="Plese enter your password"
             required
@@ -43,6 +46,7 @@
           <label for="email">Email:</label>
           <input
             type="email"
+            name="email"
             id="email"
             placeholder="Plese enter your email"
             required
@@ -52,6 +56,7 @@
           <label for="phone">Your phone number:</label>
           <input
             type="tel"
+            name="phone"
             id="phone"
             placeholder="Plese enter your phone number"
             required
@@ -61,6 +66,7 @@
           <label for="address">Your address:</label>
           <input
             type="text"
+            name="address"
             id="address"
             placeholder="Plese enter your address"
             required
@@ -83,4 +89,3 @@
     </form>
   </body>
 </html>
-

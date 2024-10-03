@@ -39,4 +39,5 @@
           </div>
         </div>
       </div>
+      <?php include("views/user/navbar.php");?>
 </header>
