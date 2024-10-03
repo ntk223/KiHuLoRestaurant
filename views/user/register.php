@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="/KiHuLo Restaurant/assets/css/signup.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
@@ -17,7 +17,7 @@
     <title>Sign up</title>
   </head>
   <body>
-    <form action="#" method="post">
+    <form action="" method="POST">
       <div class="registration-form">
         <h2 class="font-effect-shadow-multiple" style="font-size: 35px">
           <strong>SIGN UP</strong>
@@ -28,6 +28,7 @@
             type="text"
             name="username"
             id="name"
+            name = "username"
             placeholder="Plese enter your username"
             required
           />
@@ -38,6 +39,7 @@
             type="password"
             name="password"
             id="password"
+            name = "password"
             placeholder="Plese enter your password"
             required
           />
@@ -48,6 +50,7 @@
             type="email"
             name="email"
             id="email"
+            name = "email"
             placeholder="Plese enter your email"
             required
           />
@@ -58,6 +61,7 @@
             type="tel"
             name="phone"
             id="phone"
+            name = "phone"
             placeholder="Plese enter your phone number"
             required
           />
@@ -68,6 +72,7 @@
             type="text"
             name="address"
             id="address"
+            name = "address"
             placeholder="Plese enter your address"
             required
           />
@@ -83,7 +88,7 @@
         </div>
         <input type="hidden" id="registration-date" name="registration-date" />
         <div class="form-group">
-          <button type="submit"><a href="#">Submit</a></button>
+          <button type="submit" name = "submit"><a href="index.php?page=customer&manage=home">Submit</a></button>
         </div>
       </div>
     </form>

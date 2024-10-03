@@ -51,9 +51,9 @@
           </form>
         </div>
         <p>Bạn chưa có tài khoản?</p>
-        <p>Đăng ký ngay <span><a href="#" id="gotoregister">tại đây</a></span></p>
+        <p>Đăng ký ngay <span><a href="index.php?page=customer&manage=register" id="gotoregister">tại đây</a></span></p>
         <div class="form-group">
-          <button type="submit"><a href="#" id="submit">Submit</a></button>
+          <button type="submit"><a href="index.php?page=customer&manage=home" id="submit">Submit</a></button>
         </div>
       </div>
     </form>
