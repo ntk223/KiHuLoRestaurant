@@ -8,6 +8,10 @@ body {
   background-color: coral;
 }
 
+a {
+  text-decoration: none;
+}
+
 .registration-form {
   background-color: bisque;
   padding: 20px;
@@ -50,11 +54,25 @@ body {
   background-color: #fc9904;
 }
 
-a {
+#gotoregister a {
   text-decoration: none;
-  color: #342d41;
+  color: #11cbff;
+}
+
+.radio-option {
+  display: flex;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-family: "Sofia", sans-serif;
+}
+#gotoregister :hover {
+  color: #f88e14;
+}
+#gotoregister :active {
+  color: #f88e14;
+}
+#submit {
+  color: black;
 }
