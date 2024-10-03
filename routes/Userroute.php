@@ -1,5 +1,5 @@
 <?php
-$manage = isset($_GET['manage']) ? $_GET['manage'] : "";
+$manage = isset($_GET['manage']) ? $_GET['manage'] : "home";
 include "controllers/UserController.php";
 $userController = new UserController();
 switch($manage){
@@ -8,6 +8,9 @@ switch($manage){
         break;
     case "login":
         $userController->login();
+        break;
+    case "home":
+        include "views/user/menu.php";
         break;
     
 }

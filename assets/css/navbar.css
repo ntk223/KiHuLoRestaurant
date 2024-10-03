@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #ffbe0c;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  width: 70%;
+  position: absolute;
+  top: 80px;
+  left: 15%;
+  width: 80%;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex; /* Hiển thị danh sách nằm ngang */
+  flex-grow: 1; /* Chiếm hết không gian còn lại */
+  justify-content: space-around; /* Cách đều các mục */
+}
+
+.navbar ul li {
+  flex-grow: 1; /* Mỗi mục sẽ chiếm không gian đều */
+  text-align: center;
+}
+
+.navbar ul li a {
+  color: white; /* Màu chữ */
+  text-decoration: none; /* Bỏ gạch chân */
+  padding: 3px;
+  display: block; /* Đảm bảo toàn bộ khối có thể nhấn được */
+  border-radius: 4px;
+}
+
+.navbar ul li a:hover {
+  background-color: #d09c00; /* Màu nền khi hover */
+}

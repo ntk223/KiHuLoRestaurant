@@ -28,8 +28,9 @@ class UserController
         {
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $role = $_POST['role'];
             $user = new User();
-            if ( $user->login($email, $password) == false) {
+            if ( $user->login($email, $password, $role) == false) {
                 echo "Login failed";
                 return ;
             }

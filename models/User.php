@@ -36,9 +36,9 @@ class User
         return $result;
     }
 
-    public function login($email, $password)
+    public function login($email, $password, $role)
     {
-        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password', role = '$role'";
         $result = $this->db->Select($query);
         if ( $result == null) {
             return false;
