@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -7,6 +6,9 @@
     <title>Home</title>
   </head>
   <body>
-    <?php include("views/user/login.php");?>
+    <?php include("common/header.php");?>
+    <main>
+    </main>
+    <?php include("common/footer.php");?>
   </body>
 </html>
