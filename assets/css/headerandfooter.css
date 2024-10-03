@@ -17,8 +17,9 @@ main {
   padding: 20px;
 }
 header {
+  
   background-color: #f8a853;
-  position: fixed;
+  position: relative;
   height: 100px;
   width: 100%;
   border: 1px;

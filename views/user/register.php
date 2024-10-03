@@ -16,7 +16,7 @@
     <title>Sign up</title>
   </head>
   <body>
-    <form action="#" method="post">
+    <form action="" method="POST">
       <div class="registration-form">
         <h2 class="font-effect-shadow-multiple" style="font-size: 35px">
           <strong>SIGN UP</strong>
@@ -26,6 +26,7 @@
           <input
             type="text"
             id="name"
+            name = "username"
             placeholder="Plese enter your username"
             required
           />
@@ -35,6 +36,7 @@
           <input
             type="password"
             id="password"
+            name = "password"
             placeholder="Plese enter your password"
             required
           />
@@ -44,6 +46,7 @@
           <input
             type="email"
             id="email"
+            name = "email"
             placeholder="Plese enter your email"
             required
           />
@@ -53,6 +56,7 @@
           <input
             type="tel"
             id="phone"
+            name = "phone"
             placeholder="Plese enter your phone number"
             required
           />
@@ -62,6 +66,7 @@
           <input
             type="text"
             id="address"
+            name = "address"
             placeholder="Plese enter your address"
             required
           />
@@ -77,7 +82,7 @@
         </div>
         <input type="hidden" id="registration-date" name="registration-date" />
         <div class="form-group">
-          <button type="submit"><a href="#">Submit</a></button>
+          <button type="submit" name = "submit"><a href="#">Submit</a></button>
         </div>
       </div>
     </form>
