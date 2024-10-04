@@ -1,2 +1,2 @@
-<?php include "views/admin/dashboard.php" ?>
+<?php include "views/admin/dashboard.php"?>
 
