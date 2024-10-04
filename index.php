@@ -1,4 +1,6 @@
 
+<?php include "views/admin/dashboard.php"?>
+
 <!DOCTYPE html>
 <html lang="vi">
   <head>

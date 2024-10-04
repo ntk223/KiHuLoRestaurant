@@ -9,10 +9,25 @@
 <body>
    
    
-    <header class="header">
-        <div class="header-top">
-           BẢNG ĐIỀU KHIỂN QUẢN LÍ
+<header class="header">
+    <div class="header-top">
+        <!-- Logo nhà hàng và liên kết mạng xã hội -->
+      
+            <div class="name_web">
+                <h2 class="font-effect-shadow-multiple">KiHuLo</h2>
+                <h2 class="font-effect-shadow-multiple">Restaurant</h2>
+            </div>
+    
+
+        <!-- Tiêu đề BẢNG ĐIỀU KHIỂN QUẢN LÍ ở giữa -->
+        <div class="center-header">
+            BẢNG ĐIỀU KHIỂN QUẢN LÍ
         </div>
+
+        <!-- Thông tin người dùng và thanh tìm kiếm -->
+      
+    
+</header>
 
     </header>
    
