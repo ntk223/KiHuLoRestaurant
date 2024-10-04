@@ -32,6 +32,7 @@
 
 .navbar ul li a:hover {
   background-color: #ff9100; /* Màu nền khi hover */
+  transition: 0.5s;
 }
 
 .sub {

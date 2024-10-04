@@ -129,6 +129,8 @@ h2 {
 
 footer {
   background-color: #f8a853;
+  width: 100%;
+  z-index: 10;
 }
 
 .info {

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="assets/css/menu.css">
 <body>
     <h1>Menu</h1>
     <table>
