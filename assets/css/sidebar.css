@@ -1,0 +1,54 @@
+.sidebar {
+  height: 546px;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 120;
+  background-color: #f5f5f5;
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 25px;
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động mượt */
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Hiệu ứng sáng nhẹ */
+  transition: all 0.4s ease;
+}
+
+.sidebar ul li a:hover::before {
+  left: 0; /* Di chuyển nền sáng vào */
+}
+
+.sidebar ul li a:hover {
+  background-color: #ffad49; /* Đổi màu nền khi hover */
+  color: #fff; /* Đổi màu chữ khi hover */
+  padding-left: 25px; /* Hiệu ứng đẩy nhẹ chữ sang phải */
+}
