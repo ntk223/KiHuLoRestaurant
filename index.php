@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -18,3 +18,4 @@
     <?php include("common/footer.php");?>
   </body>
 </html>
+

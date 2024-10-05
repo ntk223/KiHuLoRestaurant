@@ -27,7 +27,7 @@
             self::init(); 
             if ( self::get("login") == false){
                 self::destroy();
-                header("Location:login.php");
+                header("Location:index.php?in=login");
             }
         }
         public static function checkLogin()
@@ -35,8 +35,14 @@
             self::init(); 
             if ( self::get("login") == true )
             {
-                header("Location:idex.php");
+                header("Location:index.php?role=customer&page=index");
             }
+        }
+        public static function destroy()
+        {
+            session_destroy();
+            session_unset();
+            header("Location:index.php");
         }
     }
 

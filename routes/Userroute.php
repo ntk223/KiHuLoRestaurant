@@ -1,17 +1,23 @@
 <?php
-$manage = isset($_GET['manage']) ? $_GET['manage'] : "home";
-include "controllers/UserController.php";
-$userController = new UserController();
-switch($manage){
-    case "register":
-        $userController->register();
+include_once 'controllers/UserController.php';
+include_once 'controllers/MenuController.php';
+$user = new UserController();
+
+$page = isset($_GET['page']) ? $_GET['page'] : 'index';
+
+switch ($page) {
+    case 'index':
+        $idex = new MenuController();
+        $idex->Menulist();
         break;
-    case "login":
-        $userController->login();
+    case 'register':
+        $user->register();
         break;
-    case "home":
-        include "views/user/menu.php";
+    case 'login':
+        echo "This is login page";
         break;
-    
+    default:
+        echo "Page not found";
+        break;
 }
 ?>
