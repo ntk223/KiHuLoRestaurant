@@ -1,31 +1,67 @@
+/* Menu tổng thể */
 .menu {
+  padding-left: 20px;
+  padding-top: 20px;
   min-height: 100vh;
   overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
 }
 
+/* Định dạng cho từng món ăn (food item) */
+
 .food {
-  height: 250px;
+  height: 280px;
   width: 310px;
   border: 1px solid black;
   text-align: center;
-  align-items: center;
   float: left;
   margin: 5px;
   list-style-type: none;
   border-radius: 10px;
   margin-bottom: 20px;
+  cursor: pointer; /* Hiển thị con trỏ chuột */
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng khi hover cả div */
 }
 
+/* Hiệu ứng khi hover vào .food */
+.food:hover {
+  transform: scale(1.05); /* Phóng to toàn bộ food item khi hover */
+}
+
+/* Hình ảnh trong .food */
+.food img {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  height: 170px;
+  width: 200px;
+  border-radius: 15px; /* Bo tròn các góc của hình ảnh */
+  transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+}
+
+.food:hover img {
+  transform: scale(1.1); /* Phóng to ảnh */
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+/* Danh sách thông tin món ăn */
 .food ul {
   list-style-type: none;
   padding: 5px;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column; /* Sắp xếp các mục li theo cột */
+  align-items: center; /* Đảm bảo các mục li nằm giữa ul */
+  background-color: #fff;
+  transition: background-color 0.3s ease;
 }
 
+/* Hiệu ứng khi hover vào food item: chuyển màu nền của ul */
+.food:hover ul {
+  background-color: #f8a853; /* Chuyển sang màu f8a853 khi hover */
+}
+
+/* Các dòng thông tin trong ul */
 .food ul li {
-  padding: 3px;
-}
-
-.food img {
-  border-radius: 7px;
-  height: 250px;
+  padding: 5px 5px 5px 50px;
+  width: 100%; /* Đảm bảo mỗi li chiếm 100% chiều rộng ul */
+  text-align: left; /* Căn chữ cái đầu tiên của mỗi mục li thẳng hàng */
 }
