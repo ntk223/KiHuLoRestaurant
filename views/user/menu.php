@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="assets/css/menu.css">
-<body>
     <div class="menu">
     <?php while ($row = $result->fetch_assoc()){?>
         <div class="food">
@@ -15,4 +14,3 @@
         </div>
     <?php } ?>
     </div>
-</body>
