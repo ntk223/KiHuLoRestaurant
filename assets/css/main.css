@@ -9,5 +9,6 @@ body {
 main {
   flex: 1; /* Chiếm hết không gian còn lại */
   margin-top: 120px;
+  padding-top: 20px;
   margin-left: 200px;
 }
