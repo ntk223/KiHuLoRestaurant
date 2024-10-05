@@ -1,0 +1,5 @@
+.menu {
+  margin-left: 20px; /* Đẩy menu sang bên phải, nhường chỗ cho sidebar */
+  min-height: 100vh; /* Đảm bảo chiều cao phủ hết trang */
+  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+}

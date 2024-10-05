@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -22,9 +23,16 @@
         $adminController->register();
         break;
       default:
-        include "views/admin/manage_users.php";
+
+
+
+
         break;
     }
     ?>
   </body>
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f

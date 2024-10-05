@@ -77,6 +77,7 @@
             required
           />
         </div>
+<<<<<<< HEAD
         <div class="radio-option">
           <form action="#">
             Sign up as:
@@ -87,6 +88,8 @@
           </form>
         </div>
         <input type="hidden" id="registration-date" name="registration-date" />
+=======
+>>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
         <div class="form-group">
           <button type="submit" name = "submit"><a href="index.php?page=customer&manage=home">Submit</a></button>
         </div>
