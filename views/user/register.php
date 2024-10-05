@@ -77,7 +77,6 @@
             required
           />
         </div>
-        <input type="hidden" id="registration-date" name="registration-date" />
         <div class="form-group">
           <button type="submit" name = "submit">Submit</button>
         </div>
