@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 <link rel="stylesheet" href="assets/css/menu.css">
+>>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 <body>
     <h1>Menu</h1>
     <table>

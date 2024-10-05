@@ -1,5 +1,4 @@
 
-<?php include "views/admin/dashboard.php"?>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -24,10 +23,16 @@
         $adminController->register();
         break;
       default:
-        include "views/user/login.php";
+
+
+
+
         break;
     }
     ?>
   </body>
 </html>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
