@@ -77,18 +77,9 @@
             required
           />
         </div>
-        <div class="radio-option">
-          <form action="#">
-            Sign up as:
-            <input type="radio" id="user" name="role" value="user" required />
-            <label for="user">User</label>
-            <input type="radio" id="admin" name="role" value="admin" required />
-            <label for="admin">Admin</label>
-          </form>
-        </div>
         <input type="hidden" id="registration-date" name="registration-date" />
         <div class="form-group">
-          <button type="submit" name = "submit"><a href="index.php?page=customer&manage=home">Submit</a></button>
+          <button type="submit" name = "submit">Submit</button>
         </div>
       </div>
     </form>
