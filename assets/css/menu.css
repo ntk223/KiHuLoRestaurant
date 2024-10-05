@@ -1,5 +1,31 @@
 .menu {
-  margin-left: 20px; /* Đẩy menu sang bên phải, nhường chỗ cho sidebar */
-  min-height: 100vh; /* Đảm bảo chiều cao phủ hết trang */
+  min-height: 100vh;
   overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+}
+
+.food {
+  height: 250px;
+  width: 310px;
+  border: 1px solid black;
+  text-align: center;
+  align-items: center;
+  float: left;
+  margin: 5px;
+  list-style-type: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.food ul {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.food ul li {
+  padding: 3px;
+}
+
+.food img {
+  border-radius: 7px;
+  height: 250px;
 }

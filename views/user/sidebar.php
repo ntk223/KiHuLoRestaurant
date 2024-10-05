@@ -2,7 +2,8 @@
 <div class="sidebar">
         <ul>
             <li><a href="#">Tất cả</a></li>
-            <li><a href="#">Món chính</a></li>
+            <li><a href="#">Khai vị</a></li>
+            <li><a href="#">Món chính</a></li> 
             <li><a href="#">Tráng miệng</a></li>
             <li><a href="#">Nước uống</a></li>
         </ul>

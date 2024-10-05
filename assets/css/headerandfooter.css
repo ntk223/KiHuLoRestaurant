@@ -12,10 +12,6 @@ body {
   flex-direction: column; /* Sắp xếp theo chiều dọc */
 }
 
-main {
-  flex: 1; /* Chiếm hết không gian còn lại */
-  margin-top: 120px;
-}
 header {
   background-color: #f8a853;
   position: fixed;

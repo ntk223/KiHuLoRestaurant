@@ -8,6 +8,7 @@ body {
 
 main {
   flex: 1; /* Chiếm hết không gian còn lại */
-  margin-top: 120px;
-  margin-left: 200px;
+  margin-top: 140px;
+  margin-left: 220px;
+  margin-bottom: 20px;
 }
