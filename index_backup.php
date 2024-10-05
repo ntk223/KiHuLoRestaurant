@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -10,8 +9,6 @@
     
     <?php 
     $page = isset($_GET['page']) ? $_GET['page']:"";
-    $role = isset($_GET['role']) ? $_GET['role']:"";
-    if ( $role != null ) $page = $role;
     switch ($page) {
       case 'customer':
         include "routes/UserRoute.php";
@@ -22,7 +19,10 @@
         $adminController->register();
         break;
       default:
-        include "views/admin/manage_users.php";
+        echo "<a href='index.php?page=customer&manage=register' class='href'>dang ky </a>";
+        echo "<br>";
+        echo "<a href='index.php?page=admin' class='href'> dang nhap</a>" ;
+        include "views/user/login.php";
         break;
     }
     ?>
