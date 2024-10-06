@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="assets/css/sidebarAD.css">
+    <link rel="stylesheet" href="assets/css/sidebarAD.css">
 
 </head>
 <body>
 
+
     <form action="" method="POST"   >
   <div class="sidebar">
+        <h2>DASHBOARD</h2>
         <h2>DASHBOARD</h2>
         <ul>
             <li><a href="index.php?role=admin&manage=customer"><b>QUẢN LÍ NGƯỜI DÙNG</b> <span class="notification">2</span></a></li>
