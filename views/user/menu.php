@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/menu.css">
-
+<main>
   <div class="menu">
       <h1 style="margin: 10px;">Menu:</h1>
   <?php while ($row = $result->fetch_assoc()){?>
@@ -17,3 +17,4 @@
       </div>
   <?php } ?>
 </div>
+</main>
