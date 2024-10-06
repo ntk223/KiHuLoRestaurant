@@ -35,7 +35,7 @@
           <p class="user-name">User name</p>
           <div class="setting-user">
             <a href="#">Cập nhật tài khoản</a>
-            <a href="#">Đăng xuất</a>
+            <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>
       </div>

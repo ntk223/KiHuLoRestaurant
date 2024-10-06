@@ -13,7 +13,7 @@
   <div class="sidebar">
         <h2>DASHBOARD</h2>
         <ul>
-            <li><a href="#"><b>QUẢN LÍ NGƯỜI DÙNG</b> <span class="notification">2</span></a></li>
+            <li><a href="index.php?role=admin&manage=customer"><b>QUẢN LÍ NGƯỜI DÙNG</b> <span class="notification">2</span></a></li>
             <li><a href="#"><b>QUẢN LÍ THỰC ĐƠN</b> <span class="notification">2</span></a></li>
             <li><a href="#"><b>QUẢN LÍ ĐƠN HÀNG</b> <span class="notification">0</span></a></li>
             <li><a href="#"><b>QUẢN LÍ GIAO HÀNG</b><span class="notification">1</span></a></li>

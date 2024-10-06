@@ -51,7 +51,7 @@
           </form>
         </div>
         <p>Bạn chưa có tài khoản?</p>
-        <p>Đăng ký ngay <span><a href="index.php?role=customer&page=register" id="gotoregister">tại đây</a></span></p>
+        <p>Đăng ký ngay <span><a href="index.php?in=register" id="gotoregister">tại đây</a></span></p>
         <div class="form-group">
           <button type="submit" id="submit">Submit</button>
         </div>

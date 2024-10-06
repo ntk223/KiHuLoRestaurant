@@ -1,23 +1,24 @@
 <?php
 include_once 'controllers/UserController.php';
-include_once 'controllers/MenuController.php';
 $user = new UserController();
-
-$page = isset($_GET['page']) ? $_GET['page'] : 'index';
-
-switch ($page) {
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+switch ($action) {
     case 'index':
-        $idex = new MenuController();
-        $idex->Menulist();
+        $user->getUserlist();
+        //include_once "views/admin/manage_users.php";
         break;
-    case 'register':
-        $user->register();
+    case 'add':
+        $user->addUser();
         break;
-    case 'login':
-        echo "This is login page";
+    case 'update':
+        echo "This is edit page";
+        break;
+    case 'delete':
+        $user->deleteUser();
         break;
     default:
         echo "Page not found";
         break;
 }
+
 ?>
