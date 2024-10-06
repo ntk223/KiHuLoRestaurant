@@ -14,36 +14,10 @@
     </header>
 
     
-    <section class="form-section">
-        <h2>Thêm người dùng mới</h2>
-        <form action="#" method="POST">
-            <label for="name">Tên người dùng:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="phone">Số điện thoại:</label>
-            <input type="tel" id="phone" name="phone">
-
-            <label for="address">Địa chỉ:</label>
-            <textarea id="address" name="address"></textarea>
-
-            <label for="role">Vai trò:</label>
-            <select id="role" name="role">
-                <option value="Customer">Customer</option>
-                <option value="Seller">Seller</option>
-            </select>
-
-            <button type="submit">Thêm người dùng</button>
-        </form>
-    </section>
-
     <!-- Bảng người dùng hiện có -->
     <section class="user-table-section">
+        <a href="index.php?role=admin&manage=customer&action=add" class="button">Thêm người dùng</a>
+
         <h2>Danh sách người dùng</h2>
         <form action="#" method="POST">
         <table>
@@ -60,24 +34,26 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Đây sẽ là nơi dữ liệu người dùng được hiển thị -->
-                <tr>
-                    <td>1</td>
-                    <td>Nguyen Nhat Huy</td>
-                    <td>nguyennhathuy@example.com</td>
-                    <td>0123456789</td>
-                    <td>123 Đường ABC, Quận X, TP BN</td>
-                    <td>Seller</td>
-                    <td>2024-10-05</td>
+                 <?php while ($row = $result->fetch_assoc()){?>
+                <tr></tr>
+                    <td><?php echo $row['user_id'];?></td>
+                    <td><?php echo $row['username'];?></td>
+                    <td><?php echo $row['email'];?></td>
+                    <td><?php echo $row['phone'];?></td>
+                    <td><?php echo $row['address'];?></td>
+                    <td><?php echo $row['role'];?></td>
+                    <td><?php echo $row['registration_date'];?></td>
                     <td>
-                        <button>Sửa</button>
-                        <button>Xóa</button>
+                    <a href="index.php?role=admin&manage=customer&action=update&id=<?php echo $row['user_id']?>" class="button">Sửa</a>
+                    <a href="index.php?role=admin&manage=customer&action=delete&id=<?php echo $row['user_id']?>" class="button">Xóa</a>
                     </td>
-                </tr>
-                <!-- Thêm nhiều dòng khác với dữ liệu thực tế -->
+                <?php }?>
             </tbody>
         </table>
         </form>
+        <br>
+        <a href="index.php?role=admin" class="button">Trở về</a>
+
     </section>
 
 </body>

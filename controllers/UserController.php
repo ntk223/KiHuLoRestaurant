@@ -2,40 +2,29 @@
 require_once "models/User.php";
 class UserController
 {
-    public function register()
+    private $user;
+    public function __construct()
     {
-        include "views/user/register.php";
-        if ( isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['address'])) 
-        {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $address = $_POST['address'];
-            $user = new User();
-            if ( $user->checkUserExist($username, $email) == true) {
-                echo "User already exists";
-                return ;
-                //header ("Location: index.php");
-            }
-            $user->createUser($username, $password, $email, $phone, $address);
-        }
+        $this->user = new User();
     }
-    public function login()
+    public function logout()
     {
-        include "views/user/login.php";
-        if ( isset($_POST['email']) && isset($_POST['password'])) 
-        {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $role = $_POST['role'];
-            $user = new User();
-            if ( $user->login($email, $password, $role) == false) {
-                echo "Login failed";
-                return ;
-            }
-            echo "Login successfully";
-        }
+        Session::destroy();
+    }
+    public function getUserlist()
+    {
+        $result = $this->user->getAllUsers();
+        include_once "views/admin/manage_users.php";
+    }
+
+    public function addUser()
+    {
+        include_once "views/admin/adduser.php";
+        $this->user->add();
+    }
+    public function deleteUser()
+    {
+        $this->user->delete();
     }
 }
 ?>

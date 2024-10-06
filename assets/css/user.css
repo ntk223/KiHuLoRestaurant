@@ -40,16 +40,17 @@ input, textarea, select {
     border-radius: 3px;
 }
 
-button {
+.button {
     padding: 10px 20px;
     background-color: #f8a853;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
 }
 
-button:hover {
+.button:hover {
     background-color: #e69542;
 }
 
@@ -80,7 +81,7 @@ th {
     color: white;
 }
 
-td button {
+td .button {
     background-color: #f44336;
     border: none;
     padding: 5px 10px;
@@ -89,6 +90,6 @@ td button {
     cursor: pointer;
 }
 
-td button:hover {
+td .button:hover {
     background-color: #d32f2f;
 }

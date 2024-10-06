@@ -1,34 +1,34 @@
+<?php 
+include_once 'config/session.php';
+Session::init();
 
-
-<!DOCTYPE html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-  </head>
-  <body>
-    
-    <?php 
-    $page = isset($_GET['page']) ? $_GET['page']:"";
-    $role = isset($_GET['role']) ? $_GET['role']:"";
-    if ( $role != null ) $page = $role;
-    switch ($page) {
-      case 'customer':
-        include "routes/UserRoute.php";
-        break;
-      case 'admin':
-        include "controllers/AdminController.php";
-        $adminController = new AdminController();
-        $adminController->register();
-        break;
-      default:
-
-
-
-
-        break;
+if (isset($_GET['role']))
+{
+    $role = $_GET['role'];
+    if ($role == "customer")
+    {
+        Session::checkSession();
+        include_once 'common/header.php';
+        include_once("views/user/sidebar.php");
+        include_once 'routes/Homeroute.php';
+        include_once 'common/footer.php';
     }
-    ?>
-  </body>
-</html>
+
+    else if ($role == "admin")
+    {
+        Session::checkSession();
+        include_once 'routes/Adminroute.php';
+    }
+}
+else{
+    if (isset($_GET['in']))
+    {
+        include_once 'routes/Sessionroute.php';
+    }
+    else{
+        include_once 'Controllers/LoginController.php';
+    }
+}
+
+?>
+
