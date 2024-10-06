@@ -46,9 +46,7 @@
           <form action="#">
             Sign up as:
             <input type="radio" id="user" name="role" value="Customer" required />
-            <input type="radio" id="user" name="role" value="Customer" required />
             <label for="user">User</label>
-            <input type="radio" id="admin" name="role" value="Seller" required />
             <input type="radio" id="admin" name="role" value="Seller" required />
             <label for="admin">Admin</label>
           </form>
@@ -56,7 +54,6 @@
         <p>Bạn chưa có tài khoản?</p>
         <p>Đăng ký ngay <span><a href="index.php?in=register" id="gotoregister">tại đây</a></span></p>
         <div class="form-group">
-          <button type="submit" id="submit">Submit</button>
           <button type="submit" id="submit">Submit</button>
         </div>
       </div>
