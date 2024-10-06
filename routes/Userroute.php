@@ -18,8 +18,6 @@ switch ($action) {
         break;
     default:
         echo "Page not found";
-    default:
-        echo "Page not found";
         break;
 }
 
