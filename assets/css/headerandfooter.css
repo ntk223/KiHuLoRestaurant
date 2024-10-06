@@ -98,11 +98,7 @@ h2 {
   right: 0;
   top: 20px;
   background-color: white;
-<<<<<<< HEAD
-  min-width: 150px;
-=======
   min-width: 145px;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -130,11 +126,8 @@ h2 {
 
 footer {
   background-color: #f8a853;
-<<<<<<< HEAD
-=======
   width: 100%;
   z-index: 10;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 }
 
 .info {
@@ -153,8 +146,6 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
-
-<<<<<<< HEAD
 .navbar {
   padding: 5px;
   background-color: #f8a853;
@@ -192,8 +183,6 @@ footer {
   background-color: #ff9100; /* Màu nền khi hover */
 }
 
-=======
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 @media only screen and (max-width: 620px) {
   .search-bar {
     left: 37%;

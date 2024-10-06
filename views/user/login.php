@@ -42,13 +42,11 @@
           />
         </div>
         <div class="radio-option">
-          <form action="#">
             Sign up as:
             <input type="radio" id="user" name="role" value="Customer" required />
             <label for="user">User</label>
             <input type="radio" id="admin" name="role" value="Seller" required />
             <label for="admin">Admin</label>
-          </form>
         </div>
         <p>Bạn chưa có tài khoản?</p>
         <p>Đăng ký ngay <span><a href="index.php?in=register" id="gotoregister">tại đây</a></span></p>

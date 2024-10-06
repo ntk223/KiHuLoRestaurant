@@ -9,9 +9,8 @@ if (isset($_GET['role']))
     {
         Session::checkSession();
         include_once 'common/header.php';
-        include_once("views/user/sidebar.php");
+        include_once "views/user/sidebar.php";
         include_once 'routes/Homeroute.php';
-
         include_once 'common/footer.php';
 
         //include_once 'common/footer.php';
