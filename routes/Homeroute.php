@@ -8,6 +8,8 @@ switch ($page) {
         $index = new MenuController();
         $index->Menulist();
         break;
+    case 'menu':
+        include_once 'routes/Menuroute.php';
     default:
         echo "Page not found";
         break;
