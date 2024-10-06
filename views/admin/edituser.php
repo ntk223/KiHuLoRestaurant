@@ -14,30 +14,28 @@
 
     <!-- Form chỉnh sửa người dùng -->
     <section class="form-section">
-        <form action="index.php?action=edit_user&id=1" method="POST">
+        <form action="" method="POST">
             <label for="name">Tên người dùng:</label>
-            <input type="text" id="name" name="username" value="Nguyễn Văn A" required>
+            <input type="text" id="name" name="username" value=<?php echo $user_inf['username']?> required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="nguyenvana@example.com" required>
+            <input type="email" id="email" name="email" value=<?php echo $user_inf['email']?> required>
 
             <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" placeholder="Để trống nếu không muốn thay đổi mật khẩu">
+            <input  id="password" name="password" value=<?php echo $user_inf['password']?>>
 
             <label for="phone">Số điện thoại:</label>
-            <input type="tel" id="phone" name="phone" value="0123456789">
+            <input type="tel" id="phone" name="phone" value=<?php echo $user_inf['phone']?>>
 
             <label for="address">Địa chỉ:</label>
-            <textarea id="address" name="address" rows="4">123 Đường ABC, Quận XYZ</textarea>
+            <textarea id="address" name="address" rows="4"><?php echo $user_inf['address']?></textarea>
 
             <label for="role">Vai trò:</label>
             <select id="role" name="role" required>
                 <option value="Customer" selected>Customer</option>
                 <option value="Seller">Seller</option>
-                <option value="Admin">Admin</option>
             </select>
-
-            <a href="#" class="button" onclick="submitForm()">Cập nhật</a>
+            <input type="submit" name="submit" class = "button" value="Cập nhật">
         </form>
     </section>
 

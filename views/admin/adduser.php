@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/css/adduser.css">
+<link rel="stylesheet" href="assets/css/user.css">
 <section class="form-section">
     <h2>Thêm người dùng mới</h2>
     <form action="#" method="POST">
@@ -22,6 +22,6 @@
             <option value="Customer">Customer</option>
             <option value="Seller">Seller</option>
         </select>
-<a href="#" class="button">Cập nhật người dùng</a>
+        <input type="submit" name="submit" class="button" value="Thêm người dùng">
     </form>
 </section>

@@ -38,6 +38,7 @@
                     <td>50,000 VND</td>
                     <td>Còn bán</td>
                     <td><img src="images/pho-bo.jpg" alt="Phở bò" width="80"></td>
+                    
                     <td>
                         <!-- Manage Menu Actions -->
                         <a href="#" class="button ">Xem</a>
