@@ -13,6 +13,11 @@ class MenuController
         $result = $this->menuitem->getMenuItem();
         include "views/user/menu.php";
     }
+    public function ItembyCategory($category_id)
+    {
+        $result = $this->menuitem->getItemByCategory((int)$category_id);
+        include "views/user/menu.php";
+    }
     public function add()
     {
 

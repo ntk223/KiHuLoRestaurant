@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="assets/css/sidebar.css" />
 <div class="sidebar">
         <ul>
-            <li><a href="#">Tất cả</a></li>
-            <li><a href="#">Khai vị</a></li>
-            <li><a href="#">Món chính</a></li> 
-            <li><a href="#">Tráng miệng</a></li>
-            <li><a href="#">Nước uống</a></li>
+            <li><a href="index.php?role=customer&page=menu&cate=all">Tất cả</a></li>
+            <li><a href="index.php?role=customer&page=menu&cate=1">Món chính</a></li>
+            <li><a href="index.php?role=customer&page=menu&cate=2">Khai vị</a></li> 
+            <li><a href="index.php?role=customer&page=menu&cate=3">Tráng miệng</a></li>
+            <li><a href="index.php?role=customer&page=menu&cate=4">Nước uống</a></li>
         </ul>
 </div>

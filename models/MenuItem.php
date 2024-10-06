@@ -19,7 +19,7 @@ class MenuItem
         $result = $this->db->Select($query);
         return $result;
     }
-    public function getMenuItemByCategory($category_id)
+    public function getItemByCategory($category_id)
     {
         $query = "SELECT * FROM menuitems WHERE category_id='$category_id'";
         $result = $this->db->Select($query);
