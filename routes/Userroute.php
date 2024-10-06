@@ -11,7 +11,7 @@ switch ($action) {
         $user->addUser();
         break;
     case 'update':
-        echo "This is edit page";
+        $user->updateUser();
         break;
     case 'delete':
         $user->deleteUser();

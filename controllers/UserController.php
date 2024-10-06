@@ -26,5 +26,11 @@ class UserController
     {
         $this->user->delete();
     }
+    public function updateUser()
+    {
+        $user_inf = $this->user->getUserById((int)$_GET['id']);
+        include_once "views/admin/edituser.php";
+        $this->user->update();
+    }
 }
 ?>
