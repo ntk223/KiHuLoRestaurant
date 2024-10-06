@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
     if ($result && $result -> num_rows > 0)
     {
         Session::set('login', true);
-        Session::set('username' , $email);
+        Session::set('username' , $result->fetch_assoc()['username']);
         if ($role == "Customer")
         {
             header('Location: index.php?role=customer&page=index');
         }
         else if ($role == "Seller")
         {
-            header('Location: index.php?role=admin&page=index');
+            header('Location: index.php?role=admin&manage=index');
         }
     }
     else{
