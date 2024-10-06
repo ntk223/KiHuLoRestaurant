@@ -1,0 +1,6 @@
+main {
+    height: 500px; /* Đặt chiều cao cố định cho phần main */
+    overflow: auto; /* Thêm thanh cuộn nếu nội dung vượt quá chiều cao */
+    padding: 15px; /* Thêm khoảng cách bên trong */
+    background-color: #f9f9f9; /* Thay đổi màu nền nếu cần */
+}

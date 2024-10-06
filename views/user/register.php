@@ -78,7 +78,7 @@
           />
         </div>
         <div class="form-group">
-          <button type="submit" name = "submit"><a href="index.php?page=customer&manage=home">Submit</a></button>
+          <button type="submit" name = "submit">Submit</button>
         </div>
       </div>
     </form>

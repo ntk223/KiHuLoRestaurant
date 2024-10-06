@@ -16,7 +16,7 @@
     <title>Log in</title>
   </head>
   <body>
-    <form action="#" method="post">
+    <form action="#" method="POST">
       <div class="registration-form">
         <h2 class="font-effect-shadow-multiple" style="font-size: 35px">
           <strong>Log in</strong>
@@ -44,16 +44,16 @@
         <div class="radio-option">
           <form action="#">
             Sign up as:
-            <input type="radio" id="user" name="role" value="user" required />
+            <input type="radio" id="user" name="role" value="Customer" required />
             <label for="user">User</label>
-            <input type="radio" id="admin" name="role" value="admin" required />
+            <input type="radio" id="admin" name="role" value="Seller" required />
             <label for="admin">Admin</label>
           </form>
         </div>
         <p>Bạn chưa có tài khoản?</p>
-        <p>Đăng ký ngay <span><a href="index.php?page=customer&manage=register" id="gotoregister">tại đây</a></span></p>
+        <p>Đăng ký ngay <span><a href="index.php?in=register" id="gotoregister">tại đây</a></span></p>
         <div class="form-group">
-          <button type="submit"><a href="index.php?page=customer&manage=home" id="submit">Submit</a></button>
+          <button type="submit" id="submit">Submit</button>
         </div>
       </div>
     </form>

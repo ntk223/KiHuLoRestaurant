@@ -7,22 +7,7 @@ class User
     {
         $this->db = new Database();
     }
-    public function createUser($username, $password, $email, $phone, $address)
-    {
-        $query = "INSERT INTO users (username, password, email, phone, address, role) VALUES ('$username', '$password', '$email', '$phone', '$address', 'customer')";
-        $result = $this->db->Insert($query);
-        echo "User created successfully";
-        return $result;
-    }
-    public function checkUserExist($username, $email)
-    {
-        $query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
-        $result = $this->db->Select($query);
-        if ( $result == null) {
-            return false;
-        }
-        return true;
-    }
+    
     public function getUserById($id)
     {
         $query = "SELECT * FROM users WHERE id = '$id'";
@@ -35,16 +20,46 @@ class User
         $result = $this->db->Select($query);
         return $result;
     }
-
-    public function login($email, $password, $role)
+    public function checkUserExist($username, $email)
     {
-        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password', role = '$role'";
+        $query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
         $result = $this->db->Select($query);
-        if ( $result == null) {
-            return false;
+        if ($result && $result -> num_rows > 0)
+        {
+            return true;
         }
-        return true;
+        return false;
     }
-
+    public function add()
+    {
+        if ( isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['address']) && isset($_POST['role'])) 
+        {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $role = $_POST['role'];
+            if ( $this->checkUserExist($username, $email) == true) {
+                echo "User already exists";
+                header('Location:index.php?role=admin&manage=customer&action=add');
+            }
+            else{
+                $query = "INSERT INTO users (username, password, email, phone, address, role) VALUES ('$username', '$password', '$email', '$phone', '$address', '$role')";
+                $result = $this->db->Insert($query);
+                header('Location:index.php?role=admin&manage=customer');
+            }
+        }
+    }
+    public function delete()
+    {
+        if ( isset($_GET['id'])) 
+        {
+            $id = $_GET['id'];
+            $query = "DELETE FROM users WHERE user_id = '$id'";
+            $result = $this->db->Delete($query);
+            header('Location:index.php?role=admin&manage=customer');
+        }
+    }
 }
  ?>
