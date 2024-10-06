@@ -1,18 +1,4 @@
 .navbar {
-<<<<<<< HEAD
-  background-color: #ffbe0c;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border: 1px solid black;
-  width: 70%;
-  position: absolute;
-  top: 80px;
-  left: 15%;
-  width: 80%;
-}
-
-=======
   padding: 5px;
   background-color: #f8a853;
   border: #f8a853;
@@ -24,7 +10,6 @@
   left: 20%;
   width: 60%;
 }
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 .navbar ul {
   list-style-type: none;
   display: flex; /* Hiển thị danh sách nằm ngang */
@@ -40,19 +25,12 @@
 .navbar ul li a {
   color: white; /* Màu chữ */
   text-decoration: none; /* Bỏ gạch chân */
-<<<<<<< HEAD
-  padding: 3px;
-=======
   padding: 5px;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
   display: block; /* Đảm bảo toàn bộ khối có thể nhấn được */
   border-radius: 4px;
 }
 
 .navbar ul li a:hover {
-<<<<<<< HEAD
-  background-color: #d09c00; /* Màu nền khi hover */
-=======
   background-color: #ff9100; /* Màu nền khi hover */
   transition: 0.5s;
 }
@@ -60,5 +38,4 @@
 .sub {
   color: white;
   margin-top: 4px;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 }
