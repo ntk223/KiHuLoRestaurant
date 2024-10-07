@@ -13,7 +13,7 @@
     </header>
 
     <section class="form-section">
-        <form action="index.php?action=add_menu_item" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
             <label for="item_name">Tên món ăn:</label>
             <input type="text" id="item_name" name="item_name" required>
 
@@ -23,6 +23,7 @@
                 <option value="1">Món chính</option>
                 <option value="2">Món khai vị</option>
                 <option value="3">Đồ uống</option>
+                <option value="4">Tráng miệng</option>
             </select>
 
             <label for="description">Mô tả món ăn:</label>
@@ -40,7 +41,7 @@
             <label for="image">Hình ảnh món ăn:</label>
             <input type="file" id="image" name="image_url" accept="image/*">
 
-            <button type="submit" class="button">Thêm món ăn</button>
+            <button type="submit" name = 'submit' class="button">Thêm món ăn</button>
         </form>
     </section>
 
