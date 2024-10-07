@@ -2,16 +2,24 @@
 include_once 'controllers/UserController.php';
 include_once 'controllers/MenuController.php';
 $page = isset($_GET['page']) ? $_GET['page'] : 'index';
-
+include_once 'common/header.php';
 switch ($page) {
     case 'index':
+        include_once "views/user/sidebar.php";
         $index = new MenuController();
         $index->Menulist();
+        
         break;
     case 'menu':
+        include_once "views/user/sidebar.php";
         include_once 'routes/Menuroute.php';
+        break;
+    case 'profile':
+        include_once 'views/user/profile.php';
+        break;
     default:
         echo "Page not found";
         break;
 }
+include_once 'common/footer.php';
 ?>
