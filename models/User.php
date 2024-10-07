@@ -10,9 +10,10 @@ class User
     
     public function getUserById($id)
     {
-        $query = "SELECT * FROM users WHERE id = '$id'";
+        $query = "SELECT * FROM users WHERE user_id = '$id'";
         $result = $this->db->Select($query);
-        return $result;
+
+        return $result->fetch_assoc();
     }
     public function getAllUsers()
     {
@@ -58,6 +59,22 @@ class User
             $id = $_GET['id'];
             $query = "DELETE FROM users WHERE user_id = '$id'";
             $result = $this->db->Delete($query);
+            header('Location:index.php?role=admin&manage=customer');
+        }
+    }
+    public function update()
+    {
+        if (isset($_POST['submit'])) 
+        {
+            $id = $_GET['id'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $role = $_POST['role'];
+            $query = "UPDATE users SET username = '$username', password = '$password', email = '$email', phone = '$phone', address = '$address', role = '$role' WHERE user_id = '$id'";
+            $result = $this->db->Update($query);
             header('Location:index.php?role=admin&manage=customer');
         }
     }

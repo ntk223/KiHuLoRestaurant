@@ -22,7 +22,6 @@
             <option value="Customer">Customer</option>
             <option value="Seller">Seller</option>
         </select>
-
-        <button type="submit" name = "submit" value = "add">Thêm người dùng</button>
+        <input type="submit" name="submit" class="button" value="Thêm người dùng">
     </form>
 </section>

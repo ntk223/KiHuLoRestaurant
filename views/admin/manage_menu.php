@@ -1,20 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Menu</title>
+    <link rel="stylesheet" href="assets/css/manage_menu.css"> <
+</head>
 <body>
-    <ul>
-        <li><a href="index.php?page=admin&action=additem" class="href">Them mon an</a></li>
-        <li><a href="" class="href"></a></li>
-        <li><a href="" class="href"></a></li>
-    </ul>
-    <h1>Add</h1>
-    <form action="" method = 'POST'>
-        <label for="menu">Name</label>
-        <input type="text" name="name">
-        <br>
-        <label for="phone">Phone</label>
-        <input type="text" name="phone">
-        <br>
-        <label for="address">Address</label>
-        <input type="text" name="address">
-        <br>
-        <input type="submit" name="submit" value="Add">
-    </form>
+
+    <header>
+        <h1>Quản lý Menu</h1>
+    </header>
+
+    <section class="menu-table-section">
+        <a href="index.php?action=add_menu_item" class="button">Thêm món ăn mới</a>
+
+        <h2>Danh sách món ăn</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên món ăn</th>
+                    <th>Danh mục</th>
+                    <th>Mô tả</th>
+                    <th>Giá</th>
+                    <th>Trạng thái</th>
+                    <th>Hình ảnh</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Bruschetta</td>
+                    <td>Món chính</td>  
+                    <td>Ngon vờ lờ lun.</td>
+                    <td>50,000 VND</td>
+                    <td>Còn bán</td>
+                    <td><img src="images/pho-bo.jpg" alt="Phở bò" width="80"></td>
+                    
+                    <td>
+                        <!-- Manage Menu Actions -->
+                        <a href="#" class="button ">Xem</a>
+                        <a href="#" class="button ">Sửa</a>
+                        <a href="#" class="button " onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
 </body>
+</html>
