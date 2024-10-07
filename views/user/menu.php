@@ -15,7 +15,7 @@
                           elseif($row['category_id'] == 2) echo 'Món khai vị';
                           elseif($row['category_id'] == 3) echo 'Nước uống';
                           else echo 'Tráng miệng';?></li>
-          <li>Bấm để thểm vào giỏ hàng</li>
+          <li>Bấm để thêm vào giỏ hàng</li>
       </ul>
       </div>
     <?php } ?>
