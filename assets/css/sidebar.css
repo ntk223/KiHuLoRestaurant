@@ -55,6 +55,14 @@
 
 @media (max-width: 800px) {
   .sidebar {
-    width: 180px;
+    width: 100px;
+  }
+
+  .sidebar ul li a {
+    padding: 15px 0px;
+  }
+
+  .sidebar ul li a:hover {
+    padding-left: 10px;
   }
 }
