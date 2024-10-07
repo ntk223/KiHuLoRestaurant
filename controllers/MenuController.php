@@ -11,22 +11,24 @@ class MenuController
     public function Menulist()
     {
         $result = $this->menuitem->getMenuItem();
-        include "views/user/menu.php";
+        $role = isset($_GET['role']) ? $_GET['role'] : 'customer';
+        if ($role== 'customer') include_once "views/user/menu.php";
+        else include_once "views/admin/manage_menu.php";
     }
     public function ItembyCategory($category_id)
     {
         $result = $this->menuitem->getItemByCategory((int)$category_id);
         include "views/user/menu.php";
     }
-    public function add()
+    public function addItem()
+    {
+        include_once "views/admin/addItem.php";
+    }
+    public function updateItem()
     {
 
     }
-    public function update()
-    {
-
-    }
-    public function delete()
+    public function deleteItem()
     {
 
     }

@@ -7,7 +7,7 @@
 </div>
   <?php while ($row = $result->fetch_assoc()){?>
       <div class="food">
-      <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="widli:200px;height:170px;">
+      <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="width:200px;height:170px;">
       <ul>
           <li>Tên món: <?php echo $row['item_name'];?></li>
           <li>Giá: <?php echo $row['price'];?> VNĐ</li>
@@ -18,6 +18,6 @@
           <li>Bấm để thểm vào giỏ hàng</li>
       </ul>
       </div>
-  <?php } ?>
+    <?php } ?>
 </div>
 </main>

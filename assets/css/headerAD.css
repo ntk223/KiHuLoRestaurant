@@ -5,11 +5,11 @@
     box-sizing: border-box;
     color: #111010; 
     position: fixed;
-    top: 0; /* Đặt header cố định ở trên cùng */
-    z-index: 1000; /* Đảm bảo header nằm trên cùng */
+    top: 0; 
+    z-index: 1000; 
 }
 
-/* Flexbox cho phần header-top để căn các khối */
+
 .header-top {
     display: flex;
     justify-content: center; 
@@ -17,13 +17,12 @@
     padding: 0 20px;
 }
 
-/* Phần bên trái của header */
 .left-header {
     display: flex;
     align-items: center;
 }
 
-/* Định dạng tên nhà hàng */
+
 .name_web {
     font-family: "Sofia", sans-serif;
     text-align: left;
