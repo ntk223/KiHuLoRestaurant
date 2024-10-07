@@ -29,6 +29,7 @@
         <div class="center-header">
             BẢNG ĐIỀU KHIỂN QUẢN LÍ
         </div>
+        <a href="index.php?in=logout" class="logout">Đăng xuất</a>
     </div>
 </header>
    
