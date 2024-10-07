@@ -32,11 +32,12 @@ class MenuItem
             $category_id = $_POST['category_id'];
             $item_name = $_POST['item_name'];
             $price = $_POST['price'];
-            $image_url = $_POST['image_url'];
+            $image_url = 'assets/images/'.$_FILES['image_url']['name'];
             $description = $_POST['description'];
             $query = "INSERT INTO menuitems (category_id, item_name, price, image_url, description) VALUES ('$category_id', '$item_name', '$price', '$image_url', '$description')";
             $result = $this->db->Insert($query);
-            return $result;
+            header("Location: index.php?role=admin&manage=menu");
+            //return $result;
         }
         return false;
     }
@@ -47,17 +48,17 @@ class MenuItem
         {
             $item_name = $_POST['item_name'];
             $price = $_POST['price'];
-            $image_url = $_POST['image_url'];
+            $image_url = 'assets/images/'.$_FILES['image_url']['name'];
             $description = $_POST['description'];
             $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', image_url='$image_url', description='$description' WHERE id=$id";
             $result = $this->db->Update($query);
-            return $result;
+            header("Location: index.php?role=admin&manage=menu");
         }
         return false;
     }
     public function deleteMenuItem($id)
     {
-        $query = "DELETE FROM menuitems WHERE id=$id";
+        $query = "DELETE FROM menuitems WHERE item_id='$id'";
         $result = $this->db->Delete($query);
         return $result;
     }

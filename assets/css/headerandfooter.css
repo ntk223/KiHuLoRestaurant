@@ -111,6 +111,8 @@ h2 {
 
   min-width: 150px;
 
+
+
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -175,33 +177,14 @@ footer {
   left: 10%;
 }
 
-.navbar ul {
-  list-style-type: none;
-  display: flex; /* Hiển thị danh sách nằm ngang */
-  flex-grow: 1; /* Chiếm hết không gian còn lại */
-  justify-content: space-around; /* Cách đều các mục */
-}
-
-.navbar ul li {
-  flex-grow: 1; /* Mỗi mục sẽ chiếm không gian đều */
-  text-align: center;
-}
-
-.navbar ul li a {
-  color: white; /* Màu chữ */
-  text-decoration: none; /* Bỏ gạch chân */
-  padding: 5px;
-  display: block; /* Đảm bảo toàn bộ khối có thể nhấn được */
-  border-radius: 4px;
-}
-
-.navbar ul li a:hover {
-  background-color: #ff9100; /* Màu nền khi hover */
-}
-
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 600px) {
   .search-bar {
     left: 37%;
     width: 20%;
+  }
+
+  .setting-user {
+    right: -5px;
+    min-width: 100px;
   }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Menu</title>
-    <link rel="stylesheet" href="assets/css/manage_menu.css"> <
+    <link rel="stylesheet" href="assets/css/manage_menu.css">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     </header>
 
     <section class="menu-table-section">
-        <a href="index.php?action=add_menu_item" class="button">Thêm món ăn mới</a>
+        <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>
 
         <h2>Danh sách món ăn</h2>
         <table>
@@ -39,13 +39,20 @@
                     <td>Còn bán</td>
                     <td><img src="#" alt="Bruschetta" width="80"></td>
                     <td>
+                        <!-- Manage Menu Actions -->
                         <a href="#" class="button ">Xem</a>
                         <a href="#" class="button ">Sửa</a>
-                        <a href="#" class="button " onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
-                    </td>
-                </tr>
+                        <a href="index.php?role=admin&manage=menu&action=delete&id=<?php echo $row['item_id']?>" class="button " onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
+                        </td>
+                    </tr>
+
+                <?php } ?>
+                
             </tbody>
         </table>
+        <br>
+        <a href="index.php?role=admin" class="button">Trở về</a>
+
     </section>
 
 </body>
