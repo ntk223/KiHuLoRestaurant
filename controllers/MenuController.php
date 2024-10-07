@@ -22,7 +22,8 @@ class MenuController
     }
     public function addItem()
     {
-        include_once "views/admin/addItem.php";
+        include_once "views/admin/addtoMenu.php";
+        $result = $this->menuitem->addMenuItem();
     }
     public function updateItem()
     {
@@ -30,7 +31,9 @@ class MenuController
     }
     public function deleteItem()
     {
-
+        $id = $_GET['id'];
+        $result = $this->menuitem->deleteMenuItem($id);
+        header("Location: index.php?role=admin&manage=menu");
     }
 }
 ?>

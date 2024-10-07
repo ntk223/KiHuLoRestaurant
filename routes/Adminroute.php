@@ -11,6 +11,7 @@ switch ($manage) {
         include_once "routes/Userroute.php";
         break;
     case 'menu':
+        include_once "routes/MenuRoute.php";
         break;
     case 'edit':
         echo "This is edit page";

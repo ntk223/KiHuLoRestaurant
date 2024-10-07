@@ -1,14 +1,18 @@
 .menu {
-  padding-left: 20px;
-  padding-top: 20px;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap; /* Các div.food sẽ tự động xuống hàng khi màn hình hẹp */
+  justify-content: space-around; /* Đảm bảo khoảng cách đều giữa các món ăn */
+  padding: 10px;
   min-height: 100vh;
-  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Định dạng cho từng món ăn (food item) */
 
 .food {
-  height: 280px;
+  height: 330px;
   width: 310px;
   border: 1px solid black;
   text-align: center;
@@ -63,4 +67,11 @@
   padding: 5px 5px 5px 50px;
   width: 100%; /* Đảm bảo mỗi li chiếm 100% chiều rộng ul */
   text-align: left; /* Căn chữ cái đầu tiên của mỗi mục li thẳng hàng */
+}
+
+@media (max-width: 800px) {
+  .menu {
+    justify-content: center;
+    padding: 2px;
+  }
 }
