@@ -46,3 +46,15 @@
   color: #fff; /* Đổi màu chữ khi hover */
   padding-left: 25px; /* Hiệu ứng đẩy nhẹ chữ sang phải */
 }
+
+@media (min-width: 800px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    width: 180px;
+  }
+}

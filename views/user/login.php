@@ -16,7 +16,7 @@
     <title>Log in</title>
   </head>
   <body>
-    <form action="#" method="POST">
+
     <form action="#" method="POST">
       <div class="registration-form">
         <h2 class="font-effect-shadow-multiple" style="font-size: 35px">
