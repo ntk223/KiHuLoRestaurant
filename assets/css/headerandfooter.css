@@ -12,22 +12,29 @@ body {
   flex-direction: column; /* Sắp xếp theo chiều dọc */
 }
 
+main {
+  flex: 1; /* Chiếm hết không gian còn lại */
+  margin-top: 120px;
+}
+
 header {
-  z-index: 10;
   background-color: #f8a853;
   position: fixed;
   height: 120px;
   width: 100%;
   border: 1px;
 }
+
 h2 {
   font-family: "Sofia", sans-serif;
 }
+
 .name_web {
   height: 50px;
   width: 50px;
   margin: 10px;
 }
+
 .contact {
   position: absolute;
   top: 5px;
@@ -35,14 +42,17 @@ h2 {
   height: 30px;
   width: 110px;
 }
+
 .contact a {
   margin: 3px;
   float: left;
 }
+
 .contact img {
   height: 20px;
   width: 20px;
 }
+
 .search-bar {
   position: absolute;
   top: 40%;
@@ -98,11 +108,7 @@ h2 {
   right: 0;
   top: 20px;
   background-color: white;
-<<<<<<< HEAD
   min-width: 150px;
-=======
-  min-width: 145px;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -112,11 +118,13 @@ h2 {
   opacity: 1; /* hiện ra khi hover */
   pointer-events: auto; /* tương tác khi hiển thị */
 }
+
 .user-name:active ~ .setting-user,
 .users-info:active .setting-user {
   opacity: 1;
   pointer-events: auto;
 }
+
 .setting-user a {
   color: black;
   padding: 9px 12px;
@@ -130,11 +138,8 @@ h2 {
 
 footer {
   background-color: #f8a853;
-<<<<<<< HEAD
-=======
   width: 100%;
   z-index: 10;
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 }
 
 .info {
@@ -142,19 +147,20 @@ footer {
   margin: 0 auto;
   table-layout: fixed;
 }
+
 .info th {
   height: 30px;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
 }
+
 .info td {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
-<<<<<<< HEAD
 .navbar {
   padding: 5px;
   background-color: #f8a853;
@@ -165,7 +171,6 @@ footer {
   position: absolute;
   top: 80px;
   left: 10%;
-  width: 80%;
 }
 
 .navbar ul {
@@ -192,8 +197,6 @@ footer {
   background-color: #ff9100; /* Màu nền khi hover */
 }
 
-=======
->>>>>>> 0fb762c6f08391d9b762fa2d18db41171c53e69f
 @media only screen and (max-width: 620px) {
   .search-bar {
     left: 37%;
