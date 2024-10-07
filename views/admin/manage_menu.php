@@ -39,7 +39,6 @@
                     <td>Còn bán</td>
                     <td><img src="#" alt="Bruschetta" width="80"></td>
                     <td>
-                        <!-- Manage Menu Actions -->
                         <a href="#" class="button ">Xem</a>
                         <a href="#" class="button ">Sửa</a>
                         <a href="#" class="button " onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
