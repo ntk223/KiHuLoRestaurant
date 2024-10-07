@@ -1,12 +1,8 @@
 <header>
-<<<<<<< HEAD
-<link rel="stylesheet" href="assets/css/navbar.css" />
-=======
 <link rel="stylesheet" href="assets/css/headerandfooter.css" />
 <link rel="stylesheet" href="assets/css/main.css"/>
 <link rel="stylesheet" href="assets/css/menu.css"/>
 
->>>>>>> 10686dceff23a54a71cfd5a8c8447cdbbb8a5422
 <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
@@ -42,7 +38,7 @@
           <p class="user-name">User name</p>
           <div class="setting-user">
             <a href="#">Cập nhật tài khoản</a>
-            <a href="#">Đăng xuất</a>
+            <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>
       </div>
