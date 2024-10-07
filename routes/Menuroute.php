@@ -17,17 +17,16 @@ else if ($role == 'admin' )
     $action = isset($_GET['action']) ? $_GET['action'] : 'index';
     switch ($action) {
         case 'index':
-            $user->getUserlist();
-            
+            $menu->Menulist();            
             break;
         case 'add':
-            $user->addUser();
+            $menu->addItem();
             break;
         case 'update':
             echo "This is edit page";
             break;
         case 'delete':
-            $user->deleteUser();
+            $menu->deleteItem();
             break;
         default:
             echo "Page not found";
