@@ -162,18 +162,6 @@ footer {
   text-align: center;
 }
 
-.navbar {
-  padding: 5px;
-  background-color: #f8a853;
-  border: #f8a853;
-  display: flex;
-  align-items: center;
-  width: 80%;
-  position: absolute;
-  top: 80px;
-  left: 10%;
-}
-
 @media only screen and (max-width: 800px) {
   .search-bar {
     left: 40%;

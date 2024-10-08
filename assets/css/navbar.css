@@ -1,7 +1,6 @@
 .navbar {
   padding: 5px;
   background-color: #f8a853;
-  border: #f8a853;
   display: flex;
   align-items: center;
   width: 80%;
@@ -31,7 +30,6 @@
 }
 
 .navbar ul li a:hover {
-
   background-color: #ff9100; /* Màu nền khi hover */
   transition: 0.5s;
 }
@@ -39,5 +37,4 @@
 .sub {
   color: white;
   margin-top: 4px;
-
 }
