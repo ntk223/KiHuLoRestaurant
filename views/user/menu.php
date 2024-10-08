@@ -15,6 +15,10 @@
                           elseif($row['category_id'] == 2) echo 'Món khai vị';
                           elseif($row['category_id'] == 3) echo 'Nước uống';
                           else echo 'Tráng miệng';?></li>
+          <li>
+            Số lượng: 
+            <input type="number" name="quantity" min="1" value="1" class="quantity-input"/>
+        </li>
           <li>Bấm để thêm vào giỏ hàng</li>
       </ul>
       </div>

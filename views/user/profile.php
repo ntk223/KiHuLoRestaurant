@@ -21,9 +21,18 @@
                 <input type="text" id="address" name="address" value="<?php echo htmlspecialchars((string)$_SESSION['address']);?>">
             </div>
             <div class="form-group">
-                <label for="password">Mật khẩu:</label>
-                <input type = 'text' id="password" name="password" value =<?php echo $_SESSION['password'];?> required>
+                <label for="oldpassword">Mật khẩu:</label>
+                <input type = 'text' id="oldpassword" name="password" value =<?php echo $_SESSION['password'];?> required>
             </div>
+            <div class="form-group">
+                <label for="newpassword">Mật khẩu mới:</label>
+                <input type = 'text' id="newpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+            </div>
+            <div class="form-group">
+                <label for="confirmpassword">Xác nhận mật khẩu mới:</label>
+                <input type = 'text' id="confirmpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+            </div>
+
             <div class="form-group">
                 <button type="submit" name = 'submit'>Lưu thay đổi</button>
             </div>
