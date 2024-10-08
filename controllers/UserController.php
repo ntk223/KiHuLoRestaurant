@@ -32,5 +32,9 @@ class UserController
         include_once "views/admin/edituser.php";
         $this->user->update();
     }
+    public function updateProfileUser(){
+        include_once "views/user/profile.php";
+        $this->user->updateProfile();
+    }
 }
 ?>

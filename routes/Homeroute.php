@@ -15,7 +15,9 @@ switch ($page) {
         include_once 'routes/Menuroute.php';
         break;
     case 'profile':
-        include_once 'views/user/profile.php';
+        $user= new UserController();
+        $user->updateProfileUser();
+        //include_once 'views/user/profile.php';
         break;
     default:
         echo "Page not found";

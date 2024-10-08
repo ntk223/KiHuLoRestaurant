@@ -43,6 +43,9 @@
 
             <button type="submit" name = 'submit' class="button">Thêm món ăn</button>
         </form>
+        <br>        
+        <a href="index.php?role=admin&manage=menu" class="button">Trở về</a>
+
     </section>
 
 </body>

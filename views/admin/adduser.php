@@ -24,4 +24,5 @@
         </select>
         <input type="submit" name="submit" class="button" value="Thêm người dùng">
     </form>
+    <a href="index.php?role=admin&manage=customer" class="button">Trở về</a>
 </section>
