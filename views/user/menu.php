@@ -3,7 +3,16 @@
 <main>
   <div class="menu">
     <div style="width : 100%">
-      <h1 style="margin: 10px;">Menu:</h1>
+      <h1 style="margin: 10px;">
+        <?php if(isset($_GET['cate'])){
+          if($_GET['cate'] == 'all') echo 'Tất cả';
+          elseif($_GET['cate'] == 1) echo 'Món chính';
+          elseif($_GET['cate'] == 2) echo 'Món khai vị';
+          elseif($_GET['cate'] == 3) echo 'Nước uống';
+          else echo 'Tráng miệng';
+        }else echo 'Tất cả';?>  
+        :
+      </h1>
 </div>
   <?php while ($row = $result->fetch_assoc()){?>
       <div class="food">
