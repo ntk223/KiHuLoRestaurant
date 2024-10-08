@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="assets/css/profile.css" />
+<link rel="stylesheet" href="assets/css/main0.css" />
+<main>
     <div class="profile">
         <h1>Cập nhật hồ sơ</h1>
         <form>
@@ -27,5 +29,4 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+</main>
