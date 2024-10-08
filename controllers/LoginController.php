@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
     {
         $data = $result->fetch_assoc();
         Session::set('login', true);
+        Session::set('user_id', $data['user_id']);
         Session::set('username' , $data['username']);
         Session::set('phone' , $data['phone']);
         Session::set('role', $data['role']);

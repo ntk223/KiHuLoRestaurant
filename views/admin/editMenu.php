@@ -43,7 +43,7 @@
 
             <input type="submit" name="submit" class = "button" value="Cập nhật">
         </form>
-        </form>
+        <a href="index.php?role=admin&manage=menu" class="button">Trở về</a>
     </section>
 
 </body>

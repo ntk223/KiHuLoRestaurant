@@ -3,10 +3,10 @@
 <main>
     <div class="profile">
         <h1>Cập nhật hồ sơ</h1>
-        <form>
+        <form method = 'POST'>
             <div class="form-group">
                 <label for="username">Tên người dùng:</label>
-                <input type="text" id="username" name="username" value = <?php echo $_SESSION['username']; ?> required>
+                <input type="text" id="username" name="username" value = "<?php echo htmlspecialchars($_SESSION['username']); ?>" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="address">Địa chỉ:</label>
-                <input type="text" id="address" name="address" value=<?php echo $_SESSION['address'];?>>
+                <input type="text" id="address" name="address" value="<?php echo htmlspecialchars((string)$_SESSION['address']);?>">
             </div>
             <div class="form-group">
                 <label for="password">Mật khẩu:</label>
