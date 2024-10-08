@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html lang="en">
  <head>
     <meta charset="UTF-8">
@@ -14,26 +13,11 @@
 <main class="content">
     <h2> <b> Nhat HUy</b></h2>
 
-
-
-
-
-   
-
 </main>
 </div>
  
-
-
-
-
-
-
- <?php include "common/footer.php" ?>   
+ <?php //include "common/footer.php" ?>   
     
  </body>
  
  </html>
-
-
-

@@ -15,9 +15,9 @@ class MenuItem
     }
     public function getMenuItemById($id)
     {
-        $query = "SELECT * FROM menuitems WHERE id=$id";
+        $query = "SELECT * FROM menuitems WHERE item_id='$id'";
         $result = $this->db->Select($query);
-        return $result;
+        return $result->fetch_assoc();
     }
     public function getItemByCategory($category_id)
     {
@@ -32,11 +32,13 @@ class MenuItem
             $category_id = $_POST['category_id'];
             $item_name = $_POST['item_name'];
             $price = $_POST['price'];
-            $image_url = $_POST['image_url'];
+            $image_url = 'assets/images/'.$_FILES['image_url']['name'];
             $description = $_POST['description'];
-            $query = "INSERT INTO menuitems (category_id, item_name, price, image_url, description) VALUES ('$category_id', '$item_name', '$price', '$image_url', '$description')";
+            $available = $_POST['available'];
+            $query = "INSERT INTO menuitems (category_id, item_name, price, image_url, description, available) VALUES ('$category_id', '$item_name', '$price', '$image_url', '$description', '$available')";
             $result = $this->db->Insert($query);
-            return $result;
+            header("Location: index.php?role=admin&manage=menu");
+            //return $result;
         }
         return false;
     }
@@ -47,17 +49,24 @@ class MenuItem
         {
             $item_name = $_POST['item_name'];
             $price = $_POST['price'];
-            $image_url = $_POST['image_url'];
+            $category_id = $_POST['category_id'];
+            $available = $_POST['available'];
             $description = $_POST['description'];
-            $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', image_url='$image_url', description='$description' WHERE id=$id";
+            $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', description='$description', available='$available' WHERE item_id='$id'";
+            if ( isset($_FILES['image_url']['name']))
+            {
+                $image_url = 'assets/images/'.$_FILES['image_url']['name'];
+                $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', image_url='$image_url', description='$description', available='$available' WHERE item_id='$id'";
+
+            }
             $result = $this->db->Update($query);
-            return $result;
+            header("Location: index.php?role=admin&manage=menu");
         }
         return false;
     }
     public function deleteMenuItem($id)
     {
-        $query = "DELETE FROM menuitems WHERE id=$id";
+        $query = "DELETE FROM menuitems WHERE item_id='$id'";
         $result = $this->db->Delete($query);
         return $result;
     }

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="assets/css/headerAD.css">
-    <!-- Liên kết Font Awesome để sử dụng các icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link
       rel="stylesheet"
@@ -30,6 +29,7 @@
         <div class="center-header">
             BẢNG ĐIỀU KHIỂN QUẢN LÍ
         </div>
+        <a href="index.php?in=logout" class="logout">Đăng xuất</a>
     </div>
 </header>
    

@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="assets/css/menu.css"/>
 
 <link
-
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
     />
@@ -35,9 +34,10 @@
       <div class="users">
         <div class="users-info">
           <img src="assets/images/user-img.png" alt="user-img" />
-          <p class="user-name">User name</p>
+          <p class="user-name"><?php echo $_SESSION['username']; ?></p>
+          
           <div class="setting-user">
-            <a href="#">Cập nhật tài khoản</a>
+            <a href="index.php?role=customer&page=profile">Cập nhật tài khoản</a>
             <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>
