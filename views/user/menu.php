@@ -22,7 +22,7 @@
       <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="width:200px;height:170px;">
       <ul>
           <li>Tên món: <span style="font-family: 'Dancing Script', cursive;font-size:23px"><?php echo $row['item_name'];?></span></li>
-          <li>Giá: <?php echo $row['price'];?> VNĐ</li>
+          <li>Giá: <?php echo number_format((int)$row['price'], 0, '', '.'); ?> VNĐ</li>
           <li>Loại: <?php if($row['category_id'] == 1) echo 'Món chính';
                           elseif($row['category_id'] == 2) echo 'Món khai vị';
                           elseif($row['category_id'] == 3) echo 'Nước uống';
