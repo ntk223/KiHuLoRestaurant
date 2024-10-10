@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="assets/css/menu.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-
 <main>
   <div class="menu">
     <div style="width : 100%">
@@ -32,7 +31,7 @@
             Số lượng: 
             <input type="number" name="quantity" min="1" value="1" class="quantity-input"/>
         </li>
-          <li>Bấm để thêm vào giỏ hàng</li>
+        <button class="add-to-cart" onclick="window.location.href='link_a';" >Thêm vào giỏ hàng</button>
       </ul>
       </div>
       </a>

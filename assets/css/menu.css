@@ -12,7 +12,7 @@
 /* Định dạng cho từng món ăn (food item) */
 
 .food {
-  height: 350px;
+  height: 360px;
   width: 310px;
   border: 1px solid black;
   text-align: center;
@@ -21,7 +21,6 @@
   list-style-type: none;
   border-radius: 10px;
   margin-bottom: 20px;
-  cursor: pointer; /* Hiển thị con trỏ chuột */
   transition: transform 0.3s ease-in-out; /* Hiệu ứng khi hover cả div */
 }
 
@@ -62,11 +61,27 @@
   background-color: #f8a853; /* Chuyển sang màu f8a853 khi hover */
 }
 
+.food:hover .add-to-cart {
+  background-color: white;
+  color: black;
+}
+
 /* Các dòng thông tin trong ul */
 .food ul li {
   padding: 5px 5px 5px 50px;
   width: 100%; /* Đảm bảo mỗi li chiếm 100% chiều rộng ul */
   text-align: left; /* Căn chữ cái đầu tiên của mỗi mục li thẳng hàng */
+}
+
+.add-to-cart {
+  background-color: #f8a853;
+  border: 2px solid rgb(35, 35, 35);
+  border-radius: 10px;
+  width: 140px;
+  height: 32px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in-out;
 }
 
 @media (max-width: 800px) {
