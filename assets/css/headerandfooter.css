@@ -172,4 +172,8 @@ footer {
     right: -5px;
     min-width: 100px;
   }
+
+  header {
+    height: 135px;
+  }
 }

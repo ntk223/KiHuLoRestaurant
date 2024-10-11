@@ -17,7 +17,7 @@
       </h1>
 </div>
   <?php while ($row = $result->fetch_assoc()){?>
-      <a href="#">
+      <a href="#" title="Đi đến review món ăn này">
       <div class="food">
       <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="width:200px;height:170px;">
       <ul>
@@ -31,7 +31,7 @@
             Số lượng: 
             <input type="number" name="quantity" min="1" value="1" class="quantity-input"/>
         </li>
-        <button class="add-to-cart" onclick="window.location.href='link_a';" >Thêm vào giỏ hàng</button>
+        <button title="Đi đến giỏ hàng" class="add-to-cart" onclick="window.location.href='#';" >Thêm vào giỏ hàng</button>
       </ul>
       </div>
       </a>
