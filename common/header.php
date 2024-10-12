@@ -40,7 +40,7 @@
           
           <div class="setting-user">
             <a href="index.php?role=customer&page=profile">Thông tin</a>
-            <a href="#">Đổi mật khẩu</a>
+            <a href="index.php?role=customer&page=password">Đổi mật khẩu</a>
             <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>

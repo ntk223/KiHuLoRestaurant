@@ -27,7 +27,6 @@
                 <label for="address">Địa chỉ:</label>
                 <input type="text" id="address" name="address" value="<?php echo htmlspecialchars((string)$_SESSION['address']);?>">
             </div>
-            <!-- dang bug dong nay -->
             <div class="form-group">
                 <button type="submit" name = 'submit'>Lưu thay đổi</button>
             </div>
