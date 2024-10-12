@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once "config/database.php";
 class User
 {
@@ -83,22 +83,23 @@ class User
         {
             $id = $_SESSION['user_id'];
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            //$password = $_POST['password'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
             //$role = $_POST['role'];
-            $query = "UPDATE users SET username = '$username', password = '$password', email = '$email', phone = '$phone', address = '$address' WHERE user_id = '$id'";
+            $query = "UPDATE users SET username = '$username', email = '$email', phone = '$phone', address = '$address' WHERE user_id = '$id'";
             $result = $this->db->Update($query);
             Session::set('username' ,  $username);
             Session::set('phone' ,  $phone);
-            Session::set('role',  'Customer');
+            //Session::set('role',  $role);
             Session::set('email',  $email);
             Session::set('address',  $address);
-            Session::set('password',  $password);
-            header('Location:index.php?role=customer&page=index');
+            //Session::set('password',  $password);
+            header('Location:index.php?role=customer&page=profile');
+            ob_end_flush();
         }
     }
 
 }
- ?>
+?>
