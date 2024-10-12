@@ -19,6 +19,8 @@ switch ($page) {
         $user->updateProfileUser();
         //include_once 'views/user/profile.php';
         break;
+    case 'cart':
+        include_once "views/user/cart.php";
     default:
         echo "Page not found";
         break;
