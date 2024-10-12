@@ -1,9 +1,16 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ</title>
+</head>
+<body>
 <?php ob_start(); ?>
+<table>Hồ sơ</table>
 <link rel="stylesheet" href="assets/css/profile.css" />
 <link rel="stylesheet" href="assets/css/main0.css" />
 <main>
     <div class="profile">
-        <h1>Cập nhật hồ sơ</h1>
+        <h1>Hồ sơ của bạn</h1>
         <form method = 'POST' action = "">
             <div class="form-group">
                 <label for="username">Tên người dùng:</label>
@@ -21,18 +28,6 @@
                 <label for="address">Địa chỉ:</label>
                 <input type="text" id="address" name="address" value="<?php echo htmlspecialchars((string)$_SESSION['address']);?>">
             </div>
-            <div class="form-group">
-                <label for="oldpassword">Mật khẩu:</label>
-                <input type = 'text' id="oldpassword" name="password" value =<?php echo $_SESSION['password'];?> required>
-            </div>
-            <div class="form-group">
-                <label for="newpassword">Mật khẩu mới:</label>
-                <input type = 'text' id="newpassword" name="apassword" value =<?php echo $_SESSION['password']."s";?> >
-            </div>
-            <div class="form-group">
-                <label for="confirmpassword">Xác nhận mật khẩu mới:</label>
-                <input type='text' id="confirmpassword" name="bpassword" value=<?php echo $_SESSION['password']."s";?> >
-            </div>
             <!-- dang bug dong nay -->
             <div class="form-group">
                 <button type="submit" name = 'submit'>Lưu thay đổi</button>
@@ -40,3 +35,4 @@
         </form>
     </div>
 </main>
+</body>

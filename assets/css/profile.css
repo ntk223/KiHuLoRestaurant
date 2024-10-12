@@ -36,23 +36,23 @@ input[type="password"] {
 /* Nút bấm */
 .form-group button {
   padding: 10px;
-  background-color: white;
-  color: black;
+  background-color: #fbab00;
+  color: white;
   border: 2px solid black;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
   margin: 10px auto; /* Căn giữa button */
   display: block; /* Chuyển button thành block để margin auto có hiệu lực */
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in;
 }
 
 .form-group button:hover {
-  background-color: #fbab00;
-  color: white;
+  background-color: #ffd181;
+  color: black;
   transform: scale(1.05);
 }
 
 #profile-button.form-group {
-  background-color: #fc9904; /* Đổi màu nền khi hover */
+  background-color: #ffd181; /* Đổi màu nền khi hover */
 }
