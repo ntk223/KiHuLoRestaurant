@@ -92,11 +92,11 @@ class User
             $result = $this->db->Update($query);
             Session::set('username' ,  $username);
             Session::set('phone' ,  $phone);
-            Session::set('role',  $role);
+            Session::set('role',  'Customer');
             Session::set('email',  $email);
             Session::set('address',  $address);
             Session::set('password',  $password);
-            header('Location:index.php?role=customer&page=profile');
+            header('Location:index.php?role=customer&page=index');
         }
     }
 

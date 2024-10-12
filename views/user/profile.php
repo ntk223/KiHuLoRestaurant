@@ -26,11 +26,11 @@
             </div>
             <div class="form-group">
                 <label for="newpassword">Mật khẩu mới:</label>
-                <input type = 'text' id="newpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+                <input type = 'text' id="newpassword" name="newpassword" value =<?php echo $_SESSION['password'];?>>
             </div>
             <div class="form-group">
                 <label for="confirmpassword">Xác nhận mật khẩu mới:</label>
-                <input type = 'text' id="confirmpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+                <input type = 'text' id="confirmpassword" name="confirmpassword" value =<?php echo $_SESSION['password'];?>>
             </div>
 
             <div class="form-group">

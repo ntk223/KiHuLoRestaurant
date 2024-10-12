@@ -36,14 +36,21 @@ input[type="password"] {
 /* Nút bấm */
 .form-group button {
   padding: 10px;
-  background-color: #fbab00;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
   margin: 10px auto; /* Căn giữa button */
   display: block; /* Chuyển button thành block để margin auto có hiệu lực */
+  transition: all 0.4s ease;
+}
+
+.form-group button:hover {
+  background-color: #fbab00;
+  color: white;
+  transform: scale(1.05);
 }
 
 #profile-button.form-group {
