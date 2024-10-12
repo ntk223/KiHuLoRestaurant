@@ -19,8 +19,13 @@ switch ($page) {
         $user->updateProfileUser();
         //include_once 'views/user/profile.php';
         break;
+    case 'password':
+        $user= new UserController();
+        $user->updatePwd();
+        break;
     case 'cart':
         include_once "views/user/cart.php";
+        break;
     default:
         echo "Page not found";
         break;

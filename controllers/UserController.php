@@ -36,5 +36,9 @@ class UserController
         include_once "views/user/profile.php";
         $this->user->updateProfile();
     }
+    public function updatePwd() {
+        include_once "views/user/password.php";
+        $this->user->updatePassword();
+    }
 }
 ?>
