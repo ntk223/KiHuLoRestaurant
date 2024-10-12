@@ -26,10 +26,12 @@
         </a>
       </div>
       <div class="search-bar">
-        <input type="text" placeholder="Search food..." />
-        <button>
+        <form action="/search" method="get">
+        <input type="text" placeholder="Search food..." name="searchFood" />
+        <button type="submit">
           <i class="fas fa-search"></i>
         </button>
+        </form>
       </div>
       <div class="users">
         <div class="users-info">

@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồ sơ</title>
 </head>
-<body>
 <?php ob_start(); ?>
 <table>Hồ sơ</table>
 <link rel="stylesheet" href="assets/css/profile.css" />
@@ -35,4 +34,3 @@
         </form>
     </div>
 </main>
-</body>

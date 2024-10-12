@@ -27,11 +27,17 @@
   padding: 5px;
   display: block; /* Đảm bảo toàn bộ khối có thể nhấn được */
   border-radius: 4px;
+  transition: 0.3s ease-in-out;
 }
 
 .navbar ul li a:hover {
   background-color: #ff9100; /* Màu nền khi hover */
-  transition: 0.5s;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.navbar ul li a::before {
+  background-color: #ff9100; /* Màu nền khi hover */
 }
 
 .sub {
