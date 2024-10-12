@@ -1,9 +1,10 @@
+<?php ob_start(); ?>
 <link rel="stylesheet" href="assets/css/profile.css" />
 <link rel="stylesheet" href="assets/css/main0.css" />
 <main>
     <div class="profile">
         <h1>Cập nhật hồ sơ</h1>
-        <form method = 'POST'>
+        <form method = 'POST' action = "">
             <div class="form-group">
                 <label for="username">Tên người dùng:</label>
                 <input type="text" id="username" name="username" value = "<?php echo htmlspecialchars($_SESSION['username']); ?>" required>
@@ -26,13 +27,13 @@
             </div>
             <div class="form-group">
                 <label for="newpassword">Mật khẩu mới:</label>
-                <input type = 'text' id="newpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+                <input type = 'text' id="newpassword" name="apassword" value =<?php echo $_SESSION['password']."s";?> >
             </div>
             <div class="form-group">
                 <label for="confirmpassword">Xác nhận mật khẩu mới:</label>
-                <input type = 'text' id="confirmpassword" name="password" value =<?php echo $_SESSION['password'];?>>
+                <input type='text' id="confirmpassword" name="bpassword" value=<?php echo $_SESSION['password']."s";?> >
             </div>
-
+            <!-- dang bug dong nay -->
             <div class="form-group">
                 <button type="submit" name = 'submit'>Lưu thay đổi</button>
             </div>
