@@ -163,11 +163,6 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
-  .search-bar {
-    left: 40%;
-    width: 20%;
-  }
-
   .setting-user {
     right: -5px;
     min-width: 100px;

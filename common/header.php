@@ -26,10 +26,12 @@
         </a>
       </div>
       <div class="search-bar">
-        <input type="text" placeholder="Search food..." />
-        <button>
+        <form action="/search" method="get">
+        <input type="text" placeholder="Search food..." name="searchFood" />
+        <button type="submit">
           <i class="fas fa-search"></i>
         </button>
+        </form>
       </div>
       <div class="users">
         <div class="users-info">
@@ -37,7 +39,8 @@
           <p class="user-name"><?php echo $_SESSION['username']; ?></p>
           
           <div class="setting-user">
-            <a href="index.php?role=customer&page=profile">Cập nhật tài khoản</a>
+            <a href="index.php?role=customer&page=profile">Thông tin</a>
+            <a href="#">Đổi mật khẩu</a>
             <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>
