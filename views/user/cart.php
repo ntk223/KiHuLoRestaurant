@@ -14,6 +14,7 @@
         <h1 style="font-family: 'Dancing Script', cursive;font-size:50px">Giỏ hàng của bạn :</h1>
         </div>
         <div class="cart-items">
+        <?php if ($result) {?>
             <table>
                 <thead>
                     <tr>
@@ -41,12 +42,15 @@
         <?php 
         echo number_format($total);
         ?>
-    </span></h3>
-</div>
+    </span></h3></div>
 
         <!-- Nút Thanh toán -->
         <div class="checkout">
             <button class="checkout-btn">Thanh toán</button>
         </div>
+        <?php } else { 
+            echo "<h2>Giỏ hàng của bạn đang trống</h2>";
+        }    
+        ?>
     </div>
 </main>
