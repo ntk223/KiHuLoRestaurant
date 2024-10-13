@@ -2,11 +2,11 @@
 include_once "models/Cart.php";
 class CartController{
     private $cart;
-    public function __constructor(){
+    public function __construct(){
         $this->cart = new Cart();
     }
     public function getItemList(){
-        $this->cart->getCartItem();
+        $result = $this->cart->getCartItem();
         include_once "views/user/cart.php";
     }
 }
