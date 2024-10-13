@@ -27,9 +27,9 @@
                     <?php while ($row = $result->fetch_assoc()) { ?>
                         <tr>
                             <td><?php echo $row['item_name']; ?></td>
-                            <td><?php echo $row['quantity']; ?></td>
-                            <td><?php echo number_format($row['price']); ?></td>
-                            <td><?php echo number_format($row['price'] * $row['quantity']); ?></td>
+                            <td><input type="number" value="<?php echo $row['quantity'];?>" min="1" class="quantity-input"></td>
+                            <td><?php echo number_format($row['price']); ?> VNĐ</td>
+                            <td><?php echo number_format($row['price'] * $row['quantity']); ?> VNĐ</td>
                             <?php $total = $row['total'];?>
                         </tr>
                     <?php } ?>
