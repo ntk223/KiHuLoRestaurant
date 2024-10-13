@@ -22,9 +22,8 @@
       </h1>
 </div>
 <?php while ($row = $result->fetch_assoc()) { ?>
-    <form action="index.php?role=customer&page=cart&action=add&id=<?php echo $row['item_id']; ?>" method="POST">
-        <a href="#" title="Đi đến review món ăn này">
             <div class="food">
+            <a href="#" title="Đi đến review món ăn này">
                 <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="width:200px;height:170px;">
                 <ul>
                     <li>Tên món: <span style="font-family: 'Dancing Script', cursive;font-size:23px"><?php echo $row['item_name']; ?></span></li>
@@ -37,15 +36,16 @@
                         else echo 'Tráng miệng'; 
                         ?>
                     </li>
+            </a>
+                    <form action="index.php?role=customer&page=cart&action=add&id=<?php echo $row['item_id']; ?>" method="POST">
                     <li>
                         Số lượng: 
                         <input type="number" name="quantity" min="1" value="1" class="quantity-input" />
                     </li>
-                    <button title="Đi đến giỏ hàng" type="submit" class="add-to-cart">Thêm vào giỏ hàng</button>
+                    <button title="Đi đến giỏ hàng" class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </form>
                 </ul>
             </div>
-        </a>
-    </form>
 <?php } ?>
 
 </div>
