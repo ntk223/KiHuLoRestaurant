@@ -105,18 +105,20 @@ class User
             $confirm_pass = $_POST['confirmpassword'];
 
             $check = $this->db->Select("SELECT * FROM users WHERE user_id = '$id' AND password = '$password'");
-            if ($check->num_rows > 0) {
+            if (!($check->num_rows > 0)) {
                 echo "<p>Mật khẩu mới không được trùng với mật khẩu cũ</p>";
                 header('Location:index.php?role=customer&page=password');
             }
-            if ( $new_pass != $confirm_pass) {
-                echo "<p>Mật khẩu mới không trùng khớp</p>";
-                header('Location:index.php?role=customer&page=password');
-            }
-            else{
-                $query = "UPDATE users SET password = '$new_pass' WHERE user_id = '$id'";
-                $result = $this->db->Update($query);
-                header('Location:index.php?role=customer&page=profile');
+            else{ 
+                if ( $new_pass != $confirm_pass) {
+                    echo "<p>Mật khẩu mới không trùng khớp</p>";
+                    header('Location:index.php?role=customer&page=password');
+                }
+                else{
+                    $query = "UPDATE users SET password = '$new_pass' WHERE user_id = '$id'";
+                    $result = $this->db->Update($query);
+                    header('Location:index.php?role=customer&page=profile');
+                }
             }
             ob_end_flush();
         }
