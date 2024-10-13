@@ -9,5 +9,8 @@ class CartController{
         $result = $this->cart->getCartItem();
         include_once "views/user/cart.php";
     }
+    public function addItem(){
+        $result = $this->cart->addItem();
+    }
 }
 ?>

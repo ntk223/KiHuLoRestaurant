@@ -1,7 +1,6 @@
 <?php
 include_once 'controllers/UserController.php';
 include_once 'controllers/MenuController.php';
-include_once 'controllers/CartController.php';
 $page = isset($_GET['page']) ? $_GET['page'] : 'index';
 include_once 'common/header.php';
 switch ($page) {
@@ -25,8 +24,7 @@ switch ($page) {
         $user->updatePwd();
         break;
     case 'cart':
-        $cart = new CartController();
-        $cart->getItemList();
+        include_once "routes/Cartroute.php";
         break;
     default:
         echo "Page not found";
