@@ -27,7 +27,10 @@ class MenuController
     }
     public function updateItem()
     {
-
+        $id = $_GET['id'];
+        $result = $this->menuitem->getMenuItemById($id);
+        include_once "views/admin/editMenu.php";
+        $this->menuitem->updateMenuItem($id);
     }
     public function deleteItem()
     {

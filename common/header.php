@@ -1,12 +1,7 @@
 <header>
-<<<<<<< HEAD
-<link rel="stylesheet" href="assets/css/navbar.css" />
-=======
 <link rel="stylesheet" href="assets/css/headerandfooter.css" />
-<link rel="stylesheet" href="assets/css/main.css"/>
 <link rel="stylesheet" href="assets/css/menu.css"/>
 
->>>>>>> 10686dceff23a54a71cfd5a8c8447cdbbb8a5422
 <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"
@@ -31,18 +26,22 @@
         </a>
       </div>
       <div class="search-bar">
-        <input type="text" placeholder="Search food..." />
-        <button>
+        <form action="/search" method="get">
+        <input type="text" placeholder="Search food..." name="searchFood" />
+        <button type="submit">
           <i class="fas fa-search"></i>
         </button>
+        </form>
       </div>
       <div class="users">
         <div class="users-info">
           <img src="assets/images/user-img.png" alt="user-img" />
-          <p class="user-name">User name</p>
+          <p class="user-name"><?php echo $_SESSION['username']; ?></p>
+          
           <div class="setting-user">
-            <a href="#">Cập nhật tài khoản</a>
-            <a href="#">Đăng xuất</a>
+            <a href="index.php?role=customer&page=profile">Thông tin</a>
+            <a href="index.php?role=customer&page=password">Đổi mật khẩu</a>
+            <a href="index.php?in=logout">Đăng xuất</a>
           </div>
         </div>
       </div>

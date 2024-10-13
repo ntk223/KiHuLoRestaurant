@@ -12,7 +12,7 @@
 /* Định dạng cho từng món ăn (food item) */
 
 .food {
-  height: 330px;
+  height: 360px;
   width: 310px;
   border: 1px solid black;
   text-align: center;
@@ -21,7 +21,6 @@
   list-style-type: none;
   border-radius: 10px;
   margin-bottom: 20px;
-  cursor: pointer; /* Hiển thị con trỏ chuột */
   transition: transform 0.3s ease-in-out; /* Hiệu ứng khi hover cả div */
 }
 
@@ -62,6 +61,11 @@
   background-color: #f8a853; /* Chuyển sang màu f8a853 khi hover */
 }
 
+.food:hover .add-to-cart {
+  background-color: white;
+  color: black;
+}
+
 /* Các dòng thông tin trong ul */
 .food ul li {
   padding: 5px 5px 5px 50px;
@@ -69,9 +73,45 @@
   text-align: left; /* Căn chữ cái đầu tiên của mỗi mục li thẳng hàng */
 }
 
+.add-to-cart {
+  background-color: #f8a853;
+  border: 2px solid rgb(35, 35, 35);
+  border-radius: 10px;
+  width: 140px;
+  height: 32px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
 @media (max-width: 800px) {
   .menu {
     justify-content: center;
     padding: 2px;
   }
+}
+
+.food input[type="number"] {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.food input[type="number"]:hover {
+  border-color: #fbab00;
+  background-color: #f8f8f8;
+}
+
+.food input[type="number"]:focus {
+  outline: none;
+  background-color: #f1f1f1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

@@ -26,6 +26,8 @@
             </select>
             <input type="submit" name="submit" class = "button" value="Cập nhật">
         </form>
+        <a href="index.php?role=admin&manage=customer" class="button">Trở về</a>
+
     </section>
 </main>
 

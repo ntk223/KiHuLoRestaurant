@@ -17,7 +17,7 @@
     <title>Sign up</title>
   </head>
   <body>
-    <form action="" method="POST">
+    <form action="/login" method="POST">
       <div class="registration-form">
         <h2 class="font-effect-shadow-multiple" style="font-size: 35px">
           <strong>SIGN UP</strong>
