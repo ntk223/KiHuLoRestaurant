@@ -6,11 +6,12 @@
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="assets/css/main0.css">
     <link rel="stylesheet" href="assets/css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <main>
     <div class="container">
         <div style="margin: 20px 20px;">
-        <h1>Giỏ hàng của bạn</h1>
+        <h1 style="font-family: 'Dancing Script', cursive;font-size:50px">Giỏ hàng của bạn :</h1>
         </div>
         <div class="cart-items">
             <table>
