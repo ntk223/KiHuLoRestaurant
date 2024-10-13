@@ -106,7 +106,7 @@ class User
 
             $check = $this->db->Select("SELECT * FROM users WHERE user_id = '$id' AND password = '$password'");
             if (!($check->num_rows > 0)) {
-                echo "<p>Mật khẩu mới không được trùng với mật khẩu cũ</p>";
+                $check  = false;
                 header('Location:index.php?role=customer&page=password');
             }
             else{ 

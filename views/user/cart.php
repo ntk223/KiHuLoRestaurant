@@ -24,12 +24,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+                        <tr>
+                            <td><?php echo $row['item_name']; ?></td>
+                            <td><?php echo $row['quantity']; ?></td>
+                            <td><?php echo number_format($row['price']); ?></td>
+                            <td><?php echo number_format($row['price'] * $row['quantity']); ?></td>
+                            <?php $total = $row['total'];?>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
         <div class="cart-total">
-            <h3>Tổng tiền: <span id="total"></span></h3>
-        </div>
+    <h3>Tổng tiền: <span id="total">
+        <?php 
+        echo number_format($total);
+        ?>
+    </span></h3>
+</div>
 
         <!-- Nút Thanh toán -->
         <div class="checkout">
