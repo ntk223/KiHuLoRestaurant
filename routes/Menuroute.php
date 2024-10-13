@@ -23,7 +23,7 @@ else if ($role == 'admin' )
             $menu->addItem();
             break;
         case 'update':
-            echo "This is edit page";
+            $menu->updateItem();
             break;
         case 'delete':
             $menu->deleteItem();

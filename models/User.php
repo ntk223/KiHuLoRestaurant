@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once "config/database.php";
 class User
 {
@@ -78,5 +78,51 @@ class User
             header('Location:index.php?role=admin&manage=customer');
         }
     }
+    public function updateProfile(){
+        if (isset($_POST['submit'])) 
+        {
+            $id = $_SESSION['user_id'];
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $address = $_POST['address'];
+            $query = "UPDATE users SET username = '$username', email = '$email', phone = '$phone', address = '$address' WHERE user_id = '$id'";
+            $result = $this->db->Update($query);
+            Session::set('username' ,  $username);
+            Session::set('phone' ,  $phone);
+            Session::set('email',  $email);
+            Session::set('address',  $address);
+            header('Location:index.php?role=customer&page=profile');
+            ob_end_flush();
+        }
+    }
+    public function updatePassword() {
+        if (isset($_POST['submit'])) 
+        {
+            $id = $_SESSION['user_id'];
+            $password = $_POST['password'];
+            $new_pass = $_POST['newpassword'];
+            $confirm_pass = $_POST['confirmpassword'];
+
+            $check = $this->db->Select("SELECT * FROM users WHERE user_id = '$id' AND password = '$password'");
+            if (!($check->num_rows > 0)) {
+                $check  = false;
+                header('Location:index.php?role=customer&page=password');
+            }
+            else{ 
+                if ( $new_pass != $confirm_pass) {
+                    echo "<p>Mật khẩu mới không trùng khớp</p>";
+                    header('Location:index.php?role=customer&page=password');
+                }
+                else{
+                    $query = "UPDATE users SET password = '$new_pass' WHERE user_id = '$id'";
+                    $result = $this->db->Update($query);
+                    header('Location:index.php?role=customer&page=profile');
+                }
+            }
+            ob_end_flush();
+        }
+    }
+
 }
- ?>
+?>
