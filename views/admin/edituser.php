@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa người dùng</title>
-    <link rel="stylesheet" href="assets/css/edituser.css">
-</head>
-<body>
+<main>
 
-    <header>
-        <h1>Chỉnh sửa thông tin người dùng</h1>
-    </header>
 
     <!-- Form chỉnh sửa người dùng -->
     <section class="form-section">
@@ -38,6 +27,5 @@
             <input type="submit" name="submit" class = "button" value="Cập nhật">
         </form>
     </section>
+</main>
 
-</body>
-</html>
