@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chỉnh sửa món ăn</title>
-    <link rel="stylesheet" href="assets/css/editMenu.css"> 
-</head>
-<body>
+<main>
 
-    <header>
-        <h1>Chỉnh sửa món ăn</h1>
-    </header>
 
     <section class="form-section">
         <form action="#" method="POST" enctype="multipart/form-data">
@@ -46,5 +35,4 @@
         <a href="index.php?role=admin&manage=menu" class="button">Trở về</a>
     </section>
 
-</body>
-</html>
+</main>

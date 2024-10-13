@@ -1,63 +1,54 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+/* Định dạng cho phần chính */
+main {
+    flex-grow: 1; /* Chiếm hết không gian còn lại */
+    padding: 20px; /* Khoảng cách bên trong main */
+    background-color: #fff; /* Màu nền cho main */
+    border-radius: 5px; /* Bo tròn góc cho main */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bóng đổ cho main */
 }
 
-header {
-    text-align: center;
-    background-color: #f8a853;
-    padding: 20px;
-    color: white;
-}
-
-h1 {
-    margin: 0;
-}
-
+/* Định dạng cho phần biểu mẫu */
 .form-section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-top: 20px; /* Khoảng cách phía trên nội dung biểu mẫu */
 }
 
+/* Định dạng cho nhãn */
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    display: block; /* Hiển thị nhãn theo chiều dọc */
+    margin: 10px 0 5px; /* Khoảng cách trên và dưới nhãn */
+    font-weight: bold; /* Chữ đậm */
 }
 
-input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+/* Định dạng cho các ô nhập liệu */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding: 10px; /* Padding cho ô nhập liệu */
+    border: 1px solid #ccc; /* Đường viền xung quanh */
+    border-radius: 5px; /* Bo tròn góc cho ô nhập liệu */
+    margin-bottom: 15px; /* Khoảng cách dưới ô nhập liệu */
+    font-size: 16px; /* Kích thước chữ */
 }
 
+/* Định dạng cho ô textarea */
+textarea {
+    resize: vertical; /* Cho phép thay đổi kích thước theo chiều dọc */
+}
+
+/* Định dạng cho nút cập nhật */
 .button {
-    padding: 10px 20px;
-    background-color: #f8a853;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
+    display: inline-block;
+    background-color: #f44336; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    padding: 10px 15px; /* Padding cho nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    text-decoration: none; /* Không có gạch chân */
+    text-align: center; /* Căn giữa chữ trong nút */
 }
 
 .button:hover {
-    background-color: #e69542;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .form-section {
-        padding: 15px;
-    }
+    background-color: #d32f2f; /* Màu nền khi hover */
 }
