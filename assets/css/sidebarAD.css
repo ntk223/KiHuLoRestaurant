@@ -1,53 +1,46 @@
 .sidebar {
-    width: 250px;
-    height: calc(100vh - 70px); /* Chiều cao sidebar bằng chiều cao viewport trừ chiều cao header */
-    background-color: #f8a853;
-    color: #101010;
-    padding-top: 70px; /* Khoảng cách giữa header và sidebar */
-    box-sizing: border-box;
-    position: fixed;
-    overflow-y: auto; /* Cho phép cuộn lên xuống nếu nội dung quá dài */
+    background-color: #ffffff; /* Màu nền cho sidebar */
+    width: 250px; /* Chiều rộng cho sidebar */
+    height: 100vh; /* Chiều cao đầy đủ của viewport */
+    padding: 20px; /* Khoảng cách bên trong */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Bóng đổ cho sidebar */
+    position: fixed; /* Để sidebar cố định khi cuộn */
+    top: 0; /* Căn trên */
+    left: 0; /* Căn trái */
+    overflow-y: auto; /* Cuộn nếu nội dung quá dài */
+    border-radius: 8px; /* Bo tròn các góc cho sidebar */
 }
 
-/* Sidebar title */
+
 .sidebar h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #080808;
-    background-color: #f44336;
-    padding: 10px; 
-    border-radius: 5px; 
+    text-align: center; /* Căn giữa tiêu đề */
+    color: #ffffff; /* Màu chữ cho tiêu đề */
+    background-color: red; /* Màu nền cho tiêu đề */
+    padding: 10px; /* Padding cho tiêu đề */
+    border-radius: 5px; /* Bo tròn các góc cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
 }
-
-/* Danh sách trong sidebar */
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Xóa dấu đầu dòng */
+    padding: 0; /* Xóa padding */
+    margin: 0; /* Xóa margin */
 }
 
-/* Các mục trong danh sách */
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin: 40px 0; /* Khoảng cách giữa các mục */
 }
 
-/* Các liên kết trong danh sách */
 .sidebar ul li a {
-    text-decoration: none;
-    color: #002795;
-    font-size: 18px;
-    display: block;
-    padding: 15px;
-    background-color: #FFD154; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    transition: background 0.3s ease, border 0.3s ease;
+    text-decoration: none; /* Không có gạch chân */
+    color:black; /* Màu chữ cho liên kết */
+    padding: 15px; /* Padding cho liên kết */
+    display: block; /* Hiển thị dưới dạng khối */
+    border-radius: 5px; /* Bo tròn các góc */
+    background-color: #e3f2fd; /* Màu nền cho từng mục quản lý */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
 }
 
-/* Hiệu ứng hover */
 .sidebar ul li a:hover {
-    background-color: #555;
-    border-color: #aaa;
+    background-color: red; /* Màu nền khi hover */
+    color: white; /* Đổi màu chữ khi hover */
 }

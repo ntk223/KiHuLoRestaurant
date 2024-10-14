@@ -8,6 +8,13 @@ class Cart{
     }
     public function getCartItem(){
         $id = $_SESSION['user_id'];
+        $check = "SELECT * FROM carts WHERE customer_id = '$id'";
+        $exist = $this->db->Select($check);
+        if( $exist == false || !( $exist->num_rows > 0)){
+            $query = "INSERT INTO carts (customer_id, total) VALUES ('$id', 0)";
+            $result = $this->db->Insert($query);
+        }
+
         $query1 = "UPDATE carts c
                     INNER JOIN cartitems ci ON c.cart_id = ci.cart_id
                     INNER JOIN menuitems mi ON mi.item_id = ci.item_id
@@ -18,7 +25,9 @@ class Cart{
                         WHERE ci2.cart_id = c.cart_id
                     )
                     WHERE c.customer_id = '$id'";
+
         $res = $this->db->Update($query1);
+
         $query =   "SELECT mi.item_name, mi.price, ci.quantity, c.total
                     FROM users u
                     INNER JOIN carts c ON c.customer_id = u.user_id
@@ -31,18 +40,29 @@ class Cart{
     }
     public function addItem(){
         $item_id = $_GET['id'];
-        $user_id = $_SESSION['user_id'];
+        $id = $_SESSION['user_id'];
+        $check = "SELECT * FROM carts WHERE customer_id = '$id'";
+        $exist = $this->db->Select($check);
+        $cart_id = -1 ;
+        if( $exist == false || !( $exist->num_rows > 0)){
+            $query = "INSERT INTO carts (customer_id, total) VALUES ('$id', 0)";
+            $result = $this->db->Insert($query);
+            $cart_id = $this->db->conn->insert_id;
+        }
+        else{
+            $cart_id = $exist->fetch_assoc()['cart_id'];
+        }
         $quantity = $_POST['quantity'];
-        $query = "SELECT * FROM cartitems WHERE cart_id = '$user_id' AND item_id = '$item_id'";
+        $query = "SELECT * FROM cartitems WHERE cart_id = '$cart_id' AND item_id = '$item_id'";
         $result = $this->db->Select($query);
         if($result->num_rows > 0){
-            $query = "UPDATE cartitems SET quantity = quantity + '$quantity' WHERE cart_id = '$user_id' AND item_id = '$item_id'";
+            $query = "UPDATE cartitems SET quantity = quantity + '$quantity' WHERE cart_id = '$cart_id' AND item_id = '$item_id'";
             $result = $this->db->Update($query);
             //header("Location: index.php?role=customer&page=menu");
         }
         else{
             $query = "INSERT INTO cartitems (cart_id, item_id, quantity, price) 
-                        VALUES ('$user_id', '$item_id','$quantity', 0 )";
+                        VALUES ('$cart_id', '$item_id','$quantity', 0 )";
             $result = $this->db->Insert($query);
         }
         header("Location: index.php?role=customer&page=menu");
