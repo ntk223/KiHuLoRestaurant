@@ -14,7 +14,6 @@
         <h1 style="font-family: 'Dancing Script', cursive;font-size:50px">Giỏ hàng của bạn :</h1>
         </div>
         <div class="cart-items">
-        <?php if ($result) {?>
             <table>
                 <thead>
                     <tr>
@@ -22,36 +21,36 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Tổng cộng</th>
+                        <th>Hành động</th> <!-- Thêm cột cho nút Xóa -->
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($row = $result->fetch_assoc()) { ?>
+                    <?php 
+                    $total = 0;
+                    while ($row = $result->fetch_assoc()) { 
+                        $item_total = $row['price'] * $row['quantity'];
+                        $total += $item_total;
+                    ?>
                         <tr>
                             <td><?php echo $row['item_name']; ?></td>
-                            <td><input type="number" value="<?php echo $row['quantity'];?>" min="1" class="quantity-input"></td>
+                            <td><input type="number" value="<?php echo $row['quantity']; ?>" min="1" class="quantity-input"></td>
                             <td><?php echo number_format($row['price']); ?> VNĐ</td>
-                            <td><?php echo number_format($row['price'] * $row['quantity']); ?> VNĐ</td>
-                            <?php $total = $row['total'];?>
+                            <td class="item-total"><?php echo number_format($item_total); ?> VNĐ</td>
+                            <td><button class="delete_food">Xóa</button></td> <!-- Nút Xóa -->
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
         </div>
         <div class="cart-total">
-    <h3>Tổng tiền: <span id="total">
-        <?php 
-        echo number_format($total);
-        ?>
-    </span></h3></div>
+            <h3>Tổng tiền: <span id="total"><?php echo number_format($total); ?> VNĐ</span></h3>
+        </div>
 
         <!-- Nút Thanh toán -->
         <div class="checkout">
             <button class="checkout-btn">Thanh toán</button>
         </div>
-        <?php } else { 
-            echo "<h2>Giỏ hàng của bạn đang trống</h2>";
-        }    
-        ?>
     </div>
 </main>
+
 <script src="assets/js/cart.js"></script>

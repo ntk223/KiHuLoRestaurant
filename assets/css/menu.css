@@ -51,7 +51,6 @@
   border-top: 1px solid black;
   display: flex;
   flex-direction: column; /* Sắp xếp các mục li theo cột */
-  align-items: center; /* Đảm bảo các mục li nằm giữa ul */
   background-color: #fff;
   transition: background-color 0.3s ease;
 }

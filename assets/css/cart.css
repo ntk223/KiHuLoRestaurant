@@ -36,6 +36,28 @@
   margin-right: 20%;
 }
 
+.delete_food {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #f8a853;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.delete_food:hover {
+  background-color: #ffd181;
+  transform: scale(1.05);
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+
+.delete_food:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 .checkout {
   text-align: center;
 }

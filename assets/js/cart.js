@@ -1,34 +1,44 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const quantityInputs = document.querySelectorAll(".quantity-input"); // Chọn tất cả các input số lượng
-  const totalElement = document.getElementById("total"); // Chọn phần tử hiển thị tổng tiền
-
-  // Hàm tính tổng tiền giỏ hàng
-  function updateTotal() {
-    let total = 0;
-
-    // Duyệt qua tất cả các input và tính tổng tiền
-    quantityInputs.forEach((input) => {
-      const row = input.closest("tr"); // Lấy hàng chứa input
-      const price = parseFloat(
-        row.cells[2].textContent.replace(/[^\d.-]/g, "")
-      ); // Lấy giá của món ăn
-      const quantity = parseInt(input.value); // Lấy số lượng đã nhập
-      const itemTotal = price * quantity; // Tính tổng của món này
-
-      // Cập nhật tổng cho món này
-      row.cells[3].textContent = itemTotal.toLocaleString() + " VNĐ"; // Cập nhật giá trị tổng của món
-      total += itemTotal; // Cộng dồn vào tổng giỏ hàng
-    });
-
-    // Cập nhật tổng giỏ hàng
-    totalElement.textContent = total.toLocaleString() + " VNĐ"; // Cập nhật tổng tiền
-  }
-
-  // Thêm sự kiện thay đổi cho tất cả các input số lượng
-  quantityInputs.forEach((input) => {
-    input.addEventListener("input", updateTotal);
+// Cập nhật tổng tiền khi thay đổi số lượng
+document.querySelectorAll(".quantity-input").forEach((input) => {
+  input.addEventListener("input", function () {
+    const row = this.closest("tr");
+    const price = parseInt(
+      row.querySelector("td:nth-child(3)").innerText.replace(/\D/g, "")
+    ); // Lấy giá đơn vị
+    const quantity = parseInt(this.value); // Lấy số lượng mới
+    const totalCell = row.querySelector("td:nth-child(4)"); // Cột tổng cộng
+    const newTotal = price * quantity; // Tính lại tổng cộng
+    totalCell.innerText = newTotal.toLocaleString() + " VNĐ"; // Hiển thị lại tổng tiền cho dòng hiện tại
+    updateTotal(); // Cập nhật tổng tiền của giỏ hàng
   });
-
-  // Gọi updateTotal lần đầu để đảm bảo tổng tiền đúng khi trang load
-  updateTotal();
 });
+
+// Xử lý sự kiện xóa cho từng nút "Xóa"
+document.querySelectorAll(".delete_food").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Lấy hàng tr chứa nút "Xóa"
+    const row = this.closest("tr");
+    // Lấy tổng tiền của món ăn đã bị xóa (số tiền sẽ được trừ khỏi tổng)
+    const itemTotal = parseFloat(
+      row.querySelector(".item-total").textContent.replace(/[^0-9.-]+/g, "")
+    );
+
+    // Xóa hàng khỏi bảng
+    row.remove();
+
+    // Cập nhật lại tổng tiền sau khi xóa món ăn
+    updateTotal();
+  });
+});
+
+// Hàm cập nhật tổng tiền của giỏ hàng
+function updateTotal() {
+  let total = 0;
+  document.querySelectorAll("tbody tr").forEach((row) => {
+    const totalCell = row.querySelector("td:nth-child(4)");
+    if (totalCell) {
+      total += parseInt(totalCell.innerText.replace(/\D/g, "")); // Tính tổng tiền từ các hàng
+    }
+  });
+  document.getElementById("total").innerText = total.toLocaleString() + " VNĐ"; // Hiển thị tổng tiền
+}
