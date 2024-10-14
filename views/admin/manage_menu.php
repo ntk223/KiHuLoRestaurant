@@ -1,7 +1,4 @@
-
-
-    <main>
-
+<main>
         <section class="menu-table-section">
             <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>
 
@@ -42,7 +39,7 @@
                     </tr>
 
                     <!-- Các món ăn khác sẽ được lặp qua ở đây -->
-                    <?php /* Ở đây sẽ là vòng lặp PHP để hiển thị danh sách món ăn */ ?>
+                    <?php }/* Ở đây sẽ là vòng lặp PHP để hiển thị danh sách món ăn */ ?>
                 </tbody>
             </table>
             <br>
