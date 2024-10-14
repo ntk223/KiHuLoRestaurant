@@ -1,9 +1,14 @@
-header {
-    background-color: #f44336; /* Màu nền cho header */
-    color: white; /* Màu chữ */
-    padding: 20px; /* Khoảng cách bên trong */
-    text-align: center; /* Căn giữa nội dung */
+.header {
+    height: 60px; /* Chiều cao của header */
+    background-color: red; /* Màu nền của header */
+    color: rgb(17, 1, 1); /* Màu chữ của header */
+    display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
     font-size: 24px; /* Kích thước chữ */
-    font-weight: bold; /* Chữ đậm */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ cho header */
+    position: fixed; /* Cố định header trên cùng */
+    top: 0; /* Căn chỉnh từ trên xuống */
+    left: 0; /* Căn chỉnh từ trái sang */
+    width: 100%; /* Đảm bảo header chiếm chiều rộng toàn bộ */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần khác */
 }
