@@ -1,0 +1,87 @@
+
+
+.form-section {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 600px; 
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-section h2 {
+    text-align: center;
+    color: #b30000;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.form-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.form-section label {
+    flex: 0 0 30%; 
+    align-self: center;
+    color: #b30000; 
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section input[type="tel"],
+.form-section textarea,
+.form-section select {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid #b30000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-section textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Định dạng cho nút */
+.form-section .button {
+    background-color: #b30000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.form-section .button:hover {
+    background-color: #990000;
+}
+
+.form-section a.button {
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-section a.button:hover {
+    background-color: #990000;
+}

@@ -1,46 +1,47 @@
-.sidebar {
-    background-color: #ffffff; /* Màu nền cho sidebar */
-    width: 250px; /* Chiều rộng cho sidebar */
-    height: 100vh; /* Chiều cao đầy đủ của viewport */
-    padding: 20px; /* Khoảng cách bên trong */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Bóng đổ cho sidebar */
-    position: fixed; /* Để sidebar cố định khi cuộn */
-    top: 0; /* Căn trên */
-    left: 0; /* Căn trái */
-    overflow-y: auto; /* Cuộn nếu nội dung quá dài */
-    border-radius: 8px; /* Bo tròn các góc cho sidebar */
-}
 
+.sidebar {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 250px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
 .sidebar h2 {
-    text-align: center; /* Căn giữa tiêu đề */
-    color: #ffffff; /* Màu chữ cho tiêu đề */
-    background-color: red; /* Màu nền cho tiêu đề */
-    padding: 10px; /* Padding cho tiêu đề */
-    border-radius: 5px; /* Bo tròn các góc cho tiêu đề */
-    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    color: #b30000;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffcccc; 
+    border-radius: 5px;
+    text-align: center;
 }
+
 .sidebar ul {
-    list-style: none; /* Xóa dấu đầu dòng */
-    padding: 0; /* Xóa padding */
-    margin: 0; /* Xóa margin */
+    list-style-type: none;
+    padding: 0;
 }
 
 .sidebar ul li {
-    margin: 40px 0; /* Khoảng cách giữa các mục */
+    margin: 50px 0;
 }
 
 .sidebar ul li a {
-    text-decoration: none; /* Không có gạch chân */
-    color:black; /* Màu chữ cho liên kết */
-    padding: 15px; /* Padding cho liên kết */
-    display: block; /* Hiển thị dưới dạng khối */
-    border-radius: 5px; /* Bo tròn các góc */
-    background-color: #e3f2fd; /* Màu nền cho từng mục quản lý */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+    color: #b30000;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex; 
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-    background-color: red; /* Màu nền khi hover */
-    color: white; /* Đổi màu chữ khi hover */
+    background-color: #ffcccc; 
+}
+
+.sidebar ul li a i {
+    margin-right: 10px; 
+    font-size: 20px;
 }

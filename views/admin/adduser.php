@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="assets/css/user.css">
+<link rel="stylesheet" href="assets/css/adduser.css">
+<main>
+    <main class ="adduser">
 <section class="form-section">
     <h2>Thêm người dùng mới</h2>
     <form action="#" method="POST">
@@ -26,3 +28,5 @@
     </form>
     <a href="index.php?role=admin&manage=customer" class="button">Trở về</a>
 </section>
+</main>
+</main>
