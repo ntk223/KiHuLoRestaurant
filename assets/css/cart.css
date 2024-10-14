@@ -36,6 +36,28 @@
   margin-right: 20%;
 }
 
+.delete_food {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #f8a853;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease-in;
+}
+
+.delete_food:hover {
+  background-color: #ffd181;
+  transform: scale(1.05);
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+
+.delete_food:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
 .checkout {
   text-align: center;
 }
@@ -55,4 +77,25 @@
   background-color: #ffd181;
   color: black;
   transform: scale(1.1);
+}
+
+.quantity-input {
+  width: 50px;
+  padding: 0;
+  text-align: center;
+  border: 1px solid #ccc; /* Viền mặc định */
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quantity-input:focus {
+  border-color: #f8a853; /* Màu viền khi được chọn (focus) */
+  box-shadow: 0 0 8px rgba(248, 168, 83, 0.5); /* Hiệu ứng ánh sáng bao quanh */
+  outline: none; /* Loại bỏ outline mặc định */
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
 }
