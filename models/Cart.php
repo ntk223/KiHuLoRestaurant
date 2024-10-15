@@ -28,7 +28,7 @@ class Cart{
 
         $res = $this->db->Update($query1);
 
-        $query =   "SELECT mi.item_name, mi.price, ci.quantity, c.total
+        $query =   "SELECT mi.item_id,ci.cart_id, mi.item_name, mi.price, ci.quantity, c.total
                     FROM users u
                     INNER JOIN carts c ON c.customer_id = u.user_id
                     INNER JOIN cartitems ci ON c.cart_id = ci.cart_id
@@ -55,7 +55,8 @@ class Cart{
         $quantity = $_POST['quantity'];
         $query = "SELECT * FROM cartitems WHERE cart_id = '$cart_id' AND item_id = '$item_id'";
         $result = $this->db->Select($query);
-        if($result->num_rows > 0){
+
+        if($result){
             $query = "UPDATE cartitems SET quantity = quantity + '$quantity' WHERE cart_id = '$cart_id' AND item_id = '$item_id'";
             $result = $this->db->Update($query);
             //header("Location: index.php?role=customer&page=menu");
@@ -67,8 +68,18 @@ class Cart{
         }
         header("Location: index.php?role=customer&page=menu");
     }
-    public function updateCartitem(){
-
+    public function deleteItem() {
+        $cart_id = $_GET['cid'];
+        $query = "DELETE FROM cartitems WHERE item_id = '$_GET[id]' AND cart_id = '$cart_id'";
+        $result = $this->db->Delete($query);
+        header("Location: index.php?role=customer&page=cart");
+    }
+    public function updateItem(){
+        $cart_id = $_GET['cid'];
+        $quantity = $_POST['quantity'];
+        $query = "UPDATE cartitems SET quantity = '$quantity' WHERE item_id = '$_GET[id]' AND cart_id = '$cart_id'";
+        $result = $this->db->Update($query);
+        header("Location: index.php?role=customer&page=cart");
     }
 
 }

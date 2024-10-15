@@ -21,23 +21,31 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Tổng cộng</th>
-                        <th>Hành động</th> <!-- Thêm cột cho nút Xóa -->
+                        <th colspan="2">Hành động</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                    if ( $result){
                     $total = 0;
+                    if ( $result){
                     while ($row = $result->fetch_assoc()) { 
                         $item_total = $row['price'] * $row['quantity'];
                         $total += $item_total;
                     ?>
+
                         <tr>
                             <td><?php echo $row['item_name']; ?></td>
-                            <td><input type="number" value="<?php echo $row['quantity']; ?>" min="1" class="quantity-input"></td>
-                            <td><?php echo number_format($row['price']); ?> VNĐ</td>
-                            <td class="item-total"><?php echo number_format($item_total); ?> VNĐ</td>
-                            <td style="width: 220px;"><a href="#"><button class="confirn_food">Xác nhận</button> </a> <a href="#"><button class="delete_food">Xóa</button></a></td> <!-- Nút Xóa -->
+                            <form action="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?>&action=update&id=<?php echo $row['item_id']?>" method="POST">
+                            <td><input type="number" name = "quantity" value="<?php echo $row['quantity']; ?>" min="1" class="quantity-input"></td>
+                                <td><?php echo number_format($row['price']); ?> VNĐ</td>
+                                <td class="item-total"><?php echo number_format($item_total); ?> VNĐ</td>
+                                <td style="width: 220px;">
+                                <button type = 'submit' class="confirn_food">Xác nhận</button>
+                                </td>
+                            </form>
+                            <td>
+                             <a href="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?> &action=delete&id=<?php echo $row['item_id']?>"><button class="delete_food">Xóa</button></a>
+                            </td> <!-- Nút Xóa -->
                         </tr>
                     <?php } 
                     }?>
@@ -52,10 +60,7 @@
         <div class="checkout">
             <button class="checkout-btn">Thanh toán</button>
         </div>
-        <div class="checkout">
-            <button class="checkout-btn"><intput type = 'submit' name = 'submit'>Xác nhận</intput></button>
-        </div>
     </div>
 </main>
 
-<script src="assets/js/cart.js"></script>
+<!-- <script src="assets/js/cart.js"></script> -->
