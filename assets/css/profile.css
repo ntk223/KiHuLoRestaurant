@@ -44,13 +44,19 @@ input[type="password"] {
   cursor: pointer;
   margin: 10px auto; /* Căn giữa button */
   display: block; /* Chuyển button thành block để margin auto có hiệu lực */
-  transition: all 0.4s ease-in;
+  transition: 0.3s ease-in;
 }
 
 .form-group button:hover {
   background-color: #ffd181;
   color: black;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  transition: 0.1s ease-in;
+}
+
+.form-group button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 #profile-button.form-group {

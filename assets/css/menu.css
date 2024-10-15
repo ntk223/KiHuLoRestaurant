@@ -83,6 +83,11 @@
   transition: 0.3s ease-in-out;
 }
 
+.add-to-cart:active {
+  transform: scale(0.95);
+  box-shadow: 0 10px 20px rgba(255, 243, 19, 0.763);
+}
+
 @media (max-width: 800px) {
   .menu {
     justify-content: center;
@@ -97,7 +102,7 @@
   border: 2px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .food input[type="number"]:hover {
@@ -108,6 +113,13 @@
 .food input[type="number"]:focus {
   outline: none;
   background-color: #f1f1f1;
+  box-shadow: 0 0 8px rgba(251, 255, 2, 0.912);
+}
+
+.food input[type="number"]::-webkit-inner-spin-button,
+.food input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
 }
 
 a {

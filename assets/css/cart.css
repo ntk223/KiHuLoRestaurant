@@ -40,7 +40,7 @@
   width: 90px;
   height: 30px;
   border-radius: 10px;
-  background-color: #f8a853;
+  background-color: #ff6b3e;
   cursor: pointer;
   color: white;
   transition: 0.3s ease-in;
@@ -50,7 +50,7 @@
   background-color: #ffd181;
   transform: scale(1.05);
   color: black;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .delete_food:active {
@@ -58,6 +58,28 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+.confirn_food {
+  margin: 5px;
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #92ff5f;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s ease-in;
+}
+
+.confirn_food:hover {
+  background-color: #019c1b;
+  transform: scale(1.05);
+  color: white;
+  transition: 0.1s ease-in-out;
+}
+
+.confirn_food:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
 .checkout {
   text-align: center;
 }
@@ -77,6 +99,12 @@
   background-color: #ffd181;
   color: black;
   transform: scale(1.1);
+  transition: 0.1s ease-in;
+}
+
+.checkout-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .quantity-input {
