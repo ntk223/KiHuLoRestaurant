@@ -12,5 +12,12 @@ class CartController{
     public function addItem(){
         $result = $this->cart->addItem();
     }
+    public function deleteCartitem(){
+        $result = $this->cart->deleteItem();
+    }
+    public function updateCartitem(){
+        $result = $this->cart->updateItem();
+    }
+
 }
 ?>

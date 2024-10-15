@@ -9,6 +9,9 @@ switch ($action) {
     case 'add':
         $cart->addItem();
         break;
+    case 'delete':
+        $cart->deleteCartitem();
+        break;
     case 'update':
         $cart->updateCartitem();
         break;
