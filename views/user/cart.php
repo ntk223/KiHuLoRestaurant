@@ -26,6 +26,7 @@
                 </thead>
                 <tbody>
                     <?php 
+                    if ( $result){
                     $total = 0;
                     while ($row = $result->fetch_assoc()) { 
                         $item_total = $row['price'] * $row['quantity'];
@@ -38,7 +39,8 @@
                             <td class="item-total"><?php echo number_format($item_total); ?> VNĐ</td>
                             <td><button class="delete_food">Xóa</button></td> <!-- Nút Xóa -->
                         </tr>
-                    <?php } ?>
+                    <?php } 
+                    }?>
                 </tbody>
             </table>
         </div>
@@ -49,6 +51,9 @@
         <!-- Nút Thanh toán -->
         <div class="checkout">
             <button class="checkout-btn">Thanh toán</button>
+        </div>
+        <div class="checkout">
+            <button class="checkout-btn"><intput type = 'submit' name = 'submit'>Xác nhận</intput></button>
         </div>
     </div>
 </main>
