@@ -36,7 +36,7 @@
                             <td><input type="number" value="<?php echo $row['quantity']; ?>" min="1" class="quantity-input"></td>
                             <td><?php echo number_format($row['price']); ?> VNĐ</td>
                             <td class="item-total"><?php echo number_format($item_total); ?> VNĐ</td>
-                            <td><button class="delete_food">Xóa</button></td> <!-- Nút Xóa -->
+                            <td style="width: 220px;"><a href="#"><button class="confirn_food">Xác nhận</button> </a> <a href="#"><button class="delete_food">Xóa</button></a></td> <!-- Nút Xóa -->
                         </tr>
                     <?php } ?>
                 </tbody>
