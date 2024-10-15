@@ -59,7 +59,7 @@
 }
 
 .confirn_food {
-  padding: 5px;
+  margin: 5px;
   width: 90px;
   height: 30px;
   border-radius: 10px;
@@ -99,6 +99,12 @@
   background-color: #ffd181;
   color: black;
   transform: scale(1.1);
+  transition: 0.1s ease-in;
+}
+
+.checkout-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .quantity-input {
