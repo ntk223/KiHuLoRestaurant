@@ -1,4 +1,53 @@
-<link rel="stylesheet" href="assets/css/adduser.css">
+<style>
+    .adduser {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-section label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-section input,
+    .form-section textarea,
+    .form-section select {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .form-section .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .form-section .button:hover {
+        background-color: #0056b3;
+    }
+</style>
 <main>
     <main class ="adduser">
 <section class="form-section">

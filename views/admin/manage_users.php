@@ -32,7 +32,8 @@
                     <td><?php echo $row['registration_date'];?></td>
                     <td>
                     <a href="index.php?role=admin&manage=customer&action=update&id=<?php echo $row['user_id']?>" class="button">Sửa</a>
-                    <a href="index.php?role=admin&manage=customer&action=delete&id=<?php echo $row['user_id']?>" class="button">Xóa</a>
+                    <a href="index.php?role=admin&manage=customer&action=delete&id=<?php echo $row['user_id']?>" class="button"
+                    onclick="return confirm('Bạn chắc chắn muốn xóa người dùng này?');">Xóa</a>
                     </td>
                 <?php }?>
             </tbody>
