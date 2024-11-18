@@ -11,24 +11,11 @@ class Cart{
         $check = "SELECT * FROM carts WHERE customer_id = '$id'";
         $exist = $this->db->Select($check);
         if( $exist == false || !( $exist->num_rows > 0)){
-            $query = "INSERT INTO carts (customer_id, total) VALUES ('$id', 0)";
+            $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
             $result = $this->db->Insert($query);
         }
 
-        $query1 = "UPDATE carts c
-                    INNER JOIN cartitems ci ON c.cart_id = ci.cart_id
-                    INNER JOIN menuitems mi ON mi.item_id = ci.item_id
-                    SET c.total = (
-                        SELECT SUM(mi2.price * ci2.quantity)
-                        FROM cartitems ci2
-                        INNER JOIN menuitems mi2 ON mi2.item_id = ci2.item_id
-                        WHERE ci2.cart_id = c.cart_id
-                    )
-                    WHERE c.customer_id = '$id'";
-
-        $res = $this->db->Update($query1);
-
-        $query =   "SELECT mi.item_id,ci.cart_id, mi.item_name, mi.price, ci.quantity, c.total
+        $query =   "SELECT mi.item_id,ci.cart_id, mi.item_name, mi.price, ci.quantity
                     FROM users u
                     INNER JOIN carts c ON c.customer_id = u.user_id
                     INNER JOIN cartitems ci ON c.cart_id = ci.cart_id
@@ -45,7 +32,7 @@ class Cart{
         $exist = $this->db->Select($check);
         $cart_id = -1 ;
         if( $exist == false || !( $exist->num_rows > 0)){
-            $query = "INSERT INTO carts (customer_id, total) VALUES ('$id', 0)";
+            $query = "INSERT INTO carts (customer_idl) VALUES ('$id')";
             $result = $this->db->Insert($query);
             $cart_id = $this->db->conn->insert_id;
         }
@@ -62,8 +49,8 @@ class Cart{
             //header("Location: index.php?role=customer&page=menu");
         }
         else{
-            $query = "INSERT INTO cartitems (cart_id, item_id, quantity, price) 
-                        VALUES ('$cart_id', '$item_id','$quantity', 0 )";
+            $query = "INSERT INTO cartitems (cart_id, item_id, quantity) 
+                        VALUES ('$cart_id', '$item_id','$quantity' )";
             $result = $this->db->Insert($query);
         }
         header("Location: index.php?role=customer&page=menu");

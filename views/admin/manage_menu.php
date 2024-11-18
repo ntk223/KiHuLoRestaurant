@@ -1,4 +1,6 @@
 <main>
+<link rel='stylesheet' href="assets/css/manage_user.css">
+
         <section class="menu-table-section">
             <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>
 
@@ -33,12 +35,10 @@
                         <td>
                         <a href="#" class="button ">Xem</a>
                         <a href="index.php?role=admin&manage=menu&action=update&id=<?php echo $row['item_id']?>" class="button ">Sửa</a>
-                        <a href="index.php?role=admin&manage=menu&action=delete&id=<?php echo $row['item_id']?>" class="button " onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
-
+                        <a href="index.php?role=admin&manage=menu&action=delete&id=<?php echo $row['item_id']?>" class="button "
+                         onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
                         </td>
                     </tr>
-
-                    <!-- Các món ăn khác sẽ được lặp qua ở đây -->
                     <?php }/* Ở đây sẽ là vòng lặp PHP để hiển thị danh sách món ăn */ ?>
                 </tbody>
             </table>

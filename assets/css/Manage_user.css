@@ -1,54 +1,39 @@
-/* Định dạng cho phần chính */
 main {
-  flex-grow: 1; /* Chiếm hết không gian còn lại */
-  padding: 20px; /* Khoảng cách bên trong main */
-  background-color: #fff; /* Màu nền cho main */
-  border-radius: 5px; /* Bo tròn góc cho main */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bóng đổ cho main */
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-/* Định dạng cho phần danh sách người dùng */
-.user-table-section {
-  margin-top: 20px; /* Khoảng cách phía trên */
+.menu-table-section {
+  margin: 20px 0;
 }
 
-/* Định dạng cho nút thêm người dùng */
 .button {
-  display: inline-block; /* Hiển thị dạng khối */
-  background-color: #f44336; /* Màu nền cho nút */
-  color: white; /* Màu chữ cho nút */
-  padding: 10px 15px; /* Padding cho nút */
-  border-radius: 5px; /* Bo tròn góc nút */
-  text-decoration: none; /* Không có gạch chân */
-  margin-bottom: 20px; /* Khoảng cách dưới nút */
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #FF9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
-
-/* Định dạng cho bảng */
 table {
-  width: 100%; /* Chiều rộng đầy đủ */
-  border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
-  margin-top: 20px; /* Khoảng cách phía trên bảng */
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* Định dạng cho tiêu đề bảng */
-thead {
-  background-color: #f8a853; /* Màu nền cho tiêu đề bảng */
-  color: #fff; /* Màu chữ cho tiêu đề bảng */
+table, th, td {
+  border: 1px solid black;
 }
 
-/* Định dạng cho các ô tiêu đề */
 th, td {
-  padding: 12px; /* Padding cho các ô */
-  border: 1px solid #ccc; /* Đường viền cho các ô */
-  text-align: left; /* Căn trái chữ trong ô */
+  padding: 15px;
+  text-align: left;
 }
 
-/* Định dạng cho các ô trong bảng */
-tbody tr:hover {
-  background-color: #f1f1f1; /* Màu nền khi hover */
+th {
+  background-color: #f2f2f2;
 }
 
-/* Định dạng cho các nút hành động trong bảng */
-td a {
-  margin-right: 10px; /* Khoảng cách giữa các nút */
+img {
+  border-radius: 5px;
 }
