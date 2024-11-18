@@ -71,6 +71,32 @@ class MenuItem
         return $result;
     }
 
+    public function statisticCategory()
+    {
+        $sql = "SELECT 
+            CASE
+                WHEN category_id = 1 THEN 'Món chính'
+                WHEN category_id = 2 THEN 'Món khai vị'
+                WHEN category_id = 3 THEN 'Món chính'
+                ELSE 'Nước uống'
+            END AS 'Loại món',
+            COUNT(*) AS 'Số lượng món',
+            CONCAT(ROUND(COUNT(*) / total_items * 100, 2),'%') AS 'Phần trăm loại món ăn'
+        FROM menuitems,
+            (SELECT COUNT(*) AS total_items FROM menuitems) AS total
+        GROUP BY category_id";
+        $result = $this->db->Query($sql);
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                echo $row['Loại món'] . " - " . $row['Số lượng món'] . " - " . $row['Phần trăm loại món ăn'] . "<br>";
+            }
+        } else {
+            echo "Không có dữ liệu.";
+        }
+
+    }
+
 
 }
 ?>
