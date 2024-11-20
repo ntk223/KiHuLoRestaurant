@@ -19,6 +19,16 @@ class ReviewController {
         include_once "views/admin/reviewdetail.php";
     }
 
+    public function deleteReview() {
+        $id = $_GET['id'];
+        $result = $this->review->deleteReview($id);
+        if ($result) {
+            header("Location: index.php?role=admin&manage=review");
+        } else {
+            echo "Error";
+        }
+    }
+
 }
 
 ?>

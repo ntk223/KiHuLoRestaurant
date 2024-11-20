@@ -79,22 +79,43 @@ class MenuItem
                 WHEN category_id = 2 THEN 'Món khai vị'
                 WHEN category_id = 3 THEN 'Món chính'
                 ELSE 'Nước uống'
-            END AS 'Loại món',
-            COUNT(*) AS 'Số lượng món',
-            CONCAT(ROUND(COUNT(*) / total_items * 100, 2),'%') AS 'Phần trăm loại món ăn'
+            END AS 'category_name',
+            COUNT(*) AS 'num_of_item',
+            CONCAT(ROUND(COUNT(*) / total_items * 100, 2),'%') AS 'rate'
         FROM menuitems,
             (SELECT COUNT(*) AS total_items FROM menuitems) AS total
         GROUP BY category_id";
-        $result = $this->db->Query($sql);
+        $result = $this->db->Select($sql);
 
-        if ($result) {
-            while ($row = $result->fetch_assoc()) {
-                echo $row['Loại món'] . " - " . $row['Số lượng món'] . " - " . $row['Phần trăm loại món ăn'] . "<br>";
-            }
-        } else {
-            echo "Không có dữ liệu.";
+        if ($result->num_rows > 0)
+        {
+            return $result;
         }
+        return false;
+    }
 
+    public function statisticItem() {
+        $query = "SELECT 
+                    mi.item_name, 
+                    SUM(o.quantity) AS total_sales,
+                    ROUND(AVG(r.rating), 1) AS avg_rating
+                FROM 
+                    menuitems mi
+                JOIN 
+                    orderitems o ON o.item_id = mi.item_id
+                LEFT JOIN
+                    reviews r ON r.item_id = mi.item_id
+                GROUP BY 
+                    mi.item_name
+                ORDER BY 
+                    total_sales DESC;
+                ";
+        $result = $this->db->Select($query);
+        if ($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
     }
 
 

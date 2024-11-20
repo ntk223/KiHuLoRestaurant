@@ -1,21 +1,44 @@
 <main>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 <h1 style="text-align: center;">Thống kê Loại Món Ăn</h1>
     <table>
         <thead>
-            <tr style="background-color: #f2f2f2; font-weight: bold;">
+            <tr >
                 <th>Loại món</th>
                 <th>Số lượng món</th>
                 <th>Phần trăm loại món ăn</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($data as $row): ?>
+            <?php include_once "models/MenuItem.php";
+            $menuItem = new MenuItem();
+            $result = $menuItem->statisticCategory();
+            while ($row = $result->fetch_assoc()) { ?>
+
                 <tr>
-                    <td style="text-align: center;"><?= $row['Loại món'] ?></td>
-                    <td style="text-align: center;"><?= $row['Số lượng món'] ?></td>
-                    <td style="text-align: center;"><?= $row['Phần trăm loại món ăn'] ?></td>
+                    <td><?php echo $row['category_name']; ?></td>
+                    <td><?php echo $row['num_of_item']; ?></td>
+                    <td><?php echo $row['rate']; ?></td>
                 </tr>
-            <?php endforeach; ?>
+            <?php } ?>
         </tbody>
     </table>
 </main>

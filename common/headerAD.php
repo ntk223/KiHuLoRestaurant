@@ -7,6 +7,6 @@
     <title>Header</title>
 </head>
 <body>
-    <header class="header"><b>Hệ Thống Quản Lý Nhà Hàng</b></header>
+    <header class="header"><b><h1>Hệ Thống Quản Lý Nhà Hàng</h1></b></header>
 </body>
 </html>

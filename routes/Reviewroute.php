@@ -13,7 +13,7 @@ switch ($action) {
     case 'update':
         break;
     case 'delete':
-        echo "This is delete page";
+        $reviewController->deleteReview();
         break;
     default:
         echo "Page not found 123";

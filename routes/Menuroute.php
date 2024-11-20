@@ -28,6 +28,8 @@ else if ($role == 'admin' )
         case 'delete':
             $menu->deleteItem();
             break;
+        case 'statistic':
+            
         default:
             echo "Page not found";
             break;
