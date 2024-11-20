@@ -10,9 +10,10 @@ switch ($action) {
     case 'detail':
         break;
     case 'update':
+        $paymentController->updatePaymentStatus();
         break;
     case 'delete':
-        echo "This is delete page";
+        $paymentController->deletePayment();
         break;
     default:
         echo "Page not found";

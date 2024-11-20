@@ -13,5 +13,33 @@ class  PaymentController {
         include_once "views/admin/manage_payments.php";
     }
 
+    public function updatePaymentStatus() {
+        if (isset($_POST['submit'])) {
+            $payment_id = $_POST['submit'];
+            $payment_status = $_POST['payment_status'];
+            $result = $this->payment->updatePaymentStatus($payment_id, $payment_status);
+            if ($result) {
+                header("Location: index.php?role=admin&manage=payment");
+            } else {
+                echo "Cập nhật thất bại";
+            }
+        }
+    }
+
+    public function deletePayment() {
+        if (isset($_GET['id'])) {
+            $payment_id = $_GET['id'];
+            $result = $this->payment->deletePayment($payment_id);
+            if ($result) {
+                header("Location: index.php?role=admin&manage=payment");
+            } else {
+                echo "Xóa thất bại";
+            }
+        }
+        
+    }
+
+
+
 }
  ?>

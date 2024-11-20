@@ -37,5 +37,11 @@ class Review {
             return false;
         }
     }
+
+    public function deleteReview($id) {
+        $query = "DELETE FROM reviews WHERE review_id = '$id'";
+        $result = $this->db->Delete($query);
+        return $result;
+    }
 }
 ?>

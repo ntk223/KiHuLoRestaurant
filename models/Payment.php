@@ -22,5 +22,22 @@ class Payment {
             return false;
         }
     }
+
+    public function updatePaymentStatus($payment_id, $payment_status) {
+
+        $query = "UPDATE payments SET payment_status = '$payment_status' WHERE payment_id = $payment_id";
+        $res = $this->db->Update($query);
+        if (  $res ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deletePayment($payment_id) {
+        $query = "DELETE FROM payments WHERE payment_id = '$payment_id'";
+        $res = $this->db->Delete($query);
+        return $res;
+    }
 }
 ?>

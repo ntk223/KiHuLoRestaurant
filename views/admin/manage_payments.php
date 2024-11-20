@@ -2,8 +2,8 @@
 <main>
     <h1>Quản lý đơn hàng</h1>
     <section class="user-table-section">
-        <h2>Danh sách đơn hàng</h2>
-        <form action="" method="POST">
+        <h2>Danh sách giao dịch</h2>
+        <form action="index.php?role=admin&manage=payment&action=update" method="POST">
             <table>
                 <thead>
                     <tr>
@@ -21,14 +21,13 @@
                         <tr>
                             <td><?php echo $row['payment_id']; ?></td>
                             <td><?php echo $row['order_id']; ?></td>
-                            <td>
-                                <select name="payment_method">
-                                    <option value="processing" <?php if($row['payment_method'] == 'Tiền mặt') echo 'selected'; ?>>Tiền mặt</option>
-                                    <option value="confirmed" <?php if($row['payment_method']== 'Thẻ tín dụng') echo 'selected'; ?>>Thẻ tín dụng</option>
-                                    <option value="cancelled" <?php if($row['payment_method'] == 'Tài khoản ngân hàng') echo 'selected'; ?>>Tài khoản ngân hàng</option>
-                                </select>
-                            </td>
-                            <td><?php echo $row['payment_status']; ?></td>
+                            <td><?php echo $row['payment_method']; ?></td>
+
+                            <td><select name = "payment_status">
+                                <option value="Đang xử lý giao dịch" <?php if($row['payment_status'] == 'Đang xử lý giao dịch') echo 'selected'; ?>>Đang xử lý giao dịch</option>
+                                <option value="Thanh toán thành công" <?php if($row['payment_status'] == 'Thanh toán thành công') echo 'selected'; ?>>Thanh toán thành công	</option>
+                                <option value="Thanh toán thất bại" <?php if($row['payment_status'] == 'Thanh toán thất bại') echo 'selected'; ?>>Thanh toán thất bại</option>
+                            </select></td>
 
                             <td><?php echo $row['payment_time']; ?></td>
                             <td><?php echo $row['amount']; ?></td>
@@ -36,7 +35,7 @@
                             <td style="width: 300px;">
                                 <!-- Nút Sửa thay vì nút gửi chung -->
                                 <button type="submit" name="submit" value="<?php echo $row['payment_id']; ?>" class="button">Xác nhận trạng thái</button>
-                                <a href="index.php?role=admin&manage=order&action=delete&id=<?php echo $row['order_id'];?>" class="button">Xóa</a>
+                                <a href="index.php?role=admin&manage=payment&action=delete&id=<?php echo $row['payment_id'];?>" class="button">Xóa</a>
                                 <a href="index.php?role=admin&manage=order&action=detail&id=<?php echo $row['order_id'];?>" class="button">Xem chi tiết</a>
                             </td>
                         </tr>

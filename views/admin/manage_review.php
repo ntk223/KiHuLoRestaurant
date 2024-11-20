@@ -29,7 +29,6 @@
                     <td><?php echo $row['rating']; ?></td>
                     <td><?php echo $row['review_date']; ?></td>
                     <td>
-                        <a href="index.php?role=admin&manage=review&action=edit&id=<?php echo $row['review_id']; ?>">Sửa</a>
                         <a href="index.php?role=admin&manage=review&action=delete&id=<?php echo $row['review_id']; ?>" 
                         onclick="return confirm('Bạn chắc chắn muốn xóa bình luận này?');">Xóa</a>
                     </td>

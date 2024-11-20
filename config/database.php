@@ -55,5 +55,40 @@ Class Database{
         if ( $delete_row) return $delete_row;
         else return false;
     }
+
+    public function Query($sql, $params = []) {
+        try {
+            // Prepare the statement
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Lỗi chuẩn bị truy vấn: " . $this->conn->error);
+            }
+    
+            // Bind parameters if provided
+            if ($params) {
+                $types = str_repeat('s', count($params)); // Assume all parameters are strings for simplicity
+                $stmt->bind_param($types, ...$params);
+            }
+    
+            // Execute the query
+            $stmt->execute();
+    
+            // Check if it’s a SELECT query
+            if (stripos(trim($sql), 'SELECT') === 0) {
+                $result = $stmt->get_result();
+                if (!$result) {
+                    throw new Exception("Lỗi thực thi truy vấn: " . $stmt->error);
+                }
+                return $result; // Return the result set
+            } else {
+                // For INSERT, UPDATE, DELETE
+                return $stmt->affected_rows; // Return number of affected rows
+            }
+        } catch (Exception $e) {
+            echo "Có lỗi xảy ra: " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }
 ?>
