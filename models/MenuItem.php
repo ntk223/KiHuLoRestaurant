@@ -101,7 +101,7 @@ class MenuItem
                     ROUND(AVG(r.rating), 1) AS avg_rating
                 FROM 
                     menuitems mi
-                JOIN 
+                LEFT JOIN 
                     orderitems o ON o.item_id = mi.item_id
                 LEFT JOIN
                     reviews r ON r.item_id = mi.item_id

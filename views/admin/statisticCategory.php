@@ -18,7 +18,7 @@
         background-color: #f2f2f2;
     }
 </style>
-<h1 style="text-align: center;">Thống kê Loại Món Ăn</h1>
+<h1 style="text-align: center;">Thống kê</h1>
     <table>
         <thead>
             <tr >
@@ -40,5 +40,25 @@
                 </tr>
             <?php } ?>
         </tbody>
+    </table>
+    <h1 style="text-align: center;">Thống kê Món Ăn</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên món</th>
+                <th>Số lượng đã bán</th>
+                <th>Đánh giá trung bình</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $result = $menuItem->statisticItem();
+            while ($row = $result->fetch_assoc()) { ?>
+                <tr>
+                    <td><?php echo $row['item_name']; ?></td>
+                    <td><?php echo $row['total_sales']; ?></td>
+                    <td><?php echo $row['avg_rating']; ?></td>
+                </tr>
+            <?php } ?>
     </table>
 </main>

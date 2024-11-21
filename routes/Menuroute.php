@@ -29,7 +29,8 @@ else if ($role == 'admin' )
             $menu->deleteItem();
             break;
         case 'statistic':
-            
+            include_once "views/admin/statisticCategory.php";
+            break;
         default:
             echo "Page not found";
             break;
