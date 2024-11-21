@@ -44,6 +44,13 @@
             </table>
         </form>
         <br>
+        <?php 
+        include_once "models/Payment.php";
+        $paymentModel = new Payment();
+        $totalPayments = $paymentModel->getTotalPayments();
+        ?>
+        <h2>Tổng doanh thu: <?php echo number_format($totalPayments); ?> VNĐ</h2>
+
         <a href="index.php?role=admin" class="button">Trở về</a>
     </section>
 </main>

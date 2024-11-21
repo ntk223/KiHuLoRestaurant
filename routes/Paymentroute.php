@@ -15,6 +15,8 @@ switch ($action) {
     case 'delete':
         $paymentController->deletePayment();
         break;
+    case 'showTotalPayments':
+        $paymentController->showTotalPayments();
     default:
         echo "Page not found";
         break;

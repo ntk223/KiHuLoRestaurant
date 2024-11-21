@@ -39,6 +39,15 @@ class  PaymentController {
         
     }
 
+    public function showTotalPayments()
+    {
+        // Lấy tổng thanh toán từ model
+        $totalPayments = $this->payment->getTotalPayments();
+
+        // Gửi dữ liệu sang view
+        include './views/totalPaymentsView.php';
+    }
+
 
 
 }

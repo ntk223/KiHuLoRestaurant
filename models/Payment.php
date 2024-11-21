@@ -39,5 +39,24 @@ class Payment {
         $res = $this->db->Delete($query);
         return $res;
     }
+
+    //Tổng doanh thu
+    public function getTotalPayments()
+    {
+        $sql = "SELECT SUM(amount) AS total_payment
+                FROM payments
+                WHERE payment_status = 'Thanh toán thành công'";
+                
+        $result = $this->db->Select($sql);
+
+        if ($result && $result->num_rows > 0)
+        {
+            // Lấy hàng đầu tiên
+            $row = $result->fetch_assoc();
+            return $row['total_payment'];
+        }
+        return 0; // Trả về 0 nếu không có kết quả
+    }
+
 }
 ?>
