@@ -128,14 +128,15 @@ class User
     public function getTopCustomers()
     {
         $sql = "SELECT
-                u.username, 
-                COUNT(o.customer_id) AS total_buy
-            FROM users u
-            JOIN orders o ON o.customer_id = u.user_id
-            JOIN deliveries d ON o.order_id = d.order_id
-            WHERE d.status = 'Giao hàng thành công'
-            GROUP BY u.username
-            ORDER BY total_buy DESC";
+            u.username, 
+            SUM(o.total) AS total_purchase,
+            COUNT(o.customer_id) AS total_buy
+        FROM users u
+        LEFT JOIN orders o ON o.customer_id = u.user_id
+        LEFT JOIN deliveries d ON o.order_id = d.order_id
+        WHERE d.status = 'Giao hàng thành công'
+        GROUP BY u.username
+        ORDER BY total_purchase DESC";
         return $this->db->Select($sql); // Kết nối với database
     }
 

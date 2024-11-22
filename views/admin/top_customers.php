@@ -6,6 +6,7 @@
             <thead>
                 <tr>
                     <th>Tên khách hàng</th>
+                    <th>Tổng tiền mua</th>
                     <th>Số lần mua hàng</th>
                 </tr>
             </thead>
@@ -17,6 +18,7 @@
 
                     <tr>
                         <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['total_purchase']; ?></td>
                         <td><?php echo $row['total_buy']; ?></td>
                     </tr>
                 <?php } ?>
