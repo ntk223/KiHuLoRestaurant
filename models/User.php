@@ -124,5 +124,21 @@ class User
         }
     }
 
+    //Đưa ra khách hàng mua nhiều nhất
+    public function getTopCustomers()
+    {
+        $sql = "SELECT
+                u.username, 
+                COUNT(o.customer_id) AS total_buy
+            FROM users u
+            JOIN orders o ON o.customer_id = u.user_id
+            JOIN deliveries d ON o.order_id = d.order_id
+            WHERE d.status = 'Giao hàng thành công'
+            GROUP BY u.username
+            ORDER BY total_buy DESC";
+        return $this->db->Select($sql); // Kết nối với database
+    }
+
+
 }
 ?>
