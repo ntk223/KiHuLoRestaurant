@@ -4,6 +4,7 @@
     <section class="user-table-section">
         <h2>Danh sách giao dịch</h2>
         <form action="index.php?role=admin&manage=payment&action=update" method="POST">
+        <a href="index.php?role=admin&manage=payment&action=revenue" class="button">Thống kê</a>
             <table>
                 <thead>
                     <tr>
