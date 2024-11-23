@@ -50,18 +50,29 @@ class  PaymentController {
 
     //Thống kê theo thời gian được nhập
     public function revenue()
-{
-    $revenueData = null; // Biến chứa dữ liệu thống kê doanh thu
-    if (isset($_POST['start_date']) && isset($_POST['end_date'])) {
-        $start_date = $_POST['start_date'];
-        $end_date = $_POST['end_date'];
+    {
+        $revenueData = null; // Biến chứa dữ liệu thống kê doanh thu
+        if (isset($_POST['start_date']) && isset($_POST['end_date'])) {
+            $start_date = $_POST['start_date'];
+            $end_date = $_POST['end_date'];
 
-        $revenueData = $this->payment->getRevenueByDateRange($start_date, $end_date);
+            $revenueData = $this->payment->getRevenueByDateRange($start_date, $end_date);
+        }
+
+        // Gửi dữ liệu xuống view
+        include_once "views/admin/revenue_statistics.php";
     }
 
-    // Gửi dữ liệu xuống view
-    include_once "views/admin/revenue_statistics.php";
-}
+    //Thống kê loại thanh toán phổ biến
+    public function showPaymentStats()
+    {
+        include_once "models/Payment.php";
+        $payment = new Payment();
+        $data = $payment->getPaymentMethodStats();
+
+        include "views/admin/paymentStatistics.php";
+    }
+
 
 
 }

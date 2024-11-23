@@ -21,6 +21,9 @@ switch ($action) {
     case 'revenue':
         $paymentController->revenue();
         break;
+    case 'paymentStatistics':
+        $paymentController->showPaymentStats();
+        break;
     default:
         echo "Page not found";
         break;

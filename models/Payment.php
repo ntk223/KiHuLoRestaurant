@@ -60,28 +60,49 @@ class Payment {
 
     // Thống kê doanh thu
     public function getRevenueByDateRange($startDate, $endDate)
-{
-    $sql = "SELECT DATE(payment_time) AS payment_date, SUM(amount) AS daily_revenue
-            FROM payments
-            WHERE payment_status = 'Thanh toán thành công'
-              AND payment_time BETWEEN '$startDate 00:00:00' AND '$endDate 23:59:59'
-            GROUP BY DATE(payment_time)";
-    $result = $this->db->Select($sql);
+    {
+        $sql = "SELECT DATE(payment_time) AS payment_date, SUM(amount) AS daily_revenue
+                FROM payments
+                WHERE payment_status = 'Thanh toán thành công'
+                AND payment_time BETWEEN '$startDate 00:00:00' AND '$endDate 23:59:59'
+                GROUP BY DATE(payment_time)";
+        $result = $this->db->Select($sql);
 
-    $revenueData = [
-        'total_revenue' => 0,
-        'daily_revenue' => []
-    ];
+        $revenueData = [
+            'total_revenue' => 0,
+            'daily_revenue' => []
+        ];
 
-    if ($result) {
-        while ($row = $result->fetch_assoc()) {
-            $revenueData['daily_revenue'][$row['payment_date']] = $row['daily_revenue'];
-            $revenueData['total_revenue'] += $row['daily_revenue'];
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $revenueData['daily_revenue'][$row['payment_date']] = $row['daily_revenue'];
+                $revenueData['total_revenue'] += $row['daily_revenue'];
+            }
         }
+
+        return $revenueData;
     }
 
-    return $revenueData;
-}
+
+    // Thống kê phương thức thanh toán phổ biến
+    public function getPaymentMethodStats()
+    {
+        $sql = "
+            SELECT 
+                payment_method, 
+                COUNT(*) AS method_count, 
+                CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM payments) * 100, 2), '%') AS method_percentage 
+            FROM payments
+            GROUP BY payment_method
+        ";
+        $result = $this->db->Select($sql);
+
+        if ($result) {
+            return $result;
+        }
+        return false;
+    }
+
 
 }
 ?>
