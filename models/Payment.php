@@ -86,7 +86,7 @@ class Payment {
 
     // Thống kê phương thức thanh toán phổ biến
     public function getPaymentMethodStats() {
-        $sql = "SELECT 
+        $query = "SELECT 
                     payment_method, 
                     COUNT(*) AS method_count, 
                     CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM payments) * 100, 2), '%') AS method_percentage,
@@ -96,7 +96,13 @@ class Payment {
                 GROUP BY 
                     payment_method";
     
-        return $this->db->Select($sql);
+        $result = $this->db->Select($query);
+
+        if ($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
     }
     
 }

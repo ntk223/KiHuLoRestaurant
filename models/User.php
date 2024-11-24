@@ -144,7 +144,7 @@ class User
     //Đưa ra khách hàng hủy nhiều nhất
     public function getCancelRateByCustomer()
     {
-        $sql = "SELECT 
+        $query = "SELECT 
             u.username,
             COUNT(o.order_id) AS total_orders,
             SUM(CASE WHEN o.order_status = 'Đã hủy' THEN 1 ELSE 0 END) AS cancelled_orders,
@@ -154,8 +154,13 @@ class User
         GROUP BY u.username
         HAVING cancelled_orders > 0
         ORDER BY cancel_rate DESC";
-        
-        return $this->db->Select($sql);
+        $result = $this->db->Select($query);
+
+        if ($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
     }
 
 

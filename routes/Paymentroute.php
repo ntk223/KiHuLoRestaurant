@@ -22,7 +22,7 @@ switch ($action) {
         $paymentController->revenue();
         break;
     case 'paymentStatistics':
-        $paymentController->showPaymentStats();
+        include_once "views/admin/statisticPayment.php";
         break;
     default:
         echo "Page not found";
