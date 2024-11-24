@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="assets/css/tableview.css">
-<body>
     <h1>Top Khách Hàng</h1>
 
         <table >
@@ -24,4 +23,3 @@
                 <?php } ?>
             </tbody>
         </table>
-</body>

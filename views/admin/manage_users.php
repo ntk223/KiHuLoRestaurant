@@ -3,7 +3,7 @@
     
     <!-- Bảng người dùng hiện có -->
     <section class="user-table-section">
-        <a href="index.php?role=admin&manage=customer&action=top_customers" class="button">Thống kê</a>
+        <a href="index.php?role=admin&manage=customer&action=statisticCustomer" class="button">Thống kê</a>
         <a href="index.php?role=admin&manage=customer&action=add" class="button">Thêm người dùng</a>
 
         <h2>Danh sách người dùng</h2>

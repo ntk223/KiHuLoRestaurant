@@ -136,9 +136,28 @@ class User
         LEFT JOIN deliveries d ON o.order_id = d.order_id
         WHERE d.status = 'Giao hàng thành công'
         GROUP BY u.username
+        HAVING total_buy > 0
         ORDER BY total_purchase DESC";
         return $this->db->Select($sql); // Kết nối với database
     }
+
+    //Đưa ra khách hàng hủy nhiều nhất
+    public function getCancelRateByCustomer()
+    {
+        $sql = "SELECT 
+            u.username,
+            COUNT(o.order_id) AS total_orders,
+            SUM(CASE WHEN o.order_status = 'Đã hủy' THEN 1 ELSE 0 END) AS cancelled_orders,
+            CONCAT(ROUND(SUM(CASE WHEN o.order_status = 'Đã hủy' THEN 1 ELSE 0 END) / COUNT(o.order_id) * 100, 2), '%') AS cancel_rate
+        FROM users u
+        JOIN orders o ON o.customer_id = u.user_id
+        GROUP BY u.username
+        HAVING cancelled_orders > 0
+        ORDER BY cancel_rate DESC";
+        
+        return $this->db->Select($sql);
+    }
+
 
 
 }

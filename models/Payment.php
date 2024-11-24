@@ -85,24 +85,19 @@ class Payment {
 
 
     // Thống kê phương thức thanh toán phổ biến
-    public function getPaymentMethodStats()
-    {
-        $sql = "
-            SELECT 
-                payment_method, 
-                COUNT(*) AS method_count, 
-                CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM payments) * 100, 2), '%') AS method_percentage 
-            FROM payments
-            GROUP BY payment_method
-        ";
-        $result = $this->db->Select($sql);
-
-        if ($result) {
-            return $result;
-        }
-        return false;
+    public function getPaymentMethodStats() {
+        $sql = "SELECT 
+                    payment_method, 
+                    COUNT(*) AS method_count, 
+                    CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM payments) * 100, 2), '%') AS method_percentage,
+                    SUM(amount) AS total_amount
+                FROM 
+                    payments
+                GROUP BY 
+                    payment_method";
+    
+        return $this->db->Select($sql);
     }
-
-
+    
 }
 ?>

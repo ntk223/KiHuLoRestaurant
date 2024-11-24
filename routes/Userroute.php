@@ -16,8 +16,8 @@ switch ($action) {
     case 'delete':
         $user->deleteUser();
         break;
-    case 'top_customers':
-        include_once "views/admin/top_customers.php";
+    case 'statisticCustomer':
+        include_once "views/admin/statisticCustomer.php";
         break;
     default:
         echo "Page not found";
