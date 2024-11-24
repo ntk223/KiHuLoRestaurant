@@ -66,9 +66,7 @@ class  PaymentController {
     //Thống kê loại thanh toán phổ biến
     public function showPaymentStats()
     {
-        include_once "models/Payment.php";
-        $payment = new Payment();
-        $data = $payment->getPaymentMethodStats();
+        $data = $this->payment->getPaymentMethodStats();
 
         include "views/admin/paymentStatistics.php";
     }

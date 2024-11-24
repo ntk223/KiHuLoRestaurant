@@ -1,6 +1,7 @@
 <link rel='stylesheet' href="assets/css/manage_user.css">
 <main>
     <h1>Quản lý đơn hàng</h1>
+    <a href="index.php?role=admin&manage=delivery&action=statisticDelivery" class="button">Thống kê</a>
     <section class="user-table-section">
         <h2>Danh sách giao hàng</h2>
         <form action="index.php?role=admin&manage=delivery&action=update" method="POST">

@@ -15,6 +15,9 @@ switch ($action) {
     case 'delete':
         echo "This is delete page";
         break;
+    case 'statisticDelivery':
+        include_once "views/admin/statisticDelivery.php";
+        break;
     default:
         echo "Page not found 123";
         break;

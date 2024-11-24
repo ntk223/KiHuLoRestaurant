@@ -18,5 +18,10 @@ class  DeliveryController {
         $result = $this->deli->DeliveryDetail($id);
         include_once "views/admin/deliverydetail.php";
     }
+
+    public function showAverageDeliveryTime() {
+        $result = $this->deli->getAverageDeliveryTime();
+        include "views/admin/statisticDelivery.php";
+    }
 }
  ?>
