@@ -67,7 +67,7 @@ class  PaymentController {
     public function showPaymentStats()
     {
         $data = $this->payment->getPaymentMethodStats();
-
+        $data = $this->payment->getPaymentMonth();
         include "views/admin/paymentStatistics.php";
     }
 
