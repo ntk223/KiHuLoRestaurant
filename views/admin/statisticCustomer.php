@@ -1,6 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê người dùng</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
 <link rel="stylesheet" href="assets/css/tableview.css">
+</head>
+</html>
+<body>
+<button id="exportExcel">Tải file Excel</button>
 <?php include_once "models/User.php";
         $user = new User();?>
+        
 <!-- In ra top khách hàng trả nhiều tiên nhất và số lần mua hàng -->
 <h1>Top Khách Hàng</h1>
 
@@ -84,3 +97,6 @@
             <?php } ?>
     </tbody>
 </table>
+</body>
+
+<script src="assets/js/fileExcel.js"></script>
