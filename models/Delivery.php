@@ -90,5 +90,21 @@ class Delivery {
         }
     }
 
+    //Thống kê ttỉ lệ các trạng thái giao hàng
+    public function getStatusShip() {
+        $query = "SELECT 
+    d.status, 
+    COUNT(*) AS total_deliveries, 
+    CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM deliveries) * 100, 2), '%') AS status_percentage 
+FROM deliveries d
+GROUP BY d.status;";
+    $result = $this->db->Select($query);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>
