@@ -19,11 +19,5 @@ class  DeliveryController {
         include_once "views/admin/deliverydetail.php";
     }
 
-    //Hiển thị thống kê
-    public function showStatistics() {
-        $avgDeliveryTime = $this->deli->getAverageDeliveryTime(); // Thời gian giao hàng trung bình
-        $successShipperRate = $this->deli->getSuccessShip(); // Tỷ lệ giao hàng thành công của shipper
-        include "views/admin/statisticDelivery.php";
-    }
 }
  ?>

@@ -40,11 +40,6 @@ class UserController
         include_once "views/user/password.php";
         $this->user->updatePassword();
     }
-    public function showCancelRateByCustomer()
-    {
-        include_once "views/admin/statisticCustomer.php";
-        $this->user->getCancelRateByCustomer();
-    }
 
 }
 ?>

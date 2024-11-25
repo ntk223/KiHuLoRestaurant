@@ -39,6 +39,7 @@ class  PaymentController {
         
     }
 
+    //Show tổng doanh thu cho đến hiện tại
     public function showTotalPayments()
     {
         // Lấy tổng thanh toán từ model
@@ -62,16 +63,6 @@ class  PaymentController {
         // Gửi dữ liệu xuống view
         include_once "views/admin/revenue_statistics.php";
     }
-
-    //Thống kê loại thanh toán phổ biến
-    public function showPaymentStats()
-    {
-        $data = $this->payment->getPaymentMethodStats();
-        $data = $this->payment->getPaymentMonth();
-        include "views/admin/paymentStatistics.php";
-    }
-
-
 
 }
  ?>
