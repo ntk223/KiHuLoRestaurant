@@ -141,7 +141,7 @@ class User
         return $this->db->Select($sql); // Kết nối với database
     }
 
-    //Đưa ra khách hàng hủy nhiều nhất
+    //Đưa ra khách hàng hủy món nhiều nhất
     public function getCancelRateByCustomer()
     {
         $query = "SELECT 
@@ -163,7 +163,26 @@ class User
         return false;
     }
 
-
-
+    //Đưa ra khách hàng boom hàng nhiều nhất
+    public function getBoomRateByCustomer()
+    {
+        $query = "SELECT 
+        u.username, 
+        COUNT(o.order_id) AS total_orders, 
+        SUM(CASE WHEN d.status = 'Đơn bị hủy' THEN 1 ELSE 0 END) AS boom_orders, 
+        CONCAT(ROUND(SUM(CASE WHEN d.status = 'Đơn bị hủy' THEN 1 ELSE 0 END) / COUNT(o.order_id) * 100, 2), '%') AS boom_rate 
+    FROM users u
+    JOIN orders o ON u.user_id = o.customer_id
+    JOIN deliveries d ON o.order_id = d.order_id
+    GROUP BY u.user_id
+    HAVING boom_rate > 0
+    ORDER BY boom_rate DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
 }
 ?>
