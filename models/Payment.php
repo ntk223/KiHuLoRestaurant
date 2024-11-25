@@ -105,5 +105,23 @@ class Payment {
         return false;
     }
     
+    //Thống kê doanh thu theo tháng
+    public function getPaymentMonth() {
+        $query = "SELECT 
+        MONTH(payment_time) AS month, 
+        YEAR(payment_time) AS year, 
+        COUNT(order_id) AS total_order,
+        SUM(amount) AS total_revenue 
+    FROM payments
+    WHERE payment_status = 'Thanh toán thành công'
+    GROUP BY YEAR(payment_time), MONTH(payment_time)
+    ORDER BY YEAR(payment_time), MONTH(payment_time);";
+        $result = $this->db->Select($query);
+        if ($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
+    }
 }
 ?>
