@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Quản lý đánh giá</h1>
+        <a href="index.php?role=admin&manage=review&action=reviewStatistics" class="button">Thống kê</a>
         <table>
             <thead>
                 <tr>

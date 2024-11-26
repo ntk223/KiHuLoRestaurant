@@ -44,5 +44,44 @@ class Review {
         return $result;
     }
 
+
+    //Thống kê món ăn được nhiều đánh giá
+    public function getMostFoodReview() {
+        $query = "SELECT 
+        m.item_name, 
+        COUNT(r.review_id) AS total_reviews, 
+        ROUND(AVG(r.rating), 2) AS avg_rating 
+    FROM menuitems m
+    LEFT JOIN reviews r ON m.item_id = r.item_id
+    GROUP BY m.item_id
+    HAVING total_reviews > 0
+    ORDER BY total_reviews DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
+
+    //Thống kê người dùng tích cực đánh giá
+    public function getMostCustomerReview() {
+        $query = "SELECT 
+        u.username, 
+        COUNT(r.review_id) AS total_reviews, 
+        ROUND(AVG(r.rating), 2) AS avg_rating 
+    FROM users u
+    LEFT JOIN reviews r ON u.user_id = r.customer_id
+    GROUP BY u.user_id
+    HAVING total_reviews > 0
+    ORDER BY total_reviews DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
+
 }
 ?>
