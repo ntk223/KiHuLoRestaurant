@@ -73,3 +73,5 @@ $payment = new Payment(); ?>
 </body>
 
 <script src="assets/js/fileExcel.js"></script>
+
+<a href="index.php?role=admin&manage=payment">Trở về</a>

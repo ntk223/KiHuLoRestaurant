@@ -16,6 +16,9 @@ switch ($action) {
     case 'delete':
         echo "This is delete page";
         break;
+    case 'statistic':
+        $orderController->statistic();
+        break;
     default:
         echo "Page not found";
         break;

@@ -44,6 +44,7 @@ class Review {
         return $result;
     }
 
+
     //Thống kê món ăn được nhiều đánh giá
     public function getMostFoodReview() {
         $query = "SELECT 
@@ -81,5 +82,6 @@ class Review {
         }
         return false;
     }
+
 }
 ?>
