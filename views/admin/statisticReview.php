@@ -25,11 +25,38 @@ $review = new Review(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $review->getMostCustomerReview();
+            $result = $review->getMostFoodReview();
             if ($result) {
                 while ($row = $result->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['item_name']; ?></td>
+                        <td><?php echo $row['total_reviews']; ?></td>
+                        <td><?php echo $row['avg_rating']; ?></td>
+                    </tr>
+            <?php } 
+            } else { ?>
+                <tr><td colspan="3">Không có dữ liệu</td></tr>
+            <?php } ?>
+        </tbody>
+    </table>
+
+    <!-- Thống kê người dùng tích cực đánh giá -->
+    <h1>Thống kê người dùng thường xuyên đánh giá</h1>
+    <table>
+    <thead>
+            <tr>
+                <th>Tên người dùng</th>
+                <th>Tổng lượt review</th>
+                <th>Điểm đánh giá trung bình</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $result = $review->getMostCustomerReview();
+            if ($result) {
+                while ($row = $result->fetch_assoc()) { ?>
+                    <tr>
+                        <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['total_reviews']; ?></td>
                         <td><?php echo $row['avg_rating']; ?></td>
                     </tr>
