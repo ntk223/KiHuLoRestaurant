@@ -98,7 +98,7 @@ class Payment {
     
         $result = $this->db->Select($query);
 
-        if ($result->num_rows > 0)
+        if ($result)
         {
             return $result;
         }
@@ -117,7 +117,7 @@ class Payment {
     GROUP BY YEAR(payment_time), MONTH(payment_time)
     ORDER BY YEAR(payment_time), MONTH(payment_time);";
         $result = $this->db->Select($query);
-        if ($result->num_rows > 0)
+        if ($result)
         {
             return $result;
         }
