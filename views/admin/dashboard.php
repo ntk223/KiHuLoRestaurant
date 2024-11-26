@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple" />
     <link rel="stylesheet" href="assets/css/dashboard.css"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
@@ -14,8 +13,12 @@
 <div class="container">
     <div></div>
     <div class="sidebar">
-    <?php include_once "common/headerAD.php"; ?>
-
+    <?php include_once "common/headerAD.php";
+          include_once "models/MenuItem.php"; 
+          include_once "models/Payment.php";
+          $menu = new MenuItem();
+          $payment = new Payment();
+    ?>
         <h2 class="sidebar-title">DASH BOARD</h2>
         <ul>
         <li><a href="index.php?role=admin&manage=customer"><i class="fas fa-users"></i><b>QUẢN LÍ NGƯỜI DÙNG</b></a></li>
@@ -26,7 +29,28 @@
         <li><a href="index.php?role=admin&manage=review"><i class="fas fa-star"></i><b>QUẢN LÍ ĐÁNH GIÁ</b></a></li>
         </ul>
     </div>
-    <h1>// thong ke doanh thu va  gioi thieu nha hang</h1>
+    <div>
+        <h1>KiHuLo Restaurant</h1>
+        <h2>Giới thiệu</h2>
+        <p>Quản lý</p>
+        <ul>
+            <li>Nguyễn Trung Kiên</li>
+            <li>Đặng Tuấn Long</li>
+            <li>Nguyễn Nhất Huy</li>
+        </ul>
+        <h2>Thống kê chung</h2>
+        <h3>Tổng doanh thu</h3>
+        <p>
+            <?php echo $payment->total() . " VNĐ";?>
+        </p>
+        <h3>Đánh giá trung bình</h3>
+        <p>
+            <?php echo $menu->avgRating()."/5";?>
+        </p>
+        
+        <h2>Liên hệ</h2>
+        <p>Địa chỉ: Trường đại học Công nghệ - Đại học Quốc gia Hà Nội</p>
+    </div>
 
 </div>
 </body>

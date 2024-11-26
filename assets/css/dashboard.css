@@ -18,7 +18,7 @@ body {
 
 .sidebar {
     width: 250px;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background: blue;
     color: #fff;
     padding: 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@ body {
 
 .sidebar ul li a:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: #ffeb3b;
+    color: #7c7c7a;
     text-shadow: 1px 1px 3px #000;
 }
 

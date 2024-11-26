@@ -2,6 +2,7 @@
 <main>
     <h1>Quản lý đơn hàng</h1>
     <section class="user-table-section">
+        <a href="index.php?role=admin&manage=order&action=statistic" class = "button">Thống kê</a>
         <h2>Danh sách đơn hàng</h2>
         <form action="index.php?role=admin&manage=order&action=update" method="POST">
             <table>

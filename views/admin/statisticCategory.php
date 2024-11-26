@@ -62,3 +62,5 @@
             <?php } ?>
     </table>
 </main>
+
+<a href="index.php?role=admin&manage=menu">Trở về</a>

@@ -65,5 +65,23 @@ class Order {
             }
         }
     }
+
+    public function statistic() {
+        $query = "SELECT 
+                    order_status,
+                    COUNT(*) AS total_orders
+                FROM 
+                    orders
+                WHERE 
+                    order_status IN ('Đã hủy', 'Đang xử lý đơn hàng', 'Đơn hàng đã xác nhận')
+                GROUP BY 
+                    order_status;";
+        $res = $this->db->Select($query);
+        if ( $res ) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
 }
  ?>

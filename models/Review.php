@@ -43,5 +43,6 @@ class Review {
         $result = $this->db->Delete($query);
         return $result;
     }
+
 }
 ?>

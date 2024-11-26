@@ -123,5 +123,16 @@ class Payment {
         }
         return false;
     }
+
+    public function total() {
+        $query = "SELECT SUM(amount)
+        FROM payments
+        WHERE payment_status = 'Thanh toán thành công'";
+        $result = $this->db->Select($query);
+        if ($result->num_rows > 0)
+        {
+            return $result->fetch_assoc()['SUM(amount)'];
+        }
+    }
 }
 ?>
