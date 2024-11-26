@@ -43,5 +43,24 @@ class Review {
         $result = $this->db->Delete($query);
         return $result;
     }
+
+    //Thống kê món ăn được nhiều đánh giá
+    public function getMostCustomerReview() {
+        $query = "SELECT 
+        m.item_name, 
+        COUNT(r.review_id) AS total_reviews, 
+        ROUND(AVG(r.rating), 2) AS avg_rating 
+    FROM menuitems m
+    LEFT JOIN reviews r ON m.item_id = r.item_id
+    GROUP BY m.item_id
+    HAVING total_reviews > 0
+    ORDER BY total_reviews DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
 }
 ?>
