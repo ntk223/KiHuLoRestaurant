@@ -8,11 +8,11 @@
 
 <link rel="stylesheet" href="assets/css/tableview.css">
 </head>
-</html>
 <?php include_once "models/Payment.php"; 
 $payment = new Payment(); ?>
 <body>
 <button id="exportExcel">Tải file Excel</button>
+
 <!-- Thống kê phương thức thanh toán -->
     <h1>Thống kê phương thức thanh toán</h1>
     <table>
@@ -70,8 +70,34 @@ $payment = new Payment(); ?>
             <?php } ?>
         </tbody>
     </table>
+
+    <!-- Thống kê thời gian bán chạy trong ngày -->
+    <h1>Thống kê thời gian bán chạy trong ngày</h1>
+    <table>
+    <thead>
+            <tr>
+                <th>Thời gian</th>
+                <th>Số đơn được thanh toán</th>
+                <th>Tổng doanh thu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $result = $payment->getMostRenueTime();
+            if ($result) {
+                while ($row = $result->fetch_assoc()) { ?>
+                    <tr>
+                        <td><?php echo $row['time_period']; ?></td>
+                        <td><?php echo $row['sumTime']; ?></td>
+                        <td><?php echo number_format($row['total_revenue']); ?> VNĐ</td>
+                    </tr>
+            <?php } 
+            } else { ?>
+                <tr><td colspan="3">Không có dữ liệu</td></tr>
+            <?php } ?>
+        </tbody>
+    </table>
+    <a href="index.php?role=admin&manage=payment">Trở về</a>
 </body>
-
+</html>
 <script src="assets/js/fileExcel.js"></script>
-
-<a href="index.php?role=admin&manage=payment">Trở về</a>

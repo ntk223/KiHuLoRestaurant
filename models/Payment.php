@@ -124,6 +124,28 @@ class Payment {
         return false;
     }
 
+    //Thống kê thời gian bán chạy trong ngày
+    public function getMostRenueTime() {
+        $query = "SELECT 
+        CASE
+            WHEN HOUR(payment_time) BETWEEN 6 AND 11 THEN 'Sáng'
+            WHEN HOUR(payment_time) BETWEEN 12 AND 17 THEN 'Trưa'
+            ELSE 'Tối'
+        END AS time_period,
+        COUNT(payment_id) AS sumTime,
+        SUM(amount) AS total_revenue
+    FROM payments
+    WHERE payment_status = 'Thanh toán thành công'
+    GROUP BY time_period
+    ORDER BY total_revenue DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
+
     public function total() {
         $query = "SELECT SUM(amount)
         FROM payments
