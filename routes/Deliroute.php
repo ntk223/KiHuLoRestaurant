@@ -11,6 +11,7 @@ switch ($action) {
         $deliveryController->getDeliveryDetail();
         break;
     case 'update':
+        $deliveryController->updateStatus();
         break;
     case 'delete':
         echo "This is delete page";

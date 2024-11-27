@@ -38,5 +38,13 @@ class MenuController
         $result = $this->menuitem->deleteMenuItem($id);
         header("Location: index.php?role=admin&manage=menu");
     }
+
+    public function reviewItem()
+    {
+        $id = $_GET['id'];
+        $result = $this->menuitem->reviewbyIditem($id);
+        include_once "views/admin/reviewItem.php";
+    }
+
 }
 ?>

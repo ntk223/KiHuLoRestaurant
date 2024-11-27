@@ -1,6 +1,6 @@
 <link rel='stylesheet' href="assets/css/manage_user.css">
 <main>
-    <h1>Quản lý đơn hàng</h1>
+    <h1>Quản lý giao hàng</h1>
     <a href="index.php?role=admin&manage=delivery&action=statisticDelivery" class="button">Thống kê</a>
     <section class="user-table-section">
         <h2>Danh sách giao hàng</h2>
@@ -28,9 +28,11 @@
                             </td>
                             <td>
                                 <select name="status">
-                                    <option value="processing" <?php if($row['status'] == 'Đang xử lý') echo 'selected'; ?>>Đang xử lý</option>
-                                    <option value="confirmed" <?php if($row['status'] == 'Đang giao hàng') echo 'selected'; ?>>Đang giao hàng</option>
-                                    <option value="cancelled" <?php if($row['status'] == 'Giao hàng thành công') echo 'selected'; ?>>Giao hàng thành công</option>
+                                    <option value="pending" <?php if($row['status'] == 'Đang xử lý') echo 'selected'; ?>>Đang xử lý</option>
+                                    <option value="shipping" <?php if($row['status'] == 'Đang giao hàng') echo 'selected'; ?>>Đang giao hàng</option>
+                                    <option value="success" <?php if($row['status'] == 'Giao hàng thành công') echo 'selected'; ?>>Giao hàng thành công</option>
+                                    <option value="cancelled" <?php if($row['status'] == 'Đơn bị hủy') echo 'selected'; ?>>Đơn bị hủy</option>
+
                                 </select>
                             </td>
                             <td><?php echo $row['shipper_id']; ?></td>

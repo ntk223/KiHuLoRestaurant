@@ -35,7 +35,7 @@
                         <td><?php echo $row['available']?></td>
                         <td><img src=<?php echo $row['image_url']?> alt=<?php echo $row['item_name']?> width="80"></td>
                         <td>
-                        <a href="#" class="button ">Xem</a>
+                        <a href="index.php?role=admin&manage=menu&action=review&id=<?php echo $row['item_id']?>" class="button ">Xem đánh giá</a>
                         <a href="index.php?role=admin&manage=menu&action=update&id=<?php echo $row['item_id']?>" class="button ">Sửa</a>
                         <a href="index.php?role=admin&manage=menu&action=delete&id=<?php echo $row['item_id']?>" class="button "
                          onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>

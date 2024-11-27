@@ -36,6 +36,25 @@ class Delivery {
             return false;
         }
     }
+    public function updateStatus($id) {
+        $status_arr = array(
+            'pending' => 'Đang xử lý',
+            'shipping' => 'Đang giao hàng',
+            'success' => 'Giao hàng thành công',
+            'cancelled' => 'Đơn bị hủy'
+        );
+        if (isset($_POST['submit'])) {
+            $res = $_POST['status'];
+            $status = $status_arr[$res];
+            $query = "UPDATE deliveries SET status = '$status' WHERE delivery_id = '$id'";
+            $result = $this->db->Update($query);
+            if ($result) {
+                header("Location: index.php?role=admin&manage=delivery");
+            } else {
+                echo "Update failed";
+            }
+        }
+    }
 
     //Thống kê thời gian giao hàng trung bình từng shipper
     public function getAverageDeliveryTime() {

@@ -107,5 +107,7 @@ $deli = new Delivery();
     </tbody>
 </table>
 
+<a href="index.php?role=admin&manage=delivery">Trở về</a>
+
 </body>
 <script src="assets/js/fileExcel.js"></script>

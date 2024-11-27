@@ -23,5 +23,10 @@ class  OrderController {
         $id = $_POST['submit'];
         $this->order->updateStatus($id);
     }
+
+    public function statistic() {
+        $res = $this->order->statistic();
+        include_once "views/admin/statisticOrder.php";
+    }
 }
  ?>

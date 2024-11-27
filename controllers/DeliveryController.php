@@ -19,5 +19,10 @@ class  DeliveryController {
         include_once "views/admin/deliverydetail.php";
     }
 
+    public function updateStatus() {
+        $id = $_POST['submit'];
+        $this->deli->updateStatus($id);
+    }
+
 }
  ?>

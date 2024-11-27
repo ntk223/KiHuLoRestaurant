@@ -118,6 +118,32 @@ class MenuItem
         return false;
     }
 
+    public function avgRating() {
+        $query = "SELECT ROUND(AVG(r.rating), 1) as rating
+                    FROM menuitems mi
+                    JOIN reviews r ON r.item_id = mi.item_id
+                    ";
+        $result = $this->db->Select($query);
+        if ($result->num_rows > 0)
+        {
+            return $result->fetch_assoc()['rating'];
+        }
+    }
+
+    public function reviewbyIditem($id)
+    {
+        $query = "SELECT u.username, mi.item_name, r.rating, r.review_text, r.review_date
+                FROM reviews r
+                JOIN menuitems mi ON mi.item_id = r.item_id
+                JOIN users u ON u.user_id = r.customer_id
+                WHERE mi.item_id = '$id'";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
 
 }
 ?>

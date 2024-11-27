@@ -31,6 +31,9 @@ else if ($role == 'admin' )
         case 'statistic':
             include_once "views/admin/statisticCategory.php";
             break;
+        case 'review':
+            $menu->reviewItem();
+            break;
         default:
             echo "Page not found";
             break;
