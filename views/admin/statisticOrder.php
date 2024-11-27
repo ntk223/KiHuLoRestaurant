@@ -1,40 +1,16 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thống kê đơn hàng</title>
-</head>
-<style>
-    h1 {
-    }
-    table {
-        margin: 0 auto;
-        border-collapse: collapse;
-        width: 50%;
-    }
-    th, td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    tr:hover {
-        background-color: #f5f5f5;
-    }
-    a {
-        text-decoration: none;
-    }
-    a:hover {
-        color: red;
-    }
+    <title>Thống kê giao hàng</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
 
-</style>
+<link rel="stylesheet" href="assets/css/tableview.css">
+</head>
+</html>
 <body>
+<button id="exportExcel">Tải file Excel</button>
     <h1>Thống kê đơn hàng</h1>
     <table>
         <tr>
