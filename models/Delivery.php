@@ -125,5 +125,23 @@ GROUP BY d.status;";
         }
     }
 
+    public function getMostShipAddress() {
+        $query = "SELECT 
+        d.delivery_address,
+        COUNT(*) AS total_deli,
+        ROUND(COUNT(*) / total_deliveries * 100, 2) AS percent
+    FROM deliveries d, 
+        (SELECT COUNT(*) AS total_deliveries FROM deliveries) total_deliveries
+    GROUP BY d.delivery_address, total_deliveries
+    HAVING total_deli > 0
+    ORDER BY total_deli DESC;";
+    $result = $this->db->Select($query);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>
