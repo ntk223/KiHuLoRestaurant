@@ -64,7 +64,7 @@ $deli = new Delivery();
 </table>
 
 <h1>Thống kê trạng thái giao hàng</h1>
-<table id="dataTable">
+<table>
     <thead>
         <tr>
             <th>Trạng thái</th>
@@ -80,6 +80,28 @@ $deli = new Delivery();
                 <td><?php echo $row['status']; ?></td>
                 <td><?php echo $row['total_deliveries']; ?></td>
                 <td><?php echo $row['status_percentage']; ?></td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
+
+<h1>Thống kê địa chỉ giao hàng phổ biến</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Địa chỉ</th>
+            <th>Số lần đặt đơn</th>
+            <th>Tỉ lệ đặt đơn của địa chỉ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php 
+        $addressShip = $deli->getMostShipAddress();
+        while ($row = $addressShip->fetch_assoc()) { ?>
+            <tr>
+                <td><?php echo $row['delivery_address']; ?></td>
+                <td><?php echo $row['total_deli']; ?></td>
+                <td><?php echo $row['percent']; ?>%</td>
             </tr>
         <?php } ?>
     </tbody>
