@@ -83,5 +83,26 @@ class Order {
             return false;
         }
     }
+
+    //Thống kê món ăn ưa thích của khách hàng
+    public function getFavouriteFood() {
+        $query = "SELECT 
+        m.item_name,
+        u.username,
+        COUNT(*) AS repeat_orders
+    FROM orderitems oi
+    JOIN menuitems m ON oi.item_id = m.item_id
+    JOIN orders o ON oi.order_id = o.order_id
+    JOIN users u ON o.customer_id = u.user_id
+    GROUP BY m.item_id, o.customer_id
+    HAVING repeat_orders > 1
+    ORDER BY repeat_orders DESC;";
+        $res = $this->db->Select($query);
+        if ( $res ) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
 }
  ?>
