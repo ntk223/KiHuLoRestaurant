@@ -26,6 +26,7 @@ class  OrderController {
 
     public function statistic() {
         $res = $this->order->statistic();
+        $favouriteFood = $this->order->getFavouriteFood();
         include_once "views/admin/statisticOrder.php";
     }
 }
