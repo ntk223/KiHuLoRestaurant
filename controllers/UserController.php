@@ -41,5 +41,10 @@ class UserController
         $this->user->updatePassword();
     }
 
+    public function historyCus() {
+        $result = $this->user->getHistoryCustomer();
+        include_once "views/admin/historyCus.php";
+    }
+
 }
 ?>

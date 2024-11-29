@@ -19,6 +19,9 @@ switch ($action) {
     case 'statisticCustomer':
         include_once "views/admin/statisticCustomer.php";
         break;
+    case 'historyCus' :
+        $user->historyCus();
+        break;
     default:
         echo "Page not found";
         break;
