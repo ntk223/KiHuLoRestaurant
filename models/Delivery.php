@@ -125,6 +125,7 @@ GROUP BY d.status;";
         }
     }
 
+    //Thống kê địa chỉ giao hàng phổ biến
     public function getMostShipAddress() {
         $query = "SELECT 
         d.delivery_address,
@@ -135,6 +136,22 @@ GROUP BY d.status;";
     GROUP BY d.delivery_address, total_deliveries
     HAVING total_deli > 0
     ORDER BY total_deli DESC;";
+    $result = $this->db->Select($query);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    //Thống kê chi phí vận hành
+    public function getDelifee() {
+        $query = "SELECT 
+        SUM(d.delivery_fee) AS total_delivery_cost,
+        (SUM(p.amount) - SUM(d.delivery_fee)) AS net_revenue
+    FROM deliveries d
+    JOIN payments p ON d.order_id = p.order_id
+    WHERE p.payment_status = 'Thanh toán thành công';";
     $result = $this->db->Select($query);
         if ($result) {
             return $result;

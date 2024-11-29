@@ -15,6 +15,13 @@
 include_once "models/Delivery.php"; 
 $deli = new Delivery(); 
 ?>
+<?php 
+        $totalship = $deli->getDelifee();
+        while ($row = $totalship->fetch_assoc()) {
+            ?>
+            <h1>Tổng phí ship: <?php echo $row['total_delivery_cost']; ?> VNĐ</h1>
+            <h1>Lợi nhuận thực tế: <?php echo $row['net_revenue']; ?> VNĐ</h1>
+            <?php } ?>
 <h1>Thống kê thời gian giao hàng trung bình của từng shipper</h1>
 <table>
     <thead>
