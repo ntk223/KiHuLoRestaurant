@@ -184,5 +184,28 @@ class User
         }
         return false;
     }
+
+    //Lịch sử khách hàng
+    public function getHistoryCustomer()
+    {
+        $query = "SELECT 
+    u.username,
+    o.order_id,
+    o.order_time,
+    GROUP_CONCAT(m.item_name) AS items,
+    SUM(m.price * oi.quantity) AS total_amount
+FROM users u
+JOIN orders o ON u.user_id = o.customer_id
+JOIN orderitems oi ON o.order_id = oi.order_id
+JOIN menuitems m ON oi.item_id = m.item_id
+GROUP BY o.order_id
+ORDER BY o.order_time DESC;";
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
 }
 ?>
