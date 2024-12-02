@@ -12,16 +12,12 @@
 <body>
 <button id="exportExcel">Tải file Excel</button>
 <?php 
-include_once "models/Delivery.php"; 
-$deli = new Delivery(); 
-?>
-<?php 
-        $totalship = $deli->getDelifee();
         while ($row = $totalship->fetch_assoc()) {
             ?>
             <h1>Tổng phí ship: <?php echo $row['total_delivery_cost']; ?> VNĐ</h1>
             <h1>Lợi nhuận thực tế: <?php echo $row['net_revenue']; ?> VNĐ</h1>
             <?php } ?>
+
 <h1>Thống kê thời gian giao hàng trung bình của từng shipper</h1>
 <table>
     <thead>
@@ -34,12 +30,11 @@ $deli = new Delivery();
     </thead>
     <tbody>
         <?php 
-        $avgDeliveryTime = $deli->getAverageDeliveryTime();
         while ($row = $avgDeliveryTime->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['shipper_name']; ?></td>
                 <td><?php echo $row['sum_ship']; ?></td>
-                <td><?php echo $row['time_ship']; ?></td>
+                <td><?php echo $row['time_ship']; ?> giờ</td>
                 <td><?php echo $row['avg_time']; ?></td>
             </tr>
         <?php } ?>
@@ -58,7 +53,6 @@ $deli = new Delivery();
     </thead>
     <tbody>
         <?php 
-        $successShipperRate = $deli->getSuccessShip();
         while ($row = $successShipperRate->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['shipper_name']; ?></td>
@@ -81,7 +75,7 @@ $deli = new Delivery();
     </thead>
     <tbody>
         <?php 
-        $statusShip = $deli->getStatusShip();
+        
         while ($row = $statusShip->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['status']; ?></td>
@@ -103,7 +97,7 @@ $deli = new Delivery();
     </thead>
     <tbody>
         <?php 
-        $addressShip = $deli->getMostShipAddress();
+        
         while ($row = $addressShip->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['delivery_address']; ?></td>

@@ -17,7 +17,7 @@ switch ($action) {
         echo "This is delete page";
         break;
     case 'statisticDelivery':
-        include_once "views/admin/statisticDelivery.php";
+        $deliveryController->statisticDeli();
         break;
     default:
         echo "Page not found 123";

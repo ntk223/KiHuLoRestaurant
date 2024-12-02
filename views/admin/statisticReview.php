@@ -25,9 +25,8 @@ $review = new Review(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $review->getMostFoodReview();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($mostFoodReview) {
+                while ($row = $mostFoodReview->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['item_name']; ?></td>
                         <td><?php echo $row['total_reviews']; ?></td>
@@ -52,9 +51,8 @@ $review = new Review(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $review->getMostCustomerReview();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($mostCusReview) {
+                while ($row = $mostCusReview->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['total_reviews']; ?></td>

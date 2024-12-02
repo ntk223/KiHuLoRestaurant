@@ -46,5 +46,13 @@ class UserController
         include_once "views/admin/historyCus.php";
     }
 
+    //Thống kê người dùng
+    public function statisticCustomer() {
+        $topCustomer = $this->user->getTopCustomers();
+        $cancelRateByCustomer = $this->user->getCancelRateByCustomer();
+        $boomRateByCustomer = $this->user->getBoomRateByCustomer();
+        include_once "views/admin/statisticCustomer.php";
+    }
+
 }
 ?>

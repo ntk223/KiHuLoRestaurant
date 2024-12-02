@@ -17,7 +17,7 @@ switch ($action) {
         $user->deleteUser();
         break;
     case 'statisticCustomer':
-        include_once "views/admin/statisticCustomer.php";
+        $user->statisticCustomer();
         break;
     case 'historyCus' :
         $user->historyCus();

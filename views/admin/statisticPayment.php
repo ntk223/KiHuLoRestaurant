@@ -8,8 +8,6 @@
 
 <link rel="stylesheet" href="assets/css/tableview.css">
 </head>
-<?php include_once "models/Payment.php"; 
-$payment = new Payment(); ?>
 <body>
 <button id="exportExcel">Tải file Excel</button>
 
@@ -26,9 +24,8 @@ $payment = new Payment(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $payment->getPaymentMethodStats();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($paymentMethodStat) {
+                while ($row = $paymentMethodStat->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['payment_method']; ?></td>
                         <td><?php echo $row['method_count']; ?></td>
@@ -55,9 +52,8 @@ $payment = new Payment(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $payment->getPaymentMonth();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($paymentMonth) {
+                while ($row = $paymentMonth->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['month']; ?></td>
                         <td><?php echo $row['year']; ?></td>
@@ -83,9 +79,8 @@ $payment = new Payment(); ?>
         </thead>
         <tbody>
             <?php 
-            $result = $payment->getMostRenueTime();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($mostRenue) {
+                while ($row = $mostRenue->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['time_period']; ?></td>
                         <td><?php echo $row['sumTime']; ?></td>

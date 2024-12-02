@@ -16,7 +16,7 @@ switch ($action) {
         $reviewController->deleteReview();
         break;
     case 'reviewStatistics':
-        include_once "views/admin/statisticReview.php";
+        $reviewController->statisticReview();
         break;
     default:
         echo "Page not found 123";
