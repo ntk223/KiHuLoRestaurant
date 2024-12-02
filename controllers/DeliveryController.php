@@ -22,6 +22,16 @@ class  DeliveryController {
     public function updateStatus() {
         $id = $_POST['submit'];
         $this->deli->updateStatus($id);
+    } 
+
+    //Thống kê giao hàng
+    public function statisticDeli() {
+        $totalship = $this->deli->getDelifee();
+        $avgDeliveryTime =$this->deli->getAverageDeliveryTime();
+        $successShipperRate = $this->deli->getSuccessShip();
+        $statusShip = $this->deli->getStatusShip();
+        $addressShip = $this->deli->getMostShipAddress();
+        include_once "views/admin/statisticDelivery.php";
     }
 
 }

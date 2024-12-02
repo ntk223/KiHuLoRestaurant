@@ -15,7 +15,7 @@
         $user = new User();?>
         
 <!-- In ra top khách hàng trả nhiều tiên nhất và số lần mua hàng -->
-<h1>Top Khách Hàng</h1>
+<h1>Top Khách Hàng</h1> 
 
 <table >
     <thead>
@@ -26,15 +26,17 @@
         </tr>
     </thead>
     <tbody>
-        <?php
-        $result = $user->getTopCustomers();
-        while ($row = $result->fetch_assoc()) { ?>
+        <?php if ($topCustomer) {
+        while ($row = $topCustomer->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['total_purchase']; ?></td>
                 <td><?php echo $row['total_buy']; ?></td>
             </tr>
-        <?php } ?>
+            <?php } 
+            } else { ?>
+                <tr><td colspan="3">Không có dữ liệu</td></tr>
+            <?php } ?>
     </tbody>
 </table>
 
@@ -51,9 +53,9 @@
         </tr>
     </thead>
     <tbody>
-        <?php $result = $user->getCancelRateByCustomer();
-        if ($result != false) {
-                while ($row = $result->fetch_assoc()) { ?>
+        <?php
+        if ($cancelRateByCustomer) {
+                while ($row = $cancelRateByCustomer->fetch_assoc()) { ?>
             <tr>
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['total_orders']; ?></td>
@@ -82,9 +84,8 @@
     </thead>
     <tbody>
     <?php 
-            $result = $user->getBoomRateByCustomer();
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { ?>
+            if ($boomRateByCustomer) {
+                while ($row = $boomRateByCustomer->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['total_orders']; ?></td>

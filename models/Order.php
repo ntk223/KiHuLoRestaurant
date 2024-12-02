@@ -104,5 +104,22 @@ class Order {
             return false;
         }
     }
+
+    //Thống kê trạng thái đơn hàng.
+    public function getOrderStatusStatistics() {
+        $query = "SELECT 
+            order_status, 
+            COUNT(*) AS total_orders,
+            ROUND(COUNT(*) * 100 / (SELECT COUNT(*) FROM orders), 2) AS percentage
+        FROM orders
+        GROUP BY order_status
+        ORDER BY total_orders DESC;";
+        $result = $this->db->Select($query);
+        if ($result) {
+            return $result;
+        }
+        return false;
+    }
+    
 }
  ?>

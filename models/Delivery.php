@@ -72,7 +72,7 @@ class Delivery {
     SELECT 
         shipper_name,
         sum_ship,
-        ROUND(avg_seconds, 2) AS time_ship,
+        ROUND(avg_seconds / 3600, 2) AS time_ship,
         CASE
             WHEN avg_seconds < 60 THEN CONCAT(ROUND(avg_seconds, 2), ' giây')
             WHEN avg_seconds < 3600 THEN CONCAT(ROUND(avg_seconds / 60, 2), ' phút')

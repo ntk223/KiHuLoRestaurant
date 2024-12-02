@@ -29,6 +29,13 @@ class ReviewController {
         }
     }
 
-}
+    //Thống kê review
+    public function statisticReview() {
+        $mostFoodReview = $this->review->getMostFoodReview();
+        $mostCusReview = $this->review->getMostCustomerReview();
+        include_once "views/admin/statisticReview.php";
+    }
+
+} 
 
 ?>

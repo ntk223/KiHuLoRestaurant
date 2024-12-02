@@ -64,5 +64,13 @@ class  PaymentController {
         include_once "views/admin/revenue_statistics.php";
     }
 
+    //Thống kê thanh toán
+    public function statisticPayment() {
+        $paymentMethodStat = $this->payment->getPaymentMethodStats();
+        $paymentMonth = $this->payment->getPaymentMonth();
+        $mostRenue = $this->payment->getMostRenueTime();
+        include_once "views/admin/statisticPayment.php";
+    }
+
 }
  ?>

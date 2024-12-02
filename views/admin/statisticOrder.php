@@ -47,5 +47,27 @@
         </tbody>
 
     </table>
+
+    <h1>Thống kê trạng thái món ăn</h1>
+    <table>
+        <tr>
+            <th>Trạng thái</th>
+            <th>Số món có trạng thái</th>
+            <th>Phần trăm</th>
+        </tr>
+        <tbody>
+            <?php if ($orderStatusStatistics) {
+            while($row = $orderStatusStatistics->fetch_assoc()){?>
+            <tr></tr>
+                <td><?php echo $row['order_status'];?></td>
+                <td><?php echo $row['total_orders'];?></td>
+                <td><?php echo $row['percentage'];?>%</td>
+            <?php }
+            } else {?> 
+            <tr><td colspan="3">Không có dữ liệu</td></tr>
+            <?php }?>
+        </tbody>
+
+    </table>
 </body>
 </html>
