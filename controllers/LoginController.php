@@ -1,7 +1,7 @@
 <?php
-include_once 'views/user/login.php';
-require_once 'config/database.php';
-require_once 'config/session.php';
+ob_start();  // Bắt đầu output buffering
+
+// Các mã xử lý đăng nhập
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -23,14 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Session::set('password', $data['password']);
         if ($role == "Customer") {
             header('Location: index.php?role=customer&page=index');
-            exit();  // Dừng script sau khi chuyển hướng
         } else if ($role == "Seller") {
             header('Location: index.php?role=admin&manage=index');
-            exit();  // Dừng script sau khi chuyển hướng
         }
     } else {
         header('Location: index.php?in=login');
-        exit();  // Dừng script sau khi chuyển hướng
     }
 }
+
+ob_end_flush();  // Kết thúc output buffering và gửi nội dung ra trình duyệt
 ?>
