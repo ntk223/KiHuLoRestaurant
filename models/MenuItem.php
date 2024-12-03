@@ -81,10 +81,10 @@ class MenuItem
                 ELSE 'Nước uống'
             END AS 'category_name',
             COUNT(*) AS 'num_of_item',
-            CONCAT(ROUND(COUNT(*) / total_items * 100, 2),'%') AS 'rate'
-        FROM menuitems,
-            (SELECT COUNT(*) AS total_items FROM menuitems) AS total
-        GROUP BY category_id, category_name";
+            CONCAT(ROUND(COUNT(*) / (SELECT COUNT(*) FROM menuitems) * 100, 2), '%') AS 'rate'
+        FROM menuitems
+        GROUP BY category_id";
+
 
         $result = $this->db->Select($sql);
 
