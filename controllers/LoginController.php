@@ -1,7 +1,7 @@
 <?php
-ob_start();  // Bắt đầu output buffering
-
-// Các mã xử lý đăng nhập
+include_once 'views/user/login.php';
+require_once 'config/database.php';
+require_once 'config/session.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -30,6 +30,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: index.php?in=login');
     }
 }
-
-ob_end_flush();  // Kết thúc output buffering và gửi nội dung ra trình duyệt
+ob_end_flush();
 ?>
