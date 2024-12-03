@@ -70,7 +70,9 @@ B.Back-end:
 #Các phần thông tin thêm cho admin gồm (Tự chuẩn bị các query và code để hiển thị):
 
 -Lịch sử giao dịch của tất cả người dùng.
+
 -Thống kê tổng doanh thu theo thời gian được chọn.
+
 -Thêm phần logic để giúp admin có thể tại được file excel về máy chứa các dữ liệu trong các 
 phần thống kê.
 
