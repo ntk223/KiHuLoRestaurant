@@ -23,13 +23,17 @@ Thành viên nhóm:
     + Xây dựng tính năng update thông tin, đổi mật khẩu cho người dùng
 
 2. Đặng Tuấn Long
+
 A.Front-end:
 + Thiết kế giao diện và hiệu ứng cho login (Cả user và admin), signup.
 + Thiết kế giao diện và hiệu ứng cho header footer, sidebar cho giao diện người dùng.
 + Thiết kế giao diện và hiệu ứng cho phần menu, cart cho người dùng.
 + Thiết kế giao diện, hiệu ứng cho phần profile, thay đổi password của người dùng.
+  
 B.Back-end:
+
 #Tạo các bảng thống kê cho admin bao gồm(Tự chuẩn bị các query và code để hiển thị):
+
 -Thống kê người dùng: 
     + Top khách hàng đã trả nhiều tiền nhất kèm lượt mua.
     + Tỷ lệ đơn hàng bị hủy, boom theo khách hàng.
@@ -51,12 +55,16 @@ B.Back-end:
 -Thống kê đánh giá:
     + Thống kê món ăn được nhiều review nhất.
     + Thống kê người dùng review món ăn nhiều nhất.
+
 #Các phần thông tin thêm cho admin gồm (Tự chuẩn bị các query và code để hiển thị):
+
 -Lịch sử giao dịch của tất cả người dùng.
 -Thống kê tổng doanh thu theo thời gian được chọn.
 -Thêm phần logic để giúp admin có thể tại được file excel về máy chứa các dữ liệu trong các 
 phần thống kê.
+
 #Thêm phần logic giúp hiển thị thông báo và ngăn người dùng nhập sai ở thay đổi password
+
 C.Database:
 Tham gia vào xây dựng database và tạo dữ liệu cho database.
 
