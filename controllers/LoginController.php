@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 include_once 'views/user/login.php';
 require_once 'config/database.php';
 require_once 'config/session.php';
@@ -30,5 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: index.php?in=login');
     }
 }
-ob_end_flush();
+
+ob_end_flush();  // Kết thúc output buffering và gửi nội dung ra trình duyệt
 ?>
