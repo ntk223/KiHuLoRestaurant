@@ -1,19 +1,23 @@
 <?php
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "restaurant");
+// define("DB_HOST", "localhost");
+// define("DB_USER", "root");
+// define("DB_PASS", "");
+// define("DB_NAME", "restaurant");
 Class Database{
-    public $host=DB_HOST;
-    public $user=DB_USER;
-    public $pass=DB_PASS;
-    public $dbname=DB_NAME;
+    public $host;
+    public $user;
+    public $pass;
+    public $dbname;
 
     public $conn;
     public $error;
 
     public function __construct()
     {
+        $this->host = getenv('DB_HOST');         // Lấy host từ biến môi trường
+        $this->user = getenv('DB_USER');         // Lấy user từ biến môi trường
+        $this->password = getenv('DB_PASSWORD'); // Lấy password từ biến môi trường
+        $this->dbname = getenv('DB_NAME');       // Lấy database name từ biến môi trường
         $this->connectDB();
     }    
     public function connectDB()
