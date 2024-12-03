@@ -4,28 +4,26 @@
 // define("DB_PASS", "");
 // define("DB_NAME", "restaurant");
 Class Database{
-    public $host;
-    public $user;
-    public $pass;
-    public $dbname;
+    private $host;
+    private $user;
+    private $password;
+    private $dbname;
+    private $port;
+    private $conn;
 
-    public $conn;
-    public $error;
-
-    public function __construct()
-    {
-        $this->host = getenv('DB_HOST');         // Lấy host từ biến môi trường
-        $this->user = getenv('DB_USER');         // Lấy user từ biến môi trường
-        $this->password = getenv('DB_PASSWORD'); // Lấy password từ biến môi trường
-        $this->dbname = getenv('DB_NAME');       // Lấy database name từ biến môi trường
+    public function __construct() {
+        $this->host = "autorack.proxy.rlwy.net";  // Host từ Railway
+        $this->user = "root";                     // User từ Railway
+        $this->password = "xXHGsINEWUgsKzujRDButPPfLyfXvndN";   // Mật khẩu từ Railway
+        $this->dbname = "railway";                // Database name từ Railway
+        $this->port = 12546;                      // Port từ Railway
         $this->connectDB();
-    }    
-    public function connectDB()
-    {
-        $this->conn= new mysqli($this->host, $this->user, $this->pass, $this->dbname);
-        if ( !$this->conn){
-            $this->error="Connection fail".$this->conn->connect_error;
-            return false;
+    }
+
+    public function connectDB() {
+        $this->conn = new mysqli($this->host, $this->user, $this->password, $this->dbname, $this->port);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
     }
     // read or select data
