@@ -1,6 +1,6 @@
 <link rel='stylesheet' href="assets/css/manage_user.css">
 <main>
-    <h1>Quản lý đơn hàng</h1>
+    <h1>Quản lý thanh toán</h1>
     <section class="user-table-section">
         <h2>Danh sách giao dịch</h2>
         <form action="index.php?role=admin&manage=payment&action=update" method="POST">
