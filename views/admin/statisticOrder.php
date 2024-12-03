@@ -10,21 +10,6 @@
 </head>
 <body>
 <button id="exportExcel">Tải file Excel</button>
-    <h1>Thống kê đơn hàng</h1>
-    <table>
-        <tr>
-            <th>Trạng thái</th>
-            <th>Số lượng</th>
-        </tr>
-        <tbody>
-            <?php while($row = $res->fetch_assoc()){?>
-            <tr></tr>
-                <td><?php echo $row['order_status'];?></td>
-                <td><?php echo $row['total_orders'];?></td>
-            <?php }?>
-        </tbody>
-
-    </table>
 <!-- Thống kê món ăn được gọi lại bởi 1 khách hàng -->
     <h1>Thống kê món ăn ưa thích của từng khách hàng</h1>
     <table>
