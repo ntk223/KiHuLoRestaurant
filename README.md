@@ -35,24 +35,35 @@ B.Back-end:
 #Tạo các bảng thống kê cho admin bao gồm(Tự chuẩn bị các query và code để hiển thị):
 
 -Thống kê người dùng: 
+
     + Top khách hàng đã trả nhiều tiền nhất kèm lượt mua.
     + Tỷ lệ đơn hàng bị hủy, boom theo khách hàng.
--Thống kê món ăn
+    
+-Thống kê món ăn:
+
     + Thống kê số lượng và tỉ lệ các loại món ăn trong thực đơn.
+    
 -Thống kê đơn hàng:
+
     + Thống kê trạng thái các đơn hàng kèm tỉ lệ.
     + Thống kê món ăn ưa thích của khách hàng dựa trên số lần gọi của khách.
+    
 -Thống kê giao hàng:
+
     + Đưa ra tổng phí ship và lợi nhuận từ việc ship của nhà hàng.
     + Thống kê thời gian giao hàng trung bình, tỉ lệ giao hàng thành công của từng shipper.
     + Thống kê trạng thái giao hàng.
     + Thống kê địa chỉ giao hàng phổ biến.
+    
 -Thống kê thanh toán:
+
     + Thống kê phương thức thanh toán chiếm tỉ lệ phần trăm bao nhiêu.
     + Thống kê doanh thu theo tháng.
     + Thống kê thời gian bán chạy trong ngày.
     + Thống kê tổng doanh thu nhà hàng từ đầu đến giờ.
+    
 -Thống kê đánh giá:
+
     + Thống kê món ăn được nhiều review nhất.
     + Thống kê người dùng review món ăn nhiều nhất.
 
