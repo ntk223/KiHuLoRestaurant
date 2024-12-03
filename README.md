@@ -21,6 +21,7 @@ Thành viên nhóm:
     + Xử lý các logic login, sign up, logout
     + Xử lý logic chỉnh sửa giỏ hàng
     + Xây dựng tính năng update thông tin, đổi mật khẩu cho người dùng
+- Deploy trang web bằng Railway
 
 2. Đặng Tuấn Long
 
