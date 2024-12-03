@@ -84,7 +84,8 @@ class MenuItem
             CONCAT(ROUND(COUNT(*) / total_items * 100, 2),'%') AS 'rate'
         FROM menuitems,
             (SELECT COUNT(*) AS total_items FROM menuitems) AS total
-        GROUP BY category_id";
+        GROUP BY category_id, category_name";
+
         $result = $this->db->Select($sql);
 
         if ($result->num_rows > 0)
