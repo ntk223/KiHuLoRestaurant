@@ -22,6 +22,9 @@ switch ($manage) {
     case 'review':
         include_once "routes/Reviewroute.php";
         break;
+    case 'combo':
+        include_once "routes/Comboroute.php";
+        break;
     default:
         echo "Page not found";
         break;

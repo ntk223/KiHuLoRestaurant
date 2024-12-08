@@ -32,7 +32,7 @@ class Cart{
         $exist = $this->db->Select($check);
         $cart_id = -1 ;
         if( $exist == false || !( $exist->num_rows > 0)){
-            $query = "INSERT INTO carts (customer_idl) VALUES ('$id')";
+            $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
             $result = $this->db->Insert($query);
             $cart_id = $this->db->conn->insert_id;
         }
