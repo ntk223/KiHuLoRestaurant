@@ -4,6 +4,7 @@
         <section class="menu-table-section">
             <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>
             <a href="index.php?role=admin&manage=menu&action=statistic" class="button">Thống kê</a>
+            <a href="index.php?role=admin&manage=combo" class="button">Combo</a>
 
 
         <h2>Danh sách món ăn</h2>
@@ -41,7 +42,7 @@
                          onclick="return confirm('Bạn có chắc chắn muốn xóa món ăn này?');">Xóa</a>
                         </td>
                     </tr>
-                    <?php }/* Ở đây sẽ là vòng lặp PHP để hiển thị danh sách món ăn */ ?>
+                    <?php }?>
                 </tbody>
             </table>
             <br>
