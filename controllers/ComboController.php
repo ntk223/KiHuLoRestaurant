@@ -17,6 +17,43 @@ Class ComboController{
         include_once 'views/admin/combo_detail.php';
     }
 
+    public function addCombo() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $name = $_POST['combo_name'];
+            $discount = $_POST['discount'];
+            $description = $_POST['description'];
+            $result = $this->combo->addCombo($name, $discount, $description);
+            if ($result) header("Location: index.php?role=admin&manage=combo");
+            else echo "Failed";
+        }
+        else include_once 'views/admin/add_combo.php';
+    }
+
+    public function updateCombo() {
+        //include_once 'views/admin/update_combo.php';
+        $id = $_GET['id'];
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $name = $_POST['combo_name'];
+            $discount = $_POST['discount'];
+            $description = $_POST['description'];
+            $result = $this->combo->updateCombo($id, $name, $discount, $description);
+            if ($result) header("Location: index.php?role=admin&manage=combo");
+            else echo "Failed";
+        }
+        else {
+            $result = $this->combo->getComboById0($id);
+            include_once 'views/admin/update_combo.php';
+        }   
+    }
+
+    public function deleteCombo(){
+        $id = $_GET['id'];
+        $result = $this->combo->deleteCombo($id);
+        if ($result) header("Location: index.php?role=admin&manage=combo");
+        else echo "Failed";
+    }
+
     public function addItem(){
         $item_id = $_POST['item'];
         $quantity = $_POST['quantity'];

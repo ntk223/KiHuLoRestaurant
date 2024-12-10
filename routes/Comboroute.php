@@ -5,12 +5,7 @@ $category_id = isset($_GET['cate']) ? $_GET['cate'] : 'all';
 $role = isset($_GET['role']) ? $_GET['role'] : 'customer';
 if ( $role=='customer')
 {
-    if ($category_id == 'all'){
-        header ("Location: index.php?role=customer&page=index");
-    }
-    else{
-        $Combo->ItembyCategory($category_id);
-    }
+    
 }
 else if ($role == 'admin' )
 {
@@ -31,6 +26,16 @@ else if ($role == 'admin' )
         case 'deleteitem':
             $Combo->deleteItem();
             break;
+        case 'add':
+            include_once "views/admin/add_combo.php";
+            $Combo->addCombo();
+            break;
+        case 'update':
+            $Combo->updateCombo();
+            break;
+        case 'delete':
+            $Combo->deleteCombo();
+            break;
         case 'statistic':
             include_once "views/admin/statisticCategory.php";
             break;
@@ -40,7 +45,7 @@ else if ($role == 'admin' )
         default:
             echo "Page not found";
             break;
-}
+    }
 }
 
 ?>

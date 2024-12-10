@@ -11,7 +11,14 @@ Class Combo {
         $result = $this->db->Select($query);
         return $result;
     }
+    public function getComboById0($id){
+        $query = "SELECT * FROM combos WHERE combo_id = '$id'";
+        $result = $this->db->Select($query);
+        if ($result) return $result->fetch_assoc();
+        else return false;
+    }
 
+    // detail($id){
     public function getComboById($id){
         $query = "SELECT mi.item_name, mi.image_url,cbi.combo_item_id , cbi.quantity, mi.price, cb.discount
                 FROM comboitems cbi
@@ -20,6 +27,27 @@ Class Combo {
                 WHERE cb.combo_id = '$id'";
         $result = $this->db->Select($query);
         if ($result) return $result;
+        else return false;
+    }
+    
+    public function addCombo($name, $discount, $description){
+        $query = "INSERT INTO combos (combo_name, discount, description) VALUES ('$name', '$discount', '$description')";
+        $result = $this->db->Insert($query);
+        if ($result) return true;
+        else return false;
+    }
+
+    public function updateCombo($id, $name, $discount, $description){
+        $query = "UPDATE combos SET combo_name = '$name', discount = '$discount', description = '$description' WHERE combo_id = '$id'";
+        $result = $this->db->Update($query);
+        if ($result) return true;
+        else return false;
+    }
+
+    public function deleteCombo($id){
+        $query = "DELETE FROM combos WHERE combo_id = '$id'";
+        $result = $this->db->Delete($query);
+        if ($result) return true;
         else return false;
     }
 

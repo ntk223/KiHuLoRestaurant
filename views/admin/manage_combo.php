@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combo</title>
+    <link rel='stylesheet' href="assets/css/manage_user.css">
+
 </head>
 <body>
     <table>
@@ -36,7 +38,8 @@
                 <?php }/* Ở đây sẽ là vòng lặp PHP để hiển thị danh sách combo */ ?>
             </tbody>
     </table>
-
+    <a href="index.php?role=admin&manage=combo&action=add" class="">Thêm combo mới</a>
+    <br>
     <a href="index.php?role=admin&manage=menu" class="button">Trở về</a>
 </body>
 </html>

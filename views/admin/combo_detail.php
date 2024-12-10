@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết</title>
-</head>
+    <link rel='stylesheet' href="assets/css/manage_user.css">
+    </head>
 <body>
     <table>
         <thead>
@@ -20,7 +21,7 @@
             <?php 
             $total = 0;
             $discount = 0;
-            while ($row = $result->fetch_assoc()){
+            while ($result&& $row = $result->fetch_assoc()){
             ?>
                 <tr>
                     <td><?php echo $row['item_name']?></td>
@@ -35,7 +36,7 @@
                     <td><a href="index.php?role=admin&manage=combo&action=deleteitem&item_id=<?php echo $row['combo_item_id'] ?>&id=<?php echo $_GET['id']?>">Xóa</a></td>
                 </tr>
                 <?php $total += $row['price'] * $row['quantity']; 
-                    $discout = $row['discount'];?>
+                    $discount = $row['discount'];?>
                 <?php }/* Ở đây sẽ là vòng lặp PHP để hiển thị chi tiết combo */ 
                 $total = $total*(1 - $discount/100)?>
             </tbody>
