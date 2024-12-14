@@ -78,5 +78,10 @@ Class ComboController{
         if ($result) header("Location: index.php?role=admin&manage=combo&action=detail&id=".$_GET['id']);
         else echo "Failed";
     }
+
+    public function ComboList() {
+        $result = $this->combo->getCombo();
+    include "views/user/combo.php";
+    }
 }
 ?>
