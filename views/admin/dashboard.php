@@ -27,6 +27,7 @@
         <li><a href="index.php?role=admin&manage=delivery"><i class="fas fa-truck"></i><b>QUẢN LÍ GIAO HÀNG</b></a></li>
         <li><a href="index.php?role=admin&manage=payment"><i class="fas fa-credit-card"></i><b>QUẢN LÍ THANH TOÁN</b></a></li>
         <li><a href="index.php?role=admin&manage=review"><i class="fas fa-star"></i><b>QUẢN LÍ ĐÁNH GIÁ</b></a></li>
+        <li><a href="index.php" class="">ĐĂNG XUẤT</a></li>
         </ul>
     </div>
     <div>
