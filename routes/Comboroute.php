@@ -36,12 +36,6 @@ else if ($role == 'admin' )
         case 'delete':
             $Combo->deleteCombo();
             break;
-        case 'statistic':
-            include_once "views/admin/statisticCategory.php";
-            break;
-        case 'review':
-            $Combo->reviewItem();
-            break;
         default:
             echo "Page not found";
             break;
