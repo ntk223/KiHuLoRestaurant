@@ -46,5 +46,11 @@ class MenuController
         include_once "views/admin/reviewItem.php";
     }
 
+    public function searchItem()
+    {
+        $result = $this->menuitem->search(); 
+        include_once "views/admin/manage_menu.php";
+    }
+
 }
 ?>

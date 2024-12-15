@@ -54,5 +54,13 @@ class UserController
         include_once "views/admin/statisticCustomer.php";
     }
 
+    public function searchUser()
+    {
+        $result = $this->user->search(); 
+        include_once "views/admin/manage_users.php";
+
+    }
+
+
 }
 ?>

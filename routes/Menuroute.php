@@ -34,6 +34,9 @@ else if ($role == 'admin' )
         case 'review':
             $menu->reviewItem();
             break;
+        case 'search':
+            $menu->searchItem();
+            break;
         default:
             echo "Page not found";
             break;
