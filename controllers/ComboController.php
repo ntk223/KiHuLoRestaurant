@@ -8,7 +8,9 @@ Class ComboController{
     }
     public function getComboList(){
         $result = $this->combo->getCombo();
-        include_once 'views/admin/manage_combo.php';
+
+        if ($_GET['role'] == 'admin') include_once 'views/admin/manage_combo.php';
+        else include_once 'views/user/combo_list.php';
     }
 
     public function comboDetail(){
