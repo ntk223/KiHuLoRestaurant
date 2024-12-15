@@ -26,6 +26,9 @@ switch ($page) {
     case 'cart':
         include_once "routes/Cartroute.php";
         break;
+    case 'combo':
+        include_once "routes/Comboroute.php";
+        break;
     default:
         echo "Page not found";
         break;
