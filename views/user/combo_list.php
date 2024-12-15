@@ -5,26 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combo</title>
     <link rel="stylesheet" href="assets/css/main0.css">
-    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/combo_list.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
+<main>
 <div class="combo-container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <h1>Danh sách Combo</h1>
+    <br>
     <div class="combo-list">
         <?php if (!empty($result)): ?>
             <?php foreach ($result as $combo): 
                 ?>
                 <div class="combo-item">
-                    <img src="<?= $combo['image_url'] ?>" alt="<?= $combo['combo_name'] ?>" />
                     <h2><?= $combo['combo_name'] ?></h2>
                     <p><?= $combo['description'] ?></p>
                     <?php $cb = new Combo();
@@ -35,10 +27,10 @@
                         
                         $price += $item['price'] * $item['quantity'];
                     }
-                    echo 'Giá: ' . $price * (1 - $combo['discount']/100) . 'đ';
+                    echo 'Giá: ' . number_format($price * (1 - $combo['discount']/100)) . 'VNĐ';
                     ?>
-
-                    <a href="index.php?role=customer&page=comboDetail&id=<?= $combo['combo_id'] ?>" class="btn">Chi tiết</a>
+                    <br>
+                    <button title="Đi đến giỏ hàng" class="add-to-cart">Thêm vào giỏ hàng</button>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
