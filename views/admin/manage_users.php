@@ -6,7 +6,7 @@
         <a href="index.php?role=admin&manage=customer&action=statisticCustomer" class="button">Thống kê</a>
         <a href="index.php?role=admin&manage=customer&action=historyCus" class="button">Lịch sử</a>
         <a href="index.php?role=admin&manage=customer&action=add" class="button">Thêm người dùng</a>
-
+        <?php include_once 'views/admin/search_user.php';?>
         <h2>Danh sách người dùng</h2>
         <form action="#" method="POST">
         <table>
@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                 <?php while ($row = $result->fetch_assoc()){?>
+                 <?php while ($result && $row = $result->fetch_assoc()){?>
                 <tr></tr>
                     <td><?php echo $row['user_id'];?></td>
                     <td><?php echo $row['username'];?></td>

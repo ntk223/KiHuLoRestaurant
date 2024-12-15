@@ -5,7 +5,7 @@
             <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>
             <a href="index.php?role=admin&manage=menu&action=statistic" class="button">Thống kê</a>
             <a href="index.php?role=admin&manage=combo" class="button">Combo</a>
-
+            <?php include_once 'views/admin/search_menu.php';?>
 
         <h2>Danh sách món ăn</h2>
         <table>
@@ -24,7 +24,7 @@
             <tbody>
                 <?php 
                 $cate = array("", "Món chính", "Món khai vị", "Nước uống","Tráng miệng");
-                while ($row = $result->fetch_assoc()){
+                while ($result&&$row = $result->fetch_assoc()){
                 ?>
                     <tr>
                     

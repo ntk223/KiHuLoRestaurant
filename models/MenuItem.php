@@ -146,6 +146,47 @@ class MenuItem
         return false;
     }
 
+    public function search()
+    {
+        if (isset($_GET['action']) && $_GET['action'] == 'search') 
+        {
+            $query = "SELECT * FROM menuitems WHERE 1 ";
+            if (isset($_POST['item_id']) && $_POST['item_id'] != '') 
+            {
+                $item_id = $_POST['item_id'];
+                $query .= " AND item_id = '$item_id' ";
+            }
+            if (isset($_POST['item_name']) && $_POST['item_name'] != '') 
+            {
+                $item_name = $_POST['item_name'];
+                $query .= " AND item_name LIKE '%$item_name%' ";
+            }
+            if (isset($_POST['category_id']) && $_POST['category_id'] != '') 
+            {
+                $category_id = $_POST['category_id'];
+                $query .= " AND category_id = '$category_id' ";
+            }
+            if (isset($_POST['price']) && $_POST['price'] != '') 
+            {
+                $price = $_POST['price'];
+                $query .= " AND price = '$price' ";
+            }
+            if (isset($_POST['available']) && $_POST['available'] != '') 
+            {
+                $available = $_POST['available'];
+                $query .= " AND available = '$available' ";
+            }
+            //$query .= " ORDER BY user_id DESC";
+
+            $result = $this->db->Select($query);
+            if ($result)
+            {
+                return $result;
+            }
+            return false;
+        }
+    }
+
 }
 ?>
 

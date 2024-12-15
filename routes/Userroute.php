@@ -22,6 +22,9 @@ switch ($action) {
     case 'historyCus' :
         $user->historyCus();
         break;
+    case 'search':
+        $user->searchUser();
+        break;
     default:
         echo "Page not found";
         break;

@@ -207,5 +207,46 @@ ORDER BY o.order_time DESC;";
         }
         return false;
     }
+
+    public function search()
+    {
+        if (isset($_GET['action']) && $_GET['action'] == 'search') 
+        {
+            $query = "SELECT * FROM users WHERE 1 ";
+            if (isset($_POST['user_id']) && $_POST['user_id'] != '') 
+            {
+                $user_id = $_POST['user_id'];
+                $query .= " AND user_id = '$user_id' ";
+            }
+            if (isset($_POST['username']) && $_POST['username'] != '') 
+            {
+                $username = $_POST['username'];
+                $query .= " AND username LIKE '%$username%' ";
+            }
+            if (isset($_POST['email']) && $_POST['email'] != '') 
+            {
+                $email = $_POST['email'];
+                $query .= " AND email LIKE '%$email%' ";
+            }
+            if (isset($_POST['phone']) && $_POST['phone'] != '') 
+            {
+                $phone = $_POST['phone'];
+                $query .= " AND phone LIKE '%$phone%' ";
+            }
+            if (isset($_POST['role']) && $_POST['role'] != '') 
+            {
+                $role = $_POST['role'];
+                $query .= " AND role = '$role' ";
+            }
+            //$query .= " ORDER BY user_id DESC";
+
+            $result = $this->db->Select($query);
+            if ($result)
+            {
+                return $result;
+            }
+            return false; 
+        }
+    }
 }
 ?>
