@@ -26,12 +26,7 @@
         </a>
       </div>
       <div class="search-bar">
-        <form action="/search" method="get">
-        <input type="text" placeholder="Search food..." name="searchFood" />
-        <button type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-        </form>
+        <?php include_once "searchbar.php"; ?>
       </div>
       <div class="users">
         <div class="users-info">

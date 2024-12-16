@@ -79,6 +79,24 @@ Class Combo {
         if ($result) return true;
         else return false;
     }
+
+    public function getPrice() {
+        $query = "SELECT 
+                    cb.combo_name,
+                    cb.discount,
+                    Ceil (SUM(mi.price * cbi.quantity) * (1 - cb.discount / 100)) AS price
+                FROM 
+                    combos cb
+                JOIN 
+                    comboitems cbi ON cbi.combo_id = cb.combo_id
+                JOIN 
+                    menuitems mi ON mi.item_id = cbi.item_id
+                GROUP BY 
+                    cb.combo_id, cb.combo_name;";
+        $result = $this->db->Select($query);
+        if ($result) return $result;
+        else return false;
+    }
 }
 
 ?>

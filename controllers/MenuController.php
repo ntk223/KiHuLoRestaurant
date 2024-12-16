@@ -56,6 +56,11 @@ class MenuController
         include_once "views/admin/manage_menu.php";
     }
 
+    public function searchForUser() {
+        $result = $this->menuitem->searchForUser(); 
+        include_once "views/user/menu.php";
+    }
+
     // Phương thức hiển thị món ăn và các review của nó
 public function showItemReviews($item_id)
 {

@@ -187,6 +187,24 @@ class MenuItem
         }
     }
 
+    public function searchForUser() {
+        if (isset($_GET['page']) && $_GET['page'] == 'search') 
+        {
+            $query = "SELECT * FROM menuitems WHERE 1 ";
+            if (isset($_POST['item_name']) && $_POST['item_name'] != '') 
+            {
+                $item_name = $_POST['item_name'];
+                $query .= " AND item_name LIKE '%$item_name%' ";
+            }
+            $result = $this->db->Select($query);
+            if ($result)
+            {
+                return $result;
+            }
+            return false;
+        }
+    }
+
     public function getReviewsByItem($item_id)
     {
         // Truy vấn lấy các review của món ăn từ bảng reviews
@@ -198,6 +216,7 @@ class MenuItem
         return $result;
     }
     
+
 }
 ?>
 

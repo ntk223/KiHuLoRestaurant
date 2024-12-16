@@ -8,7 +8,6 @@ switch ($page) {
         include_once "views/user/sidebar.php";
         $index = new MenuController();
         $index->Menulist();
-        
         break;
     case 'menu':
         include_once "views/user/sidebar.php";
@@ -29,6 +28,10 @@ switch ($page) {
     case 'combo':
         include_once "routes/Comboroute.php";
         break;
+    case 'search':
+        $mn = new MenuController();
+        include_once 'views/user/sidebar.php';
+        $mn->searchForUser();
     default:
         echo "Page not found";
         break;

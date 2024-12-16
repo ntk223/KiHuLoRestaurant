@@ -21,7 +21,7 @@
         :
       </h1>
 </div>
-<?php while ($row = $result->fetch_assoc()) { ?>
+<?php while ($result && $row = $result->fetch_assoc()) { ?>
             <div class="food">
             <a href="index.php?role=customer&page=item_reviews&item_id=<?php echo $row['item_id']; ?>" title="Đi đến review món ăn này">
                 <img src="<?php echo $row['image_url']; ?>" alt="<?php echo $row['item_name']; ?>" style="width:200px;height:170px;">
