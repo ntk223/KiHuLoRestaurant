@@ -52,7 +52,7 @@
                 </tbody>
             </table>
             <br>
-            <table>
+<table>
     <thead>
         <tr>
             <th>Tên Combo</th>
@@ -64,10 +64,11 @@
     </thead>
     <tbody>
         <?php 
-        $combo_total = 0; // Tổng tiền cho tất cả combo
+         // Tổng tiền cho tất cả combo
+         $combo_total = 0;
         if ($combo_result) { // $combo_result chứa dữ liệu combo
             while ($row = $combo_result->fetch_assoc()) { 
-                $combo_item_total = $row['price'] * $row['quantity'];
+                $combo_item_total = $row['price_each'] * $row['quantity'];
                 $combo_total += $combo_item_total;
         ?>
             <tr>
@@ -75,25 +76,25 @@
                 <td><?php echo $row['combo_name']; ?></td>
                 
                 <!-- Form cập nhật số lượng combo -->
-                <form action="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?>&action=update_combo&id=<?php echo $row['combo_id']; ?>" method="POST">
+                <form action="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?>&action=updatecombo&id=<?php echo $row['combo_id']; ?>" method="POST">
                     <td>
                         <input type="number" name="quantity" value="<?php echo $row['quantity']; ?>" min="1" class="quantity-input">
                     </td>
                     <!-- Đơn giá -->
-                    <td><?php echo number_format($row['price']); ?> VNĐ</td>
+                    <td><?php echo number_format($row['price_each']); ?> VNĐ</td>
                     
                     <!-- Tổng cộng -->
                     <td class="item-total"><?php echo number_format($combo_item_total); ?> VNĐ</td>
                     
                     <!-- Nút cập nhật -->
                     <td style="width: 220px;">
-                        <button type="submit" class="confirm_food">Xác nhận</button>
+                        <button type="submit" class="confirn_food">Xác nhận</button>
                     </td>
                 </form>
                 
                 <!-- Nút xóa combo -->
                 <td>
-                    <a href="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?>&action=delete_combo&id=<?php echo $row['combo_id']; ?>">
+                    <a href="index.php?role=customer&page=cart&cid=<?php echo $row['cart_id']; ?>&action=deletecombo&id=<?php echo $row['combo_id']; ?>">
                         <button class="delete_food">Xóa</button>
                     </a>
                 </td>
@@ -103,13 +104,15 @@
     </tbody>
 </table>
 
+<div>
+    <h3>Tổng tiền: <?php echo number_format($combo_total + $total); ?> VNĐ</h3>
+</div>
         </div>
+
         <!-- Bảng Combo -->
-    
+
         <!-- Tổng cộng -->
-        <div>
-            <h3>Tổng tiền: <?php echo number_format($total + $combo_total); ?> VNĐ</h3>
-        </div>
+
         <div class="checkout">
             <button class="checkout-btn">Thanh toán</button>
         </div>

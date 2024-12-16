@@ -5,14 +5,16 @@ class CartController{
     public function __construct(){
         $this->cart = new Cart();
     }
-    public function getItemList(){
+    public function getCartList(){
         $result = $this->cart->getCartItem();
-        include "views/user/cart.php";
-    }
-    public function getComboList(){
         $combo_result = $this->cart->getComboItems();
-        include "views/user/cart.php";
+        include_once "views/user/cart.php";
     }
+    // public function getComboList(){
+    //     $combo_result = $this->cart->getComboItems();
+    //     $combo_total = 0;
+    //     include_once "views/user/combo_incart.php";
+    // }
     public function addItem(){
         $result = $this->cart->addItem();
     }

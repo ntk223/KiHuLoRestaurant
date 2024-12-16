@@ -4,8 +4,7 @@ $cart = new CartController();
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 switch ($action) {
     case 'index':
-        $cart->getItemList();
-        $cart->getComboList();
+        $cart->getCartList();
         break;
     case 'add':
         $cart->addItem();

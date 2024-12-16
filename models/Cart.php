@@ -138,27 +138,30 @@ class Cart{
     
         // Truy vấn danh sách combo
         $query = "SELECT 
-    mc.combo_id, 
-    c.cart_id, 
-    mc.combo_name, 
-    SUM(mi.price * ci.quantity) AS combo_price,  -- Tính tổng giá của combo
-    cc.quantity
-FROM 
-    users u
-INNER JOIN 
-    carts c ON c.customer_id = u.user_id
-INNER JOIN 
-    cartcombos cc ON c.cart_id = cc.cart_id
-INNER JOIN 
-    combos mc ON mc.combo_id = cc.combo_id
-INNER JOIN 
-    comboitems ci ON ci.combo_id = mc.combo_id  -- Join với bảng comboitems
-INNER JOIN 
-    menuitems mi ON mi.item_id = ci.item_id      -- Join với bảng menuitems để lấy giá
-WHERE 
-    u.user_id = '$id'
-GROUP BY 
-    mc.combo_id, c.cart_id, mc.combo_name, cc.quantity;";
+                    c.cart_id,
+                    cb.combo_id,
+                    cb.combo_name,
+                    cb.discount,
+                    CEIL(SUM(mi.price * cbi.quantity) * (1 - cb.discount / 100)) AS price_each,
+                    cc.quantity as quantity
+                FROM 
+                    combos cb
+                JOIN 
+                    comboitems cbi ON cbi.combo_id = cb.combo_id
+                JOIN 
+                    menuitems mi ON mi.item_id = cbi.item_id
+                JOIN 
+                    cartcombos cc ON cc.combo_id = cb.combo_id
+                JOIN
+                    carts c ON c.cart_id = cc.cart_id
+                WHERE cb.combo_id IN
+                    (SELECT cc.combo_id
+                    FROM cartcombos cc
+                    JOIN carts c ON c.cart_id = cc.cart_id
+                    JOIN users u ON u.user_id = c.customer_id
+                    WHERE u.user_id = '$id')
+                GROUP BY 
+                    cb.combo_id, cb.combo_name;";
         $result = $this->db->Select($query);
     
         return $result;
