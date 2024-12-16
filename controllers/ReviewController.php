@@ -37,14 +37,33 @@ class ReviewController {
     }
 
     public function getReviewsByItemId($item_id)
-{
-    return $this->review->getReviewsByItemId($item_id);
-}
+    {
+        return $this->review->getReviewsByItemId($item_id);
+    }
 
-public function addReview($customer_id, $item_id, $rating, $review_text)
-{
-    return $this->review->addReview($customer_id, $item_id, $rating, $review_text);
-}
+    public function addReview()
+    {
+        $item_id = isset($_GET['item_id']) ? $_GET['item_id'] : null;
+        $this->review->addReview($item_id);
+    }
+
+
+    public function ItemReviews()
+    {
+        // Lấy item_id từ URL
+        $item_id = isset($_GET['item_id']) ? $_GET['item_id'] : null;
+        
+        if ($item_id) {
+            // Lấy review của món ăn từ model
+            $reviews = $this->review->getReviewsByItem($item_id); // Phương thức lấy reviews từ DB
+            include "views/user/item_reviews.php"; // Gọi view để hiển thị reviews
+        } else {
+            echo "Không tìm thấy món ăn!";
+        }
+    }
+
+
+
 
 } 
 

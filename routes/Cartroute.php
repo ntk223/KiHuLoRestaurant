@@ -9,7 +9,7 @@ switch ($action) {
     case 'add':
         $cart->addItem();
         break;
-    case 'addCombo':
+    case 'addcombo':
         $cart->addCombo();
         break;
     case 'deletecombo':
