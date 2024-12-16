@@ -69,5 +69,101 @@ class Cart{
         header("Location: index.php?role=customer&page=cart");
     }
 
+    public function addCombo() {
+        $combo_id = $_GET['id'];
+        $id = $_SESSION['user_id'];
+        $check = "SELECT * FROM carts WHERE customer_id = '$id'";
+        $exist = $this->db->Select($check);
+        $cart_id = -1;
+        if ($exist == false || !$exist->num_rows > 0) {
+            $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
+            $this->db->Insert($query);
+            $cart_id = $this->db->conn->insert_id;
+        } else {
+            $cart_id = $exist->fetch_assoc()['cart_id'];
+        }
+        $quantity = $_POST['quantity'];
+        // Kiểm tra combo đã tồn tại trong giỏ hàng chưa
+        $query = "SELECT * FROM cartcombos WHERE cart_id = '$cart_id' AND combo_id = '$combo_id'";
+        $result = $this->db->Select($query);
+    
+        if ($result && $result->num_rows > 0) {
+            // Combo đã tồn tại, tăng số lượng
+            $query = "UPDATE cartcombos SET quantity = quantity + '$quantity' 
+                      WHERE cart_id = '$cart_id' AND combo_id = '$combo_id'";
+            $this->db->Update($query);
+        } else {
+            // Combo chưa tồn tại, thêm mới
+            $query = "INSERT INTO cartcombos (cart_id, combo_id, quantity) 
+                      VALUES ('$cart_id', '$combo_id', '$quantity')";
+            $this->db->Insert($query);
+        }
+    
+        header("Location: index.php?role=customer&page=combo_list");
+    }
+
+    public function deleteCombo() {
+        $cart_id = $_GET['cid']; // ID giỏ hàng
+        $combo_id = $_GET['id']; // ID combo được truyền từ URL
+    
+        // Thực hiện truy vấn xóa combo trong giỏ hàng
+        $query = "DELETE FROM cartcombos WHERE combo_id = '$combo_id' AND cart_id = '$cart_id'";
+        $this->db->Delete($query);
+    
+        header("Location: index.php?role=customer&page=cart");
+    }
+    
+    public function updateCombo() {
+        $cart_id = $_GET['cid']; // ID giỏ hàng
+        $combo_id = $_GET['id']; // ID combo
+        $quantity = $_POST['quantity']; // Số lượng mới từ form
+    
+        // Thực hiện truy vấn cập nhật số lượng combo
+        $query = "UPDATE cartcombos SET quantity = '$quantity' 
+                  WHERE combo_id = '$combo_id' AND cart_id = '$cart_id'";
+        $this->db->Update($query);
+    
+        header("Location: index.php?role=customer&page=cart");
+    }
+    
+    public function getComboItems() {
+        $id = $_SESSION['user_id'];
+        $check = "SELECT * FROM carts WHERE customer_id = '$id'";
+        $exist = $this->db->Select($check);
+    
+        if ($exist == false || !($exist->num_rows > 0)) {
+            $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
+            $this->db->Insert($query);
+        }
+    
+        // Truy vấn danh sách combo
+        $query = "SELECT 
+    mc.combo_id, 
+    c.cart_id, 
+    mc.combo_name, 
+    SUM(mi.price * ci.quantity) AS combo_price,  -- Tính tổng giá của combo
+    cc.quantity
+FROM 
+    users u
+INNER JOIN 
+    carts c ON c.customer_id = u.user_id
+INNER JOIN 
+    cartcombos cc ON c.cart_id = cc.cart_id
+INNER JOIN 
+    combos mc ON mc.combo_id = cc.combo_id
+INNER JOIN 
+    comboitems ci ON ci.combo_id = mc.combo_id  -- Join với bảng comboitems
+INNER JOIN 
+    menuitems mi ON mi.item_id = ci.item_id      -- Join với bảng menuitems để lấy giá
+WHERE 
+    u.user_id = '$id'
+GROUP BY 
+    mc.combo_id, c.cart_id, mc.combo_name, cc.quantity;";
+        $result = $this->db->Select($query);
+    
+        return $result;
+    }
+    
+    
 }
 ?>
