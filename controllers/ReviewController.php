@@ -36,6 +36,16 @@ class ReviewController {
         include_once "views/admin/statisticReview.php";
     }
 
+    public function getReviewsByItemId($item_id)
+{
+    return $this->review->getReviewsByItemId($item_id);
+}
+
+public function addReview($customer_id, $item_id, $rating, $review_text)
+{
+    return $this->review->addReview($customer_id, $item_id, $rating, $review_text);
+}
+
 } 
 
 ?>

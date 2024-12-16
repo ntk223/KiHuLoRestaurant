@@ -83,5 +83,27 @@ class Review {
         return false;
     }
 
+    // Lấy tất cả các review của món ăn theo item_id
+    public function getReviewsByItemId($item_id)
+    {
+        $query = "SELECT * FROM reviews WHERE item_id = :item_id ORDER BY review_date DESC";
+        $stmt = $this->db->Select($query);
+        $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+     // Thêm review mới vào cơ sở dữ liệu
+     public function addReview($customer_id, $item_id, $rating, $review_text)
+     {
+         $query = "INSERT INTO reviews (customer_id, item_id, rating, review_text) 
+                   VALUES (:customer_id, :item_id, :rating, :review_text)";
+         $stmt = $this->db->Select($query);
+         $stmt->bindParam(':customer_id', $customer_id, PDO::PARAM_INT);
+         $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
+         $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
+         $stmt->bindParam(':review_text', $review_text, PDO::PARAM_STR);
+         return $stmt->execute();
+     }
 }
 ?>
