@@ -94,16 +94,34 @@ class Review {
     }
 
      // Thêm review mới vào cơ sở dữ liệu
-     public function addReview($customer_id, $item_id, $rating, $review_text)
+     public function getReviewsByItem($item_id)
      {
-         $query = "INSERT INTO reviews (customer_id, item_id, rating, review_text) 
-                   VALUES (:customer_id, :item_id, :rating, :review_text)";
-         $stmt = $this->db->Select($query);
-         $stmt->bindParam(':customer_id', $customer_id, PDO::PARAM_INT);
-         $stmt->bindParam(':item_id', $item_id, PDO::PARAM_INT);
-         $stmt->bindParam(':rating', $rating, PDO::PARAM_INT);
-         $stmt->bindParam(':review_text', $review_text, PDO::PARAM_STR);
-         return $stmt->execute();
+         // Truy vấn lấy các review của món ăn từ bảng reviews
+         $query = "SELECT * FROM reviews
+                     JOIN users ON reviews.customer_id = users.user_id
+                      WHERE item_id = '$item_id'";
+         $result = $this->db->Select($query);
+         if ($result) return $result;
+         else return false;
      }
+
+     public function addReview($item_id)
+{
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $rating = $_POST['rating'];
+        $review_text = $_POST['review_text'];
+        $customer_id = $_SESSION['user_id']; // Giả sử người dùng đã đăng nhập
+
+        // Thêm review vào cơ sở dữ liệu thông qua ReviewController
+        $query = "INSERT INTO reviews (customer_id, item_id, rating, review_text) VALUES ('$customer_id', '$item_id', '$rating', '$review_text')";
+        $result = $this->db->Insert($query);
+        // Sau khi thêm review, chuyển hướng về trang chi tiết món ăn để hiển thị review mới
+        header("Location: index.php?role=customer&page=review&item_id=" . $item_id);
+        exit(); // Quan trọng, tránh lỗi khi chuyển hướng
+    }
+}
+
+
+
 }
 ?>

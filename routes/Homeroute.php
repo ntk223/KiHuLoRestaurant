@@ -32,8 +32,12 @@ switch ($page) {
         $mn = new MenuController();
         include_once 'views/user/sidebar.php';
         $mn->searchForUser();
+        break;
+    case 'review':
+        include_once 'routes/Reviewroute.php';
+        break;
     default:
-        echo "Page not found";
+        echo "Page not found123";
         break;
 }
 include_once 'common/footer.php';

@@ -34,11 +34,10 @@ class Cart{
         if( $exist == false || !( $exist->num_rows > 0)){
             $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
             $result = $this->db->Insert($query);
-            $cart_id = $this->db->conn->insert_id;
         }
-        else{
-            $cart_id = $exist->fetch_assoc()['cart_id'];
-        }
+        $exist = $this->db->Select($check);
+        $cart_id = $exist->fetch_assoc()['cart_id'];
+        
         $quantity = $_POST['quantity'];
         $query = "SELECT * FROM cartitems WHERE cart_id = '$cart_id' AND item_id = '$item_id'";
         $result = $this->db->Select($query);
@@ -78,10 +77,10 @@ class Cart{
         if ($exist == false || !$exist->num_rows > 0) {
             $query = "INSERT INTO carts (customer_id) VALUES ('$id')";
             $this->db->Insert($query);
-            $cart_id = $this->db->conn->insert_id;
-        } else {
-            $cart_id = $exist->fetch_assoc()['cart_id'];
         }
+        $exist = $this->db->Select($check);
+        $cart_id = $exist->fetch_assoc()['cart_id'];
+
         $quantity = $_POST['quantity'];
         // Kiểm tra combo đã tồn tại trong giỏ hàng chưa
         $query = "SELECT * FROM cartcombos WHERE cart_id = '$cart_id' AND combo_id = '$combo_id'";
@@ -138,30 +137,28 @@ class Cart{
     
         // Truy vấn danh sách combo
         $query = "SELECT 
-                    c.cart_id,
-                    cb.combo_id,
-                    cb.combo_name,
-                    cb.discount,
-                    CEIL(SUM(mi.price * cbi.quantity) * (1 - cb.discount / 100)) AS price_each,
-                    cc.quantity as quantity
-                FROM 
-                    combos cb
-                JOIN 
-                    comboitems cbi ON cbi.combo_id = cb.combo_id
-                JOIN 
-                    menuitems mi ON mi.item_id = cbi.item_id
-                JOIN 
-                    cartcombos cc ON cc.combo_id = cb.combo_id
-                JOIN
-                    carts c ON c.cart_id = cc.cart_id
-                WHERE cb.combo_id IN
-                    (SELECT cc.combo_id
-                    FROM cartcombos cc
-                    JOIN carts c ON c.cart_id = cc.cart_id
-                    JOIN users u ON u.user_id = c.customer_id
-                    WHERE u.user_id = '$id')
-                GROUP BY 
-                    cb.combo_id, cb.combo_name;";
+                c.cart_id,
+                cb.combo_id,
+                cb.combo_name,
+                cb.discount,
+                CEIL(SUM(mi.price * cbi.quantity) * (1 - cb.discount / 100)) AS price_each,
+                cc.quantity
+            FROM 
+                combos cb
+            JOIN 
+                comboitems cbi ON cbi.combo_id = cb.combo_id
+            JOIN 
+                menuitems mi ON mi.item_id = cbi.item_id
+            JOIN 
+                cartcombos cc ON cc.combo_id = cb.combo_id
+            JOIN
+                carts c ON c.cart_id = cc.cart_id
+            JOIN
+                users u ON u.user_id = c.customer_id
+            WHERE 
+                u.user_id = '$id'
+            GROUP BY 
+                c.cart_id, cb.combo_id, cb.combo_name, cb.discount, cc.quantity;";
         $result = $this->db->Select($query);
     
         return $result;

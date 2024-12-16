@@ -205,17 +205,7 @@ class MenuItem
         }
     }
 
-    public function getReviewsByItem($item_id)
-    {
-        // Truy vấn lấy các review của món ăn từ bảng reviews
-        $query = "SELECT * FROM reviews WHERE item_id = ?";
-        $stmt = $this->db->Select($query);
-        $stmt->bind_param("i", $item_id); // Bind item_id vào câu truy vấn
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result;
-    }
-    
+
 
 }
 ?>
