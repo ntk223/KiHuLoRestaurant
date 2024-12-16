@@ -29,12 +29,12 @@
                     }
                     echo 'Giá: ' . number_format($price * (1 - $combo['discount']/100)) . 'VNĐ';
                     ?>
-                    <form action="index.php?role=customer&page=cart&action=addCombo&id=<?php echo $row['item_id']; ?>" method="POST">
+                    <form action="index.php?role=customer&page=cart&action=addcombo&id=<?php echo $combo['combo_id']; ?>" method="POST">
                     <li>
                         Số lượng: 
                         <input type="number" name="quantity" min="1" value="1" class="quantity-input" />
                     </li>
-                    <button title="Đi đến giỏ hàng" class="add-to-cart">Thêm vào giỏ hàng</button>
+                    <button title="Đi đến giỏ hàng" class="add-to-cart" type="submit" name="submit">Thêm vào giỏ hàng</button>
                     </form>
                 </div>
             <?php endforeach; ?>

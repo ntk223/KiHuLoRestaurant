@@ -99,7 +99,7 @@ class Cart{
             $this->db->Insert($query);
         }
     
-        header("Location: index.php?role=customer&page=combo_list");
+        header("Location: index.php?role=customer&page=combo");
     }
 
     public function deleteCombo() {
