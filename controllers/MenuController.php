@@ -52,5 +52,10 @@ class MenuController
         include_once "views/admin/manage_menu.php";
     }
 
+    public function searchForUser() {
+        $result = $this->menuitem->searchForUser(); 
+        include_once "views/user/menu.php";
+    }
+
 }
 ?>

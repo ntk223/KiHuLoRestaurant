@@ -11,6 +11,8 @@ if ( $role=='customer')
     else{
         $menu->ItembyCategory($category_id);
     }
+
+    
 }
 else if ($role == 'admin' )
 {
