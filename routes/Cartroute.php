@@ -12,11 +12,11 @@ switch ($action) {
     case 'addCombo':
         $cart->addCombo();
         break;
-    case 'deleteCombo':
-        $cart->deleteCartitem();
+    case 'deletecombo':
+        $cart->deleteCombo();
         break;
-    case 'updateCombo':
-        $cart->updateCartitem();
+    case 'updatecombo':
+        $cart->updateCombo();
         break;
     case 'delete':
         $cart->deleteCartitem();
