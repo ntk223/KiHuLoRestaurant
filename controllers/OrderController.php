@@ -16,7 +16,8 @@ class  OrderController {
     public function orderDetail() {
         $id = $_GET['id'];
         $orderDetail = $this->order->orderDetail($id);
-        include_once "views/admin/orderdetail.php";
+        if ($_GET['role'] == 'admin')include_once "views/admin/orderdetail.php";
+        else include_once "views/user/order_detail.php";
     }
 
     public function updateStatus() {

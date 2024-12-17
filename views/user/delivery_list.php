@@ -18,6 +18,7 @@
                 <th>Địa chỉ</th>
                 <th>Phí vận chuyển</th>
                 <th>Trạng thái</th>
+                <th>Thời gian giao hàng</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,7 @@
                     <td><?php echo $row['delivery_address']; ?></td>
                     <td><?php echo $row['delivery_fee']; ?></td>
                     <td><?php echo $row['status']; ?></td>
+                    <td><?php if($row['status'] == 'Giao hàng thành công') echo $row['delivery_time']; ?></td>
                 </tr>
             <?php } 
             }?>

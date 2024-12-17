@@ -38,11 +38,8 @@ else {
         case 'confirm':
             $orderController->createOrder();
             break;
-        case 'add':
-            $orderController->addOrder();
-            break;
-        case 'delete':
-            $orderController->deleteOrder();
+        case 'detail':
+            $orderController->orderDetail();
             break;
         default:
             echo "Page not found";

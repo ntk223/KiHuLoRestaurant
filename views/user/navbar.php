@@ -7,5 +7,6 @@
             <li><a href="index.php?role=customer&page=cart"><span><i class="fas fa-shopping-cart"></i></span> Cart</a></li>
             <li><a href="index.php?role=customer&page=order"><span><i class="fas fa-shopping-bag"></i></span> Order</a></li>
             <li><a href="index.php?role=customer&page=delivery"><span><i class="fas fa-truck"></i></span> Delivery</a></li>
+            <li><a href="index.php?role=customer&page=payment"><span><i class="fas fa-wallet"></i></span> Payment</a></li>
         </ul>
 </div>

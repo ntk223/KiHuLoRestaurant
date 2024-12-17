@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/table.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
-
 <main>
 <body class="table-page">
     <table class="order-table">
@@ -26,7 +25,7 @@
                 while ($row = $result->fetch_assoc()) { 
             ?>
                 <tr>
-                    <td><?php echo $row['order_id']; ?></td>
+                    <td><a href="index.php?role=customer&page=order&action=detail&id=<?php echo $row['order_id']; ?>"><?php echo $row['order_id']; ?></a></td>
                     <td><?php echo $row['order_time']; ?></td>
                     <td><?php echo $row['total']; ?></td>
                     <td><?php echo $row['order_status']; ?></td>
