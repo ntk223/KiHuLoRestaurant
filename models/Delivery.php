@@ -48,6 +48,10 @@ class Delivery {
             $status = $status_arr[$res];
             $query = "UPDATE deliveries SET status = '$status' WHERE delivery_id = '$id'";
             $result = $this->db->Update($query);
+            if ($status == 'Giao hàng thành công') {
+                $query = "UPDATE deliveries SET delivery_time = NOW() WHERE delivery_id = '$id'";
+                $result = $this->db->Update($query);
+            }
             if ($result) {
                 header("Location: index.php?role=admin&manage=delivery");
             } else {

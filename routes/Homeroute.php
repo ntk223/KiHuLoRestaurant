@@ -42,6 +42,9 @@ switch ($page) {
     case 'delivery':
         include_once 'routes/Deliroute.php';
         break;
+    case 'payment':
+        include_once 'routes/Paymentroute.php';
+        break;
     default:
         echo "Page not found123";
         break;
