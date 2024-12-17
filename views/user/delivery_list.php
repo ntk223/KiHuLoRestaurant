@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Giao hàng</title>
+    <link rel="stylesheet" href="assets/css/main0.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
+
+<main>
 <body>
-    <br><br><br><br><br><br><br><br>
-    <table>
+    <table class="order-table">
         <thead>
             <tr>
                 <th>Mã đơn hàng</th>
@@ -32,4 +36,5 @@
         </tbody>
     </table>
 </body>
+</main>
 </html>

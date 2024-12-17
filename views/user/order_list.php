@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách đơn hàng</title>
+    <title>Đặt hàng</title>
+    <link rel="stylesheet" href="assets/css/main0.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
-<body>
-    <br><br><br><br><br><br><br><br>
-    <table>
+
+<main>
+<body class="table-page">
+    <table class="order-table">
         <thead>
             <tr>
                 <th>Mã đơn hàng</th>
                 <th>Ngày đặt hàng</th>
                 <th>Tổng tiền</th>
                 <th>Trạng thái</th>
-
             </tr>
         </thead>
         <tbody>
             <?php 
-            if ( $result){
-            while ($row = $result->fetch_assoc()) { 
+            if ($result) {
+                while ($row = $result->fetch_assoc()) { 
             ?>
                 <tr>
                     <td><?php echo $row['order_id']; ?></td>
@@ -32,6 +35,6 @@
             }?>
         </tbody>
     </table>    
-
 </body>
+        </main>
 </html>
