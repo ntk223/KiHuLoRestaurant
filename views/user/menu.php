@@ -10,7 +10,7 @@
 <main>
   <div class="menu">
     <div style="width : 100%">
-      <h1 style="margin: 10px;font-family: 'Dancing Script', cursive;font-size:50px">
+      <h1>
         <?php if(isset($_GET['cate'])){
           if($_GET['cate'] == 'all') echo 'Tất cả';
           elseif($_GET['cate'] == 1) echo 'Món chính';
@@ -44,6 +44,9 @@
                     </li>
                     <button title="Đi đến giỏ hàng" class="add-to-cart">Thêm vào giỏ hàng</button>
                     </form>
+                    <a href="index.php?role=customer&page=review&item_id=<?php echo $row['item_id']; ?>" title="Đi đến review món ăn này">
+                      <button class="add-to-cart">Đánh giá</button>
+</a>
                 </ul>
             </div>
 <?php } ?>
