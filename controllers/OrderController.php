@@ -30,5 +30,14 @@ class  OrderController {
         $orderStatusStatistics = $this->order->getOrderStatusStatistics();
         include_once "views/admin/statisticOrder.php";
     }
+
+    public function createOrder() {
+        $this->order->createOrder();
+    }
+
+    public function getOrderByUser() {
+        $result = $this->order->getOrderByUser($_SESSION['user_id']);
+        include_once "views/user/order_list.php";
+    }
 }
  ?>

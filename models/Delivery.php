@@ -160,5 +160,18 @@ GROUP BY d.status;";
         }
     }
 
+    public function getDeliveryByUser($id) {
+        $query = "SELECT * FROM deliveries
+        JOIN orders ON deliveries.order_id = orders.order_id
+         WHERE customer_id = '$id'";
+
+        $result = $this->db->Select($query);
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
 }
 ?>

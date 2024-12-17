@@ -36,6 +36,12 @@ switch ($page) {
     case 'review':
         include_once 'routes/Reviewroute.php';
         break;
+    case 'order':
+        include_once 'routes/Orderroute.php';
+        break;
+    case 'delivery':
+        include_once 'routes/Deliroute.php';
+        break;
     default:
         echo "Page not found123";
         break;
