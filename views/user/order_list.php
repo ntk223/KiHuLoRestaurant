@@ -7,7 +7,7 @@
 </head>
 <body>
     <br><br><br><br><br><br><br><br>
-    <table>
+    <table border="1" cellspacing="0" cellpadding="10">
         <thead>
             <tr>
                 <th>Mã đơn hàng</th>
@@ -23,7 +23,7 @@
             while ($row = $result->fetch_assoc()) { 
             ?>
                 <tr>
-                    <td><?php echo $row['order_id']; ?></td>
+                    <td><a href="index.php?role=customer&page=order&action=detail&id=<?php echo $row['order_id']; ?>"><?php echo $row['order_id']; ?></a></td>
                     <td><?php echo $row['order_time']; ?></td>
                     <td><?php echo $row['total']; ?></td>
                     <td><?php echo $row['order_status']; ?></td>

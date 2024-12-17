@@ -16,7 +16,7 @@
                  <?php 
                  $total = 0;
                  $username = "";
-                 while ($row = $orderDetail->fetch_assoc()){ ?>
+                 while ($orderDetail&&$row = $orderDetail->fetch_assoc()){ ?>
                 <tr>
                     <td><?php echo $row['item_name'];?></td>
                     <td><?php echo $row['quantity'];?></td>

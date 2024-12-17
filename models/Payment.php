@@ -156,5 +156,42 @@ class Payment {
             return $result->fetch_assoc()['SUM(amount)'];
         }
     }
+
+    public function getPaymentByUser() {
+        $user_id = $_SESSION['user_id'];
+        $query = "select p.payment_id, o.order_id, p.payment_status, p.payment_method,p.amount, p.payment_time
+                from users u
+                join orders o on o.customer_id = u.user_id
+                join payments p on p.order_id = o.order_id
+                where u.user_id = '$user_id'";
+
+        $result = $this->db->Select($query);
+        if ($result)
+        {
+            return $result;
+        }
+        return false;
+    }
+
+    public function confirmPayment() {
+        if (isset($_POST['submit'])) {
+            $order_id = $_POST['order_id'];
+            $amount = $_POST['amount'];
+            $money = $_POST['money'];
+            $payment_status = 'Thanh toán thành công';
+            if ($money != $amount) {
+                echo "<br><br><br><br><br><br><br><br>Số tiền thanh toán không đúng";
+            } else {
+                $query = "UPDATE payments SET payment_status = '$payment_status', payment_time = NOW() WHERE order_id = '$order_id'";
+                $result = $this->db->Update($query);
+                if ($result) {
+                    header("Location: index.php?role=customer&page=payment");
+                } else {
+                    echo "Thanh toán thất bại";
+                }
+            }
+        }
+
+    }
 }
 ?>

@@ -72,5 +72,21 @@ class  PaymentController {
         include_once "views/admin/statisticPayment.php";
     }
 
+    public function getPaymentByUser() {
+        $result = $this->payment->getPaymentByUser();
+        include_once "views/user/payment_list.php";
+    }
+
+    public function confirmPayment() {
+        if (isset($_POST['submit'])) {
+            $result = $this->payment->confirmPayment();
+            if ($result) {
+                header("Location: index.php?role=user&manage=payment");
+            } else {
+                echo "Xác nhận thất bại";
+            }
+        }
+    }
+
 }
  ?>
