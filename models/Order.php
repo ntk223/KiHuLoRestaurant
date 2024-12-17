@@ -49,6 +49,27 @@ class Order {
         }
     }
 
+    public function orderDetailCombo($id) {
+        $query = "SELECT 
+                    cb.combo_name,
+                    oi.quantity,
+                    CEIL(SUM(cbi.quantity * mi.price) * (1 - COALESCE(cb.discount, 0) / 100)) AS price_each
+                FROM orders o
+                JOIN orderitems oi ON oi.order_id = o.order_id
+                JOIN combos cb ON cb.combo_id = oi.combo_id
+                JOIN comboitems cbi ON cbi.combo_id = cb.combo_id
+                JOIN menuitems mi ON cbi.item_id = mi.item_id
+                WHERE o.order_id = '$id'
+                GROUP BY cb.combo_id, cb.combo_name, cb.discount;
+                ";
+        $res = $this->db->Select($query);
+        if (  $res ) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
+
     public function updateStatus($id) {
         $status_arr = array(
             'processing' => 'Đang xử lý đơn hàng',
@@ -221,6 +242,24 @@ class Order {
     public function getOrderByUser($user_id) {
         $query = "SELECT * FROM orders WHERE customer_id = '$user_id'";
         $res = $this->db->Select($query);
+        if (  $res ) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
+
+    public function cancelOrder($order_id) {
+        $query = "UPDATE orders SET order_status = 'Đã hủy' WHERE order_id = '$order_id'";
+        $res = $this->db->Update($query);
+
+        // sua thong tin giao hang
+        $query2 = "UPDATE deliveries SET status = 'Đơn hàng bị hủy' WHERE order_id = '$order_id'";
+        $res2 = $this->db->Update($query2);
+
+        // sua thong tin thanh toan
+        $query3 = "UPDATE payments SET payment_status = 'Đã hủy' WHERE order_id = '$order_id'";
+        $res3 = $this->db->Update($query3);
         if (  $res ) {
             return $res;
         } else {

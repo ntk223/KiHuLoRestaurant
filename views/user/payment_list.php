@@ -37,6 +37,8 @@
                     <td>
                         <?php if ($row['payment_status'] == 'Thanh toán thành công') { ?>
                             <?php echo $row['payment_time']; ?>
+                        <?php } else if ($row['payment_status'] == 'Đã hủy') { ?>
+                            <?php echo 'Đã hủy'; ?>
                         <?php } else { ?>
                             <!-- Form thanh toán -->
                             <form action="index.php?role=customer&page=payment&action=confirm" method="POST">

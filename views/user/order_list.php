@@ -10,6 +10,7 @@
 </head>
 <main>
 <body class="table-page">
+    <h2>Bấm vào mã đơn hàng để xem chi tiết</h2>
     <table class="order-table">
         <thead>
             <tr>
@@ -20,20 +21,41 @@
             </tr>
         </thead>
         <tbody>
-            <?php 
-            if ($result) {
-                while ($row = $result->fetch_assoc()) { 
-            ?>
-                <tr>
-                    <td><a href="index.php?role=customer&page=order&action=detail&id=<?php echo $row['order_id']; ?>"><?php echo $row['order_id']; ?></a></td>
-                    <td><?php echo $row['order_time']; ?></td>
-                    <td><?php echo $row['total']; ?></td>
-                    <td><?php echo $row['order_status']; ?></td>
-                </tr>
-            <?php } 
-            }?>
-        </tbody>
+    <?php 
+    if ($result) {
+        while ($row = $result->fetch_assoc()) { 
+    ?>
+        <tr>
+            <td>
+                <a href="index.php?role=customer&page=order&action=detail&id=<?php echo $row['order_id']; ?>">
+                    <?php echo $row['order_id']; ?>
+                </a>
+            </td>
+            <td><?php echo $row['order_time']; ?></td>
+            <td><?php echo number_format($row['total']); ?> VNĐ</td>
+            <td>
+            <?php echo $row['order_status']; ?>
+                <div style="width: 5px;"></div>
+                <?php if ($row['order_status'] == "Đang xử lý"): ?>
+    <!-- Nút Hủy đơn hàng -->
+                    <form action="index.php?role=customer&page=order&action=cancel" method="POST" onsubmit="return confirmCancel();" style="display: inline;">
+                        <input type="hidden" name="order_id" value="<?php echo $row['order_id']; ?>">
+                        <button type="submit">Hủy đơn hàng</button> <!-- Không thêm class mới -->
+                    </form>
+                <?php endif; ?>
+
+            </td>
+        </tr>
+    <?php } 
+    }?>
+</tbody>
+
     </table>    
 </body>
         </main>
 </html>
+<script>
+    function confirmCancel() {
+        return confirm("Bạn có chắc chắn muốn hủy đơn hàng này không?");
+    }
+</script>
