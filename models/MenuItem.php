@@ -205,6 +205,15 @@ class MenuItem
         }
     }
 
+    public function getReviewsByItemId($item_id)
+{
+    $query = "SELECT u.username, r.review_text, r.rating, r.review_date, r.review_id
+            FROM reviews r
+            JOIN users u ON u.user_id = r.customer_id
+            JOIN menuitems mi ON mi.item_id = r.item_id WHERE mi.item_id = '$item_id'";
+    $result = $this->db->Select($query);
+    return $result;
+}
 
 
 }
