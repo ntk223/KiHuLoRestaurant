@@ -34,5 +34,10 @@ class  DeliveryController {
         include_once "views/admin/statisticDelivery.php";
     }
 
+    public function getDeliveryByUser() {
+        $result = $this->deli->getDeliveryByUser($_SESSION['user_id']);
+        include_once "views/user/delivery_list.php";
+    }
+
 }
  ?>
