@@ -32,7 +32,8 @@ else if ($role == 'admin' )
             include_once "views/admin/statisticCategory.php";
             break;
         case 'review':
-            $menu->reviewItem();
+            $item_id = $_GET['id']; // Lấy ID của món ăn từ URL
+            $menu->viewItemReviews($item_id); // Gọi phương thức để hiển thị review của món ăn
             break;
         case 'search':
             $menu->searchItem();

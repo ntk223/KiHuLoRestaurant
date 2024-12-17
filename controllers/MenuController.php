@@ -53,5 +53,16 @@ class MenuController
         $result = $this->menuitem->searchForUser(); 
         include_once "views/user/menu.php";
     }
+
+    public function viewItemReviews($item_id)
+{
+    // Gọi hàm từ Model để lấy các review của món ăn theo item_id
+    $reviews = $this->menuitem->getReviewsByItemId($item_id); 
+    // Lấy thông tin chi tiết món ăn
+    $menuItem = $this->menuitem->getMenuItemById($item_id);
+    // Hiển thị trang reviews
+    include "views/admin/reviews_list.php";
+}
+
 }
 ?>
