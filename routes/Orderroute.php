@@ -41,6 +41,9 @@ else {
         case 'detail':
             $orderController->orderDetail();
             break;
+        case 'cancel':
+            $orderController->cancelOrder();
+            break;
         default:
             echo "Page not found";
             break;
