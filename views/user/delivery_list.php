@@ -11,6 +11,7 @@
 
 <main>
 <body>
+    <h1>Thông tin giao hàng:</h1>
     <table class="order-table">
         <thead>
             <tr>

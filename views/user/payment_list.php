@@ -11,7 +11,7 @@
 
 <main>
 <body class="table-page">
-    <h2>Giao dịch</h2>
+    <h1>Giao dịch:</h1>
     <table class="order-table">
         <thead>
             <tr>

@@ -10,7 +10,7 @@
 </head>
 <main>
 <body class="table-page">
-    <h2>Bấm vào mã đơn hàng để xem chi tiết</h2>
+    <h1>Bấm vào mã đơn hàng để xem chi tiết:</h1>
     <table class="order-table">
         <thead>
             <tr>

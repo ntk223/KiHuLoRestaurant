@@ -9,9 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <main>
+<h1>Danh sách Combo:</h1>
 <div class="combo-container">
-    <h1>Danh sách Combo</h1>
-    <br>
     <div class="combo-list">
         <?php if (!empty($result)): ?>
             <?php foreach ($result as $combo): 
