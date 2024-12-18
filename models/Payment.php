@@ -180,14 +180,13 @@ class Payment {
             $money = $_POST['money'];
             $payment_status = 'Thanh toán thành công';
             if ($money != $amount) {
-                echo "<br><br><br><br><br><br><br><br>Số tiền thanh toán không đúng";
+                echo "<br><br><br><br><br><br><br><br> <main><h2>Số tiền thanh toán không đúng</h2></main>";
+                return;
             } else {
                 $query = "UPDATE payments SET payment_status = '$payment_status', payment_time = NOW() WHERE order_id = '$order_id'";
                 $result = $this->db->Update($query);
                 if ($result) {
                     header("Location: index.php?role=customer&page=payment");
-                } else {
-                    echo "Thanh toán thất bại";
                 }
             }
         }

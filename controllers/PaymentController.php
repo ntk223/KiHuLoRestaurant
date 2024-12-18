@@ -82,8 +82,6 @@ class  PaymentController {
             $result = $this->payment->confirmPayment();
             if ($result) {
                 header("Location: index.php?role=user&manage=payment");
-            } else {
-                echo "Xác nhận thất bại";
             }
         }
     }
