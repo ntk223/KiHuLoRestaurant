@@ -7,6 +7,7 @@
 <table>Hồ sơ</table>
 <link rel="stylesheet" href="assets/css/profile.css" />
 <link rel="stylesheet" href="assets/css/main0.css" />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <main>
     <div class="profile">
         <h1>Hồ sơ của bạn</h1>

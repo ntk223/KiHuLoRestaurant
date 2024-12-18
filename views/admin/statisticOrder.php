@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thống kê giao hàng</title>
+    <title>Thống kê đơn hàng</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
 
 <link rel="stylesheet" href="assets/css/tableview.css">
@@ -44,7 +44,11 @@
             <?php if ($orderStatusStatistics) {
             while($row = $orderStatusStatistics->fetch_assoc()){?>
             <tr></tr>
-                <td><?php echo $row['order_status'];?></td>
+                <td>
+                    <?php 
+                        echo (!empty($row['order_status'])) ? $row['order_status'] : 'Chưa xác định đặt'; 
+                    ?>
+                </td>
                 <td><?php echo $row['total_orders'];?></td>
                 <td><?php echo $row['percentage'];?>%</td>
             <?php }

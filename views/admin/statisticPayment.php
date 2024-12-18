@@ -27,7 +27,11 @@
             if ($paymentMethodStat) {
                 while ($row = $paymentMethodStat->fetch_assoc()) { ?>
                     <tr>
-                        <td><?php echo $row['payment_method']; ?></td>
+                        <td>
+                            <?php 
+                                echo (!empty($row['payment_method'])) ? $row['payment_method'] : 'Chưa xác nhận đặt hàng'; 
+                            ?>
+                        </td>
                         <td><?php echo $row['method_count']; ?></td>
                         <td><?php echo $row['method_percentage']; ?></td>
                         <td><?php echo number_format($row['total_amount']); ?> VNĐ</td>
