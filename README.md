@@ -33,7 +33,7 @@ A.Front-end:
 - Thiết kế giao diện, hiệu ứng cho phần profile, thay đổi password của người dùng.
 - Thiết kế giao diện cho phần bình luận của người dùng
 
-# B.Back-end:
+B.Back-end:
 
 - Phần Admin:
 
