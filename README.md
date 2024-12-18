@@ -16,10 +16,13 @@ Thành viên nhóm: + Nguyễn Trung Kiên - 23021590 + Đặng Tuấn Long - 23
   - Xây dựng giao diện phần thống kê:
     - Đưa ra doanh thu và đánh giá của nhà hàng trong phần dashboard
     - Đưa ra các món ăn và danh sách bình luận
+  - Tìm kiếm người dùng, món ăn bằng bộ lọc
 - Trang Customer:
   - Xử lý các logic login, sign up, logout
   - Xử lý logic chỉnh sửa giỏ hàng
   - Xây dựng tính năng update thông tin, đổi mật khẩu cho người dùng
+  - Xây dựng logic thanh toán, kiểm tra đơn hàng, giao hàng.
+  - Tìm kiếm món ăn theo tên
 - Deploy trang web bằng Railway
 
 2. Đặng Tuấn Long
@@ -118,3 +121,4 @@ Tham gia vào xây dựng database và tạo dữ liệu cho database.
   Query lấy ra những shipper giao nhiều đơn nhất hiện tại
   Query lấy ra danh sách khách hàng chưa đặt hàng bao giờ
   Query lấy ra danh sách đơn hàng đã giao thành công nhưng chưa thanh toán
+  chuẩn bị data cho combo

@@ -116,7 +116,7 @@
             </div>
             <div class="checkout-button">
                 <a href="index.php?role=customer&page=order&action=create&cid=<?php echo $cart_id?>&total=<?php echo $total+$combo_total ?>">
-                    <button class="checkout-btn">Thanh toán</button></a>
+                    <button class="checkout-btn">Đặt hàng</button></a>
             </div>
         </div>
 
