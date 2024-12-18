@@ -117,9 +117,9 @@
 }
 
 .quantity-input:focus {
-  border-color: #f8a853; /* Màu viền khi được chọn (focus) */
-  box-shadow: 0 0 8px rgba(248, 168, 83, 0.5); /* Hiệu ứng ánh sáng bao quanh */
-  outline: none; /* Loại bỏ outline mặc định */
+  border-color: #f8a853;
+  box-shadow: 0 0 8px rgba(248, 168, 83, 0.5);
+  outline: none;
 }
 
 .quantity-input::-webkit-inner-spin-button,

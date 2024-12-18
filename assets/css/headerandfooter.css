@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  flex: 1; /* Chiếm hết không gian còn lại */
+  flex: 1;
   margin-top: 120px;
 }
 
@@ -104,7 +104,7 @@ h2 {
 .setting-user {
   display: block;
   opacity: 0; /* ẩn ban đầu */
-  transition: opacity 0.5s ease; /* thời gian chuyển tiếp */
+  transition: opacity 0.5s ease;
   position: absolute;
   right: 0;
   top: 20px;

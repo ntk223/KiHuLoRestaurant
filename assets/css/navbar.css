@@ -11,33 +11,33 @@
 }
 .navbar ul {
   list-style-type: none;
-  display: flex; /* Hiển thị danh sách nằm ngang */
-  flex-grow: 1; /* Chiếm hết không gian còn lại */
-  justify-content: space-around; /* Cách đều các mục */
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
 }
 
 .navbar ul li {
-  flex-grow: 1; /* Mỗi mục sẽ chiếm không gian đều */
+  flex-grow: 1;
   text-align: center;
 }
 
 .navbar ul li a {
-  color: white; /* Màu chữ */
-  text-decoration: none; /* Bỏ gạch chân */
+  color: white;
+  text-decoration: none;
   padding: 5px;
-  display: block; /* Đảm bảo toàn bộ khối có thể nhấn được */
+  display: block;
   border-radius: 4px;
   transition: 0.3s ease-in-out;
 }
 
 .navbar ul li a:hover {
-  background-color: #ff9100; /* Màu nền khi hover */
+  background-color: #ff9100;
   transform: scale(1.05);
   transition: 0.3s ease-in-out;
 }
 
 .navbar ul li a::before {
-  background-color: #ff9100; /* Màu nền khi hover */
+  background-color: #ff9100;
 }
 
 .sub {

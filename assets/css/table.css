@@ -10,7 +10,7 @@
 }
 
 .order-table thead {
-  background-color: #f8a853; /* Màu cam chủ đạo */
+  background-color: #f8a853;
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -19,15 +19,15 @@
 .order-table td {
   padding: 12px 16px;
   text-align: center;
-  border: 1px solid #e0e0e0; /* Viền mềm mại */
+  border: 1px solid #e0e0e0;
 }
 
 .order-table tbody tr:nth-child(even) {
-  background-color: #fdf1e3; /* Màu nền nhẹ cho hàng chẵn */
+  background-color: #fdf1e3;
 }
 
 .order-table tbody tr:hover {
-  background-color: #ffe1c5; /* Hiệu ứng hover */
+  background-color: #ffe1c5;
   transition: background-color 0.3s ease;
 }
 
@@ -45,13 +45,13 @@
 /* Trạng thái Đơn Hàng */
 .order-table td:last-child {
   font-weight: bold;
-  color: #f8943b; /* Màu cam đậm cho trạng thái */
+  color: #f8943b;
 }
 
 /* Responsive Table */
 @media screen and (max-width: 768px) {
   .order-table thead {
-    display: none; /* Ẩn phần tiêu đề trên mobile */
+    display: none;
   }
 
   .order-table,
@@ -95,8 +95,8 @@
   max-width: 500px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff9f0; /* Màu nền nhẹ */
-  border: 1px solid #f8a853; /* Viền màu chủ đạo */
+  background-color: #fff9f0;
+  border: 1px solid #f8a853;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
@@ -123,14 +123,14 @@
 
 .order-confirm-form input[type="text"]:focus,
 .order-confirm-form select:focus {
-  border-color: #f8a853; /* Màu cam chủ đạo khi focus */
+  border-color: #f8a853;
   outline: none;
   box-shadow: 0 0 5px rgba(248, 168, 83, 0.5);
 }
 
 .order-confirm-form button {
-  background-color: #f8a853; /* Màu cam chủ đạo */
-  color: #fff; /* Chữ màu trắng */
+  background-color: #f8a853;
+  color: #fff;
   padding: 10px 15px;
   font-size: 16px;
   font-weight: bold;
@@ -144,4 +144,44 @@
 
 .order-confirm-form button:hover {
   background-color: #e6953b;
+}
+
+/* ----- Form trong ô của order-table ----- */
+.order-table td form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.order-table td form input[type="text"] {
+  flex: 1; /* Input tự động giãn ra */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.order-table td form input[type="text"]:focus {
+  border-color: #f8a853;
+  box-shadow: 0 0 5px rgba(248, 168, 83, 0.5);
+  outline: none;
+}
+
+.order-table td form button {
+  padding: 8px 12px;
+  background-color: #f8a853;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.order-table td form button:hover {
+  background-color: #e7953f;
 }

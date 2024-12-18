@@ -7,7 +7,7 @@ body {
 }
 
 main {
-  flex: 1; /* Chiếm hết không gian còn lại */
+  flex: 1;
   margin-top: 120px;
   padding-top: 20px;
   margin-left: 200px;
