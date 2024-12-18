@@ -29,12 +29,14 @@ Thành viên nhóm: + Nguyễn Trung Kiên - 23021590 + Đặng Tuấn Long - 23
 
 A.Front-end:
 
-- Thiết kế giao diện cho tất cả các phần thống kê, lịch sử của quản lý(admin).
-- Thiết kế giao diện và hiệu ứng cho login (Cả user và admin), signup.
-- Thiết kế giao diện và hiệu ứng cho header footer, sidebar cho giao diện người dùng.
-- Thiết kế giao diện và hiệu ứng cho phần menu, cart cho người dùng.
-- Thiết kế giao diện, hiệu ứng cho phần profile, thay đổi password của người dùng.
-- Thiết kế giao diện cho phần bình luận của người dùng
+- Thiết kế giao diện cho tất cả các phần thống kê, lịch sử, tổng doanh thu của quản lý(admin).
+- Thiết kế giao diện và hiệu ứng cho login, (Cả user và admin).
+- Thiết kế giao diện cho tất cả các trang của người dùng bao gồm:
+
+  - Thiết kế giao diện và hiệu ứng cho header footer, sidebar cho giao diện người dùng.
+  - Thiết kế giao diện và hiệu ứng cho phần trang chủ, combo, giỏ hàng, đơn hàng, giao hàng, thanh toán cho người dùng.
+  - Thiết kế giao diện, hiệu ứng cho phần profile, thay đổi password của người dùng.
+  - Thiết kế giao diện cho phần bình luận của người dùng
 
 B.Back-end:
 
@@ -54,9 +56,9 @@ B.Back-end:
 
   -Thống kê đơn hàng:
 
-    - Thống kê trạng thái các đơn hàng kèm tỉ lệ.
+  - Thống kê trạng thái các đơn hàng kèm tỉ lệ.
 
-    - Thống kê món ăn ưa thích của khách hàng dựa trên số lần gọi của khách.
+  - Thống kê món ăn ưa thích của khách hàng dựa trên số lần gọi của khách.
 
   -Thống kê giao hàng:
 
@@ -90,9 +92,9 @@ B.Back-end:
 
   -Thống kê tổng doanh thu theo thời gian được chọn.
 
-  -Thêm phần logic để giúp admin có thể tại được file excel về máy chứa các dữ liệu trong các phần thống kê.
+  -Xử lý logic để giúp admin có thể tải được file excel về máy chứa các dữ liệu trong các phần thống kê.
 
-  - Xem reiview của món trong danh sách
+  -Xem bình luận và đánh giá của các món trong danh sách.
 
 - Phần user:
 
