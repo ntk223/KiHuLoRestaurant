@@ -37,59 +37,69 @@ B.Back-end:
 
 - Phần Admin:
 
-#Tạo các bảng thống kê cho admin bao gồm(Tự chuẩn bị các query và code):
+- Tạo các bảng thống kê cho admin bao gồm(Tự chuẩn bị các query và code):
 
--Thống kê người dùng:
+  -Thống kê người dùng:
 
-    + Top khách hàng đã trả nhiều tiền nhất kèm lượt mua.
-    + Tỷ lệ đơn hàng bị hủy, boom theo khách hàng.
+  # Top khách hàng đã trả nhiều tiền nhất kèm lượt mua.
 
--Thống kê món ăn:
+  # Tỷ lệ đơn hàng bị hủy, boom theo khách hàng.
 
-    + Thống kê số lượng và tỉ lệ các loại món ăn trong thực đơn.
+  -Thống kê món ăn:
 
--Thống kê đơn hàng:
+  # Thống kê số lượng và tỉ lệ các loại món ăn trong thực đơn.
 
-    + Thống kê trạng thái các đơn hàng kèm tỉ lệ.
-    + Thống kê món ăn ưa thích của khách hàng dựa trên số lần gọi của khách.
+  -Thống kê đơn hàng:
 
--Thống kê giao hàng:
+  # Thống kê trạng thái các đơn hàng kèm tỉ lệ.
 
-    + Đưa ra tổng phí ship và lợi nhuận từ việc ship của nhà hàng.
-    + Thống kê thời gian giao hàng trung bình, tỉ lệ giao hàng thành công của từng shipper.
-    + Thống kê trạng thái giao hàng.
-    + Thống kê địa chỉ giao hàng phổ biến.
+  # Thống kê món ăn ưa thích của khách hàng dựa trên số lần gọi của khách.
 
--Thống kê thanh toán:
+  -Thống kê giao hàng:
 
-    + Thống kê phương thức thanh toán chiếm tỉ lệ phần trăm bao nhiêu.
-    + Thống kê doanh thu theo tháng.
-    + Thống kê thời gian bán chạy trong ngày.
-    + Thống kê tổng doanh thu nhà hàng từ đầu đến giờ.
+  # Đưa ra tổng phí ship và lợi nhuận từ việc ship của nhà hàng.
 
--Thống kê đánh giá:
+  # Thống kê thời gian giao hàng trung bình, tỉ lệ giao hàng thành công của từng shipper.
 
-    + Thống kê món ăn được nhiều review nhất.
-    + Thống kê người dùng review món ăn nhiều nhất.
+  # Thống kê trạng thái giao hàng.
 
-#Các phần thông tin thêm cho admin gồm (Tự chuẩn bị các query và code):
+  # Thống kê địa chỉ giao hàng phổ biến.
 
--Lịch sử giao dịch của tất cả người dùng.
+  -Thống kê thanh toán:
 
--Thống kê tổng doanh thu theo thời gian được chọn.
+  # Thống kê phương thức thanh toán chiếm tỉ lệ phần trăm bao nhiêu.
 
--Thêm phần logic để giúp admin có thể tại được file excel về máy chứa các dữ liệu trong các
-phần thống kê.
+  # Thống kê doanh thu theo tháng.
+
+  # Thống kê thời gian bán chạy trong ngày.
+
+  # Thống kê tổng doanh thu nhà hàng từ đầu đến giờ.
+
+  -Thống kê đánh giá:
+
+  # Thống kê món ăn được nhiều review nhất.
+
+  # Thống kê người dùng review món ăn nhiều nhất.
+
+- Các phần thông tin thêm cho admin gồm (Tự chuẩn bị các query và code):
+
+  -Lịch sử giao dịch của tất cả người dùng.
+
+  -Thống kê tổng doanh thu theo thời gian được chọn.
+
+  -Thêm phần logic để giúp admin có thể tại được file excel về máy chứa các dữ liệu trong các phần thống kê.
+
+  - Xem reiview của món trong danh sách
 
 - Phần user:
 
-* Logic giúp hiển thị thông báo và ngăn người dùng nhập sai ở thay đổi password.
+  - Logic giúp hiển thị thông báo và ngăn người dùng nhập sai ở thay đổi password.
 
-* Xử phần bình luận và đánh giá món ăn của người dùng.
+  - Xử phần bình luận và đánh giá món ăn của người dùng.
 
-* Xử lý trang combo, thêm combo vào giỏ hàng cho người dùng.
+  - Xử lý trang combo, thêm combo vào giỏ hàng cho người dùng.
 
-* Xử lý cart.
+  - Xử lý cart.
 
 C.Database:
 Tham gia vào xây dựng database và tạo dữ liệu cho database.

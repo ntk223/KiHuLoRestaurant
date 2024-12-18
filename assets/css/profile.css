@@ -42,8 +42,8 @@ input[type="password"] {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin: 10px auto; /* Căn giữa button */
-  display: block; /* Chuyển button thành block để margin auto có hiệu lực */
+  margin: 10px auto;
+  display: block;
   transition: 0.3s ease-in;
 }
 
@@ -60,5 +60,5 @@ input[type="password"] {
 }
 
 #profile-button.form-group {
-  background-color: #ffd181; /* Đổi màu nền khi hover */
+  background-color: #ffd181;
 }

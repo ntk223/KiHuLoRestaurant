@@ -50,14 +50,14 @@
   padding: 5px;
   border-top: 1px solid black;
   display: flex;
-  flex-direction: column; /* Sắp xếp các mục li theo cột */
+  flex-direction: column;
   background-color: #fff;
   transition: background-color 0.3s ease;
 }
 
 /* Hiệu ứng khi hover vào food item: chuyển màu nền của ul */
 .food:hover ul {
-  background-color: #f8a853; /* Chuyển sang màu f8a853 khi hover */
+  background-color: #f8a853;
 }
 
 .food:hover .add-to-cart {
@@ -68,8 +68,8 @@
 /* Các dòng thông tin trong ul */
 .food ul li {
   padding: 5px 5px 5px 50px;
-  width: 100%; /* Đảm bảo mỗi li chiếm 100% chiều rộng ul */
-  text-align: left; /* Căn chữ cái đầu tiên của mỗi mục li thẳng hàng */
+  width: 100%;
+  text-align: left;
 }
 
 .add-to-cart {
