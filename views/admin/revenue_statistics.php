@@ -42,5 +42,6 @@
             <p>Không có doanh thu trong khoảng thời gian đã chọn.</p>
         <?php } ?>
     <?php } ?>
+    <a href="index.php?role=admin&manage=payment">Trở về</a>
 </body>
 </html>
