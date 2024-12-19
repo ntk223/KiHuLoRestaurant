@@ -214,8 +214,5 @@ class MenuItem
     $result = $this->db->Select($query);
     return $result;
 }
-
-
 }
 ?>
-

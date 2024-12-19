@@ -60,7 +60,5 @@ class UserController
         include_once "views/admin/manage_users.php";
 
     }
-
-
 }
 ?>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review</title>
     <link rel="stylesheet" href="assets/css/main0.css">
-    <link rel="stylesheet" href="/KiHuLoRestaurant/assets/css/review.css" />
+    <link rel="stylesheet" href="assets/css/review.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>

@@ -61,10 +61,5 @@ class ReviewController {
             echo "Không tìm thấy món ăn!";
         }
     }
-
-
-
-
 } 
-
 ?>
