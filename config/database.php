@@ -1,49 +1,48 @@
 <?php
 Class Database{
-    // phan nay dung cho Railway
-    // private $host;
-    // private $user;
-    // private $password;
-    // private $dbname;
-    // private $port;
-    // private $conn;
+    private $host;
+    private $user;
+    private $password;
+    private $dbname;
+    private $port;
+    private $conn;
 
-    // public function __construct() {
-    //     $this->host = "autorack.proxy.rlwy.net";  // Host từ Railway
-    //     $this->user = "root";                     // User từ Railway
-    //     $this->password = "xXHGsINEWUgsKzujRDButPPfLyfXvndN";   // Mật khẩu từ Railway
-    //     $this->dbname = "railway";                // Database name từ Railway
-    //     $this->port = 12546;                      // Port từ Railway
-    //     $this->connectDB();
-    // }
-
-    // public function connectDB() {
-    //     $this->conn = new mysqli($this->host, $this->user, $this->password, $this->dbname, $this->port);
-    //     if ($this->conn->connect_error) {
-    //         die("Connection failed: " . $this->conn->connect_error);
-    //     }
-    // }
-
-    public $host="localhost";
-    public $user="root";
-    public $pass="";
-    public $dbname="restaurant";
-
-    public $conn;
-    public $error;
-
-    public function __construct()
-    {
+    public function __construct() {
+        $this->host = "autorack.proxy.rlwy.net";  // Host từ Railway
+        $this->user = "root";                     // User từ Railway
+        $this->password = "xXHGsINEWUgsKzujRDButPPfLyfXvndN";   // Mật khẩu từ Railway
+        $this->dbname = "railway";                // Database name từ Railway
+        $this->port = 12546;                      // Port từ Railway
         $this->connectDB();
-    }    
-    public function connectDB()
-    {
-        $this->conn= new mysqli($this->host, $this->user, $this->pass, $this->dbname);
-        if ( !$this->conn){
-            $this->error="Connection fail".$this->conn->connect_error;
-            return false;
+    }
+
+    public function connectDB() {
+        $this->conn = new mysqli($this->host, $this->user, $this->password, $this->dbname, $this->port);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
     }
+
+    // public $host="localhost";
+    // public $user="root";
+    // public $pass="";
+    // public $dbname="restaurant";
+
+    // public $conn;
+    // public $error;
+
+    // public function __construct()
+    // {
+    //     $this->connectDB();
+    // }    
+    // public function connectDB()
+    // {
+    //     $this->conn= new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+    //     if ( !$this->conn){
+    //         $this->error="Connection fail".$this->conn->connect_error;
+    //         return false;
+    //     }
+    // }
     // read or select data
     public function Select($query)
     {
