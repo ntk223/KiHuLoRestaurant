@@ -1,4 +1,4 @@
-<link rel= 'stylesheet' href="assets/css/manage_user.css">
+<link rel= 'stylesheet' href="/assets/css/manage_user.css">
 <main>
     
     <!-- Bảng người dùng hiện có -->
