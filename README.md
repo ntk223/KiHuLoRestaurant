@@ -1,14 +1,18 @@
 Bài tập lớn môn Cơ sở dữ liệu
+
 Tên project : KiHuLo Restaurant - web quản lý nhà hàng bán đồ ăn trực tuyến
+
 Sử dụng: PHP, Js, HTML, CSS, SQL
+
 Mô hình lập trình ứng dụng: MVC
+
 Thành viên nhóm:
 
--Nguyễn Trung Kiên - 23021590
+-Nguyễn Trung Kiên - 23021590 (tài khoản github: ntk223 và ntk2203)
 
--Đặng Tuấn Long - 23021614
+-Đặng Tuấn Long - 23021614 (tài khoản github: DLdevcoder)
 
--Nguyễn Nhất Huy - 23021578
+-Nguyễn Nhất Huy - 23021578 (tài khoản github: Lawliet119)
 
 Tài khoản admin: seller.uet@gmail.com
 
