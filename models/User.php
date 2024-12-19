@@ -93,7 +93,8 @@ class User
             Session::set('email',  $email);
             Session::set('address',  $address);
             header('Location:index.php?role=customer&page=profile');
-            ob_end_flush();
+            exit();
+            //ob_end_flush();
         }
     }
     public function updatePassword() {
