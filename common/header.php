@@ -34,7 +34,7 @@ ob_start(); // Bắt đầu output buffering
       <div class="users">
         <div class="users-info">
           <img src="assets/images/user-img.png" alt="user-img" />
-          <p class="user-name"></p>
+          <p class="user-name"><?php echo $_SESSION['username'];?></p>
           
           <div class="setting-user">
             <a href="index.php?role=customer&page=profile">Thông tin</a>
@@ -45,6 +45,3 @@ ob_start(); // Bắt đầu output buffering
       </div>
       <?php include("views/user/navbar.php");?>
 </header>
-<?php
-ob_end_flush(); // Gửi tất cả output ra trình duyệt sau khi PHP hoàn thành
-?>
