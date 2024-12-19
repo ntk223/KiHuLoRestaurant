@@ -1,4 +1,4 @@
-<link rel= 'stylesheet' href="assets/css/manage_user.css">
+<link rel= 'stylesheet' href="assets/css/Manage_user.css">
 <main>
     <h1>Chi tiết đơn hàng</h1>
     <section class="user-table-section">

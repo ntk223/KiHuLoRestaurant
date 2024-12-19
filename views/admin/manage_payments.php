@@ -1,4 +1,4 @@
-<link rel='stylesheet' href="/assets/css/manage_user.css">
+<link rel='stylesheet' href="assets/css/Manage_user.css">
 <main>
     <h1>Quản lý thanh toán</h1>
     <section class="user-table-section">

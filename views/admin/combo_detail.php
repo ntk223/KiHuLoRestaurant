@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết</title>
-    <link rel='stylesheet' href="assets/css/manage_user.css">
+    <link rel='stylesheet' href="assets/css/Manage_user.css">
     </head>
 <body>
     <table>
