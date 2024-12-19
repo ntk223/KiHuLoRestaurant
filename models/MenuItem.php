@@ -53,7 +53,7 @@ class MenuItem
             $available = $_POST['available'];
             $description = $_POST['description'];
             $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', description='$description', available='$available' WHERE item_id='$id'";
-            if ( isset($_FILES['image_url']['name']))
+            if ( isset($_FILES['image_url']['name']) && $_FILES['image_url']['name'] != '')
             {
                 $image_url = 'assets/images/'.$_FILES['image_url']['name'];
                 $query = "UPDATE menuitems SET category_id='$category_id', item_name='$item_name', price='$price', image_url='$image_url', description='$description', available='$available' WHERE item_id='$id'";
