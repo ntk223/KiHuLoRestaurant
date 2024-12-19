@@ -31,7 +31,7 @@
       <div class="users">
         <div class="users-info">
           <img src="assets/images/user-img.png" alt="user-img" />
-          <p class="user-name"><?php echo $_SESSION['username']; ?></p>
+          <p class="user-name"></p>
           
           <div class="setting-user">
             <a href="index.php?role=customer&page=profile">Thông tin</a>
