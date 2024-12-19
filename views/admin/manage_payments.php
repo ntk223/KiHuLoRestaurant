@@ -1,4 +1,5 @@
 <link rel='stylesheet' href="assets/css/Manage_user.css">
+<title>Thanh toán</title>
 <main>
     <h1>Quản lý thanh toán</h1>
     <section class="user-table-section">
