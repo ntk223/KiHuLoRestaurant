@@ -8,7 +8,7 @@ Mô hình lập trình ứng dụng: MVC
 
 Thành viên nhóm:
 
--Nguyễn Trung Kiên - 23021590 (tài khoản github: ntk223 và ntk2203)
+-Nguyễn Trung Kiên - 23021590 (tài khoản github: ntk223 và ntk2203 do liên kết mail chính và mail edu trên git)
 
 -Đặng Tuấn Long - 23021614 (tài khoản github: DLdevcoder)
 
