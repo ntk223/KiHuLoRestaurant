@@ -1,3 +1,6 @@
+<?php
+ob_start(); // Bắt đầu output buffering
+?>
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/menu.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -54,3 +57,6 @@
 </div>
 </main>
 </body>
+<?php
+ob_end_flush(); // Gửi tất cả output ra trình duyệt sau khi PHP hoàn thành
+?>
