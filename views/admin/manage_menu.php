@@ -1,5 +1,5 @@
 <main>
-<link rel='stylesheet' href="assets/css/manage_user.css">
+<link rel='stylesheet' href="assets/css/Manage_user.css">
 
         <section class="menu-table-section">
             <a href="index.php?role=admin&manage=menu&action=add" class="button">Thêm món ăn mới</a>

@@ -1,4 +1,4 @@
-<link rel='stylesheet' href="assets/css/manage_user.css">
+<link rel='stylesheet' href="assets/css/Manage_user.css">
 <main>
     <h1>Quản lý giao hàng</h1>
     <a href="index.php?role=admin&manage=delivery&action=statisticDelivery" class="button">Thống kê</a>
