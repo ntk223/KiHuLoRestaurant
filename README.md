@@ -117,8 +117,8 @@ Tham gia vào xây dựng database và tạo dữ liệu cho database.
    B.Back-end
    +Chuẩn bị data cho Database
 
-- Chuẩn bị query cho phía back-end(đã bao gồm code):
-  Query lấy ra những shipper giao nhiều đơn nhất hiện tại
-  Query lấy ra danh sách khách hàng chưa đặt hàng bao giờ
-  Query lấy ra danh sách đơn hàng đã giao thành công nhưng chưa thanh toán
-  chuẩn bị data cho combo
+- Tham gia vào xây dựng và chuẩn bị database
+- Chuẩn bị data cho combo
+
+  Bảng database
+  ![alt text](image.png)
