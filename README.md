@@ -2,7 +2,18 @@ Bài tập lớn môn Cơ sở dữ liệu
 Tên project : KiHuLo Restaurant - web quản lý nhà hàng bán đồ ăn trực tuyến
 Sử dụng: PHP, Js, HTML, CSS, SQL
 Mô hình lập trình ứng dụng: MVC
-Thành viên nhóm: + Nguyễn Trung Kiên - 23021590 + Đặng Tuấn Long - 23021614 + Nguyễn Nhất Huy - 23021578
+Thành viên nhóm:
+-Nguyễn Trung Kiên - 23021590
+-Đặng Tuấn Long - 23021614
+-Nguyễn Nhất Huy - 23021578
+
+Tài khoản admin: seller.uet@gmail.com
+
+Mật khẩu admin: sellerpass
+
+Tài khoản người dùng: viet.hai@gmail.com
+
+Mật khẩu người dùng: password123
 
 Đóng góp của từng thành viên:
 
@@ -30,10 +41,10 @@ Thành viên nhóm: + Nguyễn Trung Kiên - 23021590 + Đặng Tuấn Long - 23
 A.Front-end:
 
 - Thiết kế giao diện cho tất cả các phần thống kê, lịch sử, tổng doanh thu của quản lý(admin).
-- Thiết kế giao diện và hiệu ứng cho login, (Cả user và admin).
+- Thiết kế giao diện và hiệu ứng cho các trang đăng nhập, đăng kí (Cả người dùng và admin).
 - Thiết kế giao diện cho tất cả các trang của người dùng bao gồm:
 
-  - Thiết kế giao diện và hiệu ứng cho header footer, sidebar cho giao diện người dùng.
+  - Thiết kế giao diện và hiệu ứng cho header, footer, navbar, sidebar cho giao diện người dùng.
   - Thiết kế giao diện và hiệu ứng cho phần trang chủ, combo, giỏ hàng, đơn hàng, giao hàng, thanh toán cho người dùng.
   - Thiết kế giao diện, hiệu ứng cho phần profile, thay đổi password của người dùng.
   - Thiết kế giao diện cho phần bình luận của người dùng
@@ -42,7 +53,7 @@ B.Back-end:
 
 - Phần Admin:
 
-- Tạo các bảng thống kê cho admin bao gồm(Tự chuẩn bị các query và code):
+- Tạo các bảng thống kê cho admin bao gồm:
 
   -Thống kê người dùng:
 
@@ -86,13 +97,13 @@ B.Back-end:
 
   - Thống kê người dùng review món ăn nhiều nhất.
 
-- Các phần thông tin thêm cho admin gồm (Tự chuẩn bị các query và code):
+- Các phần khác trông trang admin bao gồm:
+
+  -Xử lý logic để giúp admin có thể tải được file excel về máy chứa các dữ liệu trong các phần thống kê.
 
   -Lịch sử giao dịch của tất cả người dùng.
 
   -Thống kê tổng doanh thu theo thời gian được chọn.
-
-  -Xử lý logic để giúp admin có thể tải được file excel về máy chứa các dữ liệu trong các phần thống kê.
 
   -Xem bình luận và đánh giá của các món trong danh sách.
 
@@ -104,7 +115,7 @@ B.Back-end:
 
   - Xử lý trang combo, thêm combo vào giỏ hàng cho người dùng.
 
-  - Xử lý cart.
+  - Xử lý giỏ hàng.
 
 C.Database:
 Tham gia vào xây dựng database và tạo dữ liệu cho database.
