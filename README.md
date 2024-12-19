@@ -3,8 +3,11 @@ Tên project : KiHuLo Restaurant - web quản lý nhà hàng bán đồ ăn tr�
 Sử dụng: PHP, Js, HTML, CSS, SQL
 Mô hình lập trình ứng dụng: MVC
 Thành viên nhóm:
+
 -Nguyễn Trung Kiên - 23021590
+
 -Đặng Tuấn Long - 23021614
+
 -Nguyễn Nhất Huy - 23021578
 
 Tài khoản admin: seller.uet@gmail.com
@@ -75,7 +78,9 @@ B.Back-end:
 
   - Đưa ra tổng phí ship và lợi nhuận từ việc ship của nhà hàng.
 
-  - Thống kê thời gian giao hàng trung bình, tỉ lệ giao hàng thành công của từng shipper.
+  - Thống kê thời gian giao hàng trung bình của từng shipper.
+ 
+  - Thống kê tỉ lệ giao hàng thành công của từng shipper.
 
   - Thống kê trạng thái giao hàng.
 
