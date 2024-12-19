@@ -1,4 +1,5 @@
 <link rel= 'stylesheet' href="assets/css/Manage_user.css">
+<title>Người dùng</title>
 <main>
     
     <!-- Bảng người dùng hiện có -->

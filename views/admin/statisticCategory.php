@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thống kê món ăn</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-
+<script src="assets/js/fileExcel.js"></script>
 <link rel="stylesheet" href="assets/css/tableview.css">
 </head>
 <main>
+<button id="exportExcel">Tải file Excel</button>  
 <h1 style="text-align: center;">Thống kê</h1>
     <table>
         <thead>
@@ -52,6 +53,5 @@
                 </tr>
             <?php } ?>
     </table>
+    <a href="index.php?role=admin&manage=menu">Trở về</a>
 </main>
-
-<a href="index.php?role=admin&manage=menu">Trở về</a>

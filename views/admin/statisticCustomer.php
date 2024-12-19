@@ -10,10 +10,7 @@
 </head>
 </html>
 <body>
-<button id="exportExcel">Tải file Excel</button>
-<?php include_once "models/User.php";
-        $user = new User();?>
-        
+<button id="exportExcel">Tải file Excel</button>   
 <!-- In ra top khách hàng trả nhiều tiên nhất và số lần mua hàng -->
 <h1>Top Khách Hàng</h1> 
 

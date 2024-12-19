@@ -64,6 +64,7 @@ $review = new Review(); ?>
             <?php } ?>
         </tbody>
     </table>
+    <a href="index.php?role=admin&manage=review">Trở về</a>
 </body>
 
 <script src="assets/js/fileExcel.js"></script>
